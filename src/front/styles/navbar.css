@@ -1,66 +1,54 @@
-@import url("https://fonts.googleapis.com/css2?family=Brawler&family=Indie+Flower&family=Montserrat:ital,wght@0,100;0,200;1,100&family=Moo+Lah+Lah&family=Noto+Sans+JP:wght@100&family=Orelega+One&family=Prompt:wght@100;800&family=Roboto:wght@100;500&family=Square+Peg&display=swap");
-
-.navbar-interior-button-2 {
-  margin-right: 55px;
-  margin-left: 55px;
-  text-align: center;
-  color: rgb(27, 4, 4);
-  font-family: "Montserrat", sans-serif;
-  font-size: 25px;
-  outline: none;
-  border: none;
-  display: inline-block;
-  text-decoration: none;
+@import url("https://fonts.googleapis.com/css2?family=Brawler&family=Indie+Flower&family=Montserrat:ital,wght@0,100;0,200;0,300;0,500;1,100&family=Moo+Lah+Lah&family=Noto+Sans+JP:wght@100&family=Orelega+One&family=Prompt:wght@100;800&family=Roboto:wght@100;500&family=Square+Peg&display=swap");
+.home-navbar {
+  background-color: black;
 }
 
-.navbar-exterior-button2 {
-  margin-right: 55px;
-  margin-left: 55px;
-  text-align: center;
-  color: rgb(27, 4, 4);
-  font-family: "Montserrat", sans-serif;
-  font-size: 25px;
-  outline: none;
-  border: none;
-  display: inline-block;
-  text-decoration: none;
+.navbar-logo {
+  height: 100px;
 }
 
-.navbar-suculentas-button2 {
-  margin-right: 55px;
-  margin-left: 55px;
+.navbar-button {
+  margin-right: 20px;
+  margin-left: 20px;
   text-align: center;
-  color: rgb(27, 4, 4);
+  color: rgb(255, 255, 255);
   font-family: "Montserrat", sans-serif;
-  font-size: 25px;
+  font-size: 20px;
   outline: none;
   border: none;
   display: inline-block;
   text-decoration: none;
+  font-weight: 300;
 }
 
-.navbar-cuidados-button2 {
-  margin-right: 55px;
-  margin-left: 55px;
-  text-align: center;
-  color: rgb(27, 4, 4);
-  font-family: "Montserrat", sans-serif;
-  font-size: 25px;
-  outline: none;
-  border: none;
-  display: inline-block;
-  text-decoration: none;
+.navbar-button:hover {
+  color: #ffe175;
+}
+.navbar-search-button {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.359);
+  border-radius: 7px;
 }
 
-.navbar-nosotros-button2 {
-  margin-right: 55px;
-  margin-left: 55px;
-  text-align: center;
-  color: rgb(27, 4, 4);
-  font-family: "Montserrat", sans-serif;
-  font-size: 25px;
-  outline: none;
+.navbar-search-button i {
+  position: absolute;
+  right: 13px;
+  top: 15px;
+}
+.form-control {
+  height: 50px;
+  background-color: #eeeeee2a;
   border: none;
-  display: inline-block;
-  text-decoration: none;
+  color: #000000;
+}
+
+.form-control:focus {
+  background-color: #eeeeee69;
+  box-shadow: none;
+  border: none;
+}
+.form-control::placeholder {
+  color: #000000;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
 }
