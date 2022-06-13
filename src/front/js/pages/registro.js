@@ -23,7 +23,7 @@ export const Registro = () => {
       </div>
       <div id="template-bg-1">
         <div className="d-flex flex-column min-vh-100 align-items-center">
-          <div className="card p-4 text-light bg-dark cardLogin mb-5 w-25">
+          <div className="card p-4 text-light bg-dark cardLogin mb-5 w-lg-25">
             <div className="card-header">
               <h2>Registro </h2>
             </div>
