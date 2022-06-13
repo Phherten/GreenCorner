@@ -8,6 +8,8 @@ import { Single } from "./pages/single";
 import { Login } from "./pages/login";
 import { Registro } from "./pages/registro";
 import injectContext from "./store/appContext";
+import { Interior } from "./pages/interior";
+import { NavbarFondo } from "./component/navbarFondo";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
@@ -35,6 +37,10 @@ const Layout = () => {
             </Route>
             <Route exact path="/single/:theid">
               <Single />
+            </Route>
+            <Route exact path="/interior">
+              <NavbarFondo />
+              <Interior />
             </Route>
             <Route>
               <h1>Not found!</h1>

@@ -4,14 +4,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../../styles/navbar.css";
 import logo from "../../img/Logo_amarillo.png";
 
-export const Navbar = () => {
+export const NavbarFondo = () => {
   function handleClick(e) {
     e.preventDefault();
   }
 
   return (
     <div className="navbar-font">
-      <nav className="navbar navbar-expand-lg home-navbar">
+      <nav className="navbar navbar-expand-lg fondo-navbar">
         <div className="container-fluid">
           <div class="order-0">
             <a className="navbar-brand " href="">
@@ -32,11 +32,9 @@ export const Navbar = () => {
           <div class="navbar-collapse collapse w-100 order-1 order-lg-1 dual-collapse2">
             <ul className="navbar-nav me-auto">
               <li>
-                <Link to={"/interior"}>
-                  <a className="nav-link navbar-button" href="#">
-                    Interior
-                  </a>
-                </Link>
+                <a className="nav-link navbar-button" href="#">
+                  Interior
+                </a>
               </li>
               <li>
                 <a className="nav-link navbar-button" href="#">
