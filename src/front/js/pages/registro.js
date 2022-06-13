@@ -11,7 +11,7 @@ export const Registro = () => {
   return (
     <div className="container-fluid fondoLogin">
       <div className="logoNav d-flex justify-content-center">
-        <Link to={"/home/"}>
+        <Link to={"/"}>
           <img
             src={Logo}
             alt="logo"
