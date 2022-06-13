@@ -28,6 +28,7 @@
   position: relative;
   background-color: rgba(255, 255, 255, 0.359);
   border-radius: 7px;
+  margin-right: 10px;
 }
 
 .navbar-search-button i {
@@ -48,6 +49,27 @@
   border: none;
 }
 .form-control::placeholder {
+  color: #000000;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+}
+
+.navbar-user-button {
+  margin-right: 25px;
+  background-color: rgba(255, 255, 255, 0.359);
+  border-radius: 7px;
+  color: #000000;
+  border: none;
+  height: 52px;
+}
+
+.navbar-user-button:focus {
+  background-color: #eeeeee69;
+  box-shadow: none;
+  border: none;
+}
+
+.navbar-user-button::placeholder {
   color: #000000;
   font-family: "Montserrat", sans-serif;
   font-weight: 900;

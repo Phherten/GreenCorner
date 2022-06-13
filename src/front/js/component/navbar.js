@@ -4,8 +4,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../../styles/navbar.css";
 import logo from "../../img/Logo_amarillo.png";
 
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-
 export const Navbar = () => {
   function handleClick(e) {
     e.preventDefault();
@@ -68,6 +66,31 @@ export const Navbar = () => {
                     class="form-control"
                   />
                   <i class="fa fa-search"></i>
+                </div>
+              </li>
+              <li>
+                <div class="btn-group ">
+                  <button
+                    type="button"
+                    class="btn btn-secondary navbar-user-button dropdown-toggle"
+                    data-bs-toggle="dropdown"
+                    data-bs-display="static"
+                    aria-expanded="false"
+                  >
+                    <i class="fa fa-user"></i>
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-end">
+                    <li>
+                      <button class="dropdown-item" type="button">
+                        Iniciar Sesión
+                      </button>
+                    </li>
+                    <li>
+                      <button class="dropdown-item" type="button">
+                        Registrarse
+                      </button>
+                    </li>
+                  </ul>
                 </div>
               </li>
             </ul>
