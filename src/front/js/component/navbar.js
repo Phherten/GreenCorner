@@ -14,15 +14,17 @@ export const Navbar = () => {
       <nav className="navbar navbar-expand-lg home-navbar">
         <div className="container-fluid">
           <div class="order-0">
-            <a className="navbar-brand" href="">
+            <a className="navbar-brand " href="">
               <button
-                className="navbar-toggler"
+                className="navbar-toggler navbar-menu-button"
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target=".dual-collapse2"
                 onClick={handleClick.bind(this)}
               >
-                <span className="navbar-toggler-icon"></span>
+                <i class="fa fa-bars"></i>
+
+                <span className="navbar-toggler-icon navbar-menu-button-icon"></span>
               </button>
               <img src={logo} className="navbar-logo" />
             </a>

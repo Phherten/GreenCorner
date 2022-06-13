@@ -2,9 +2,19 @@
 .home-navbar {
   background-color: black;
 }
+.navbar-menu-button {
+  background-color: none;
+  color: rgb(255, 255, 255);
+  margin-left: 5px;
+  padding-right: 0px;
+}
+.navbar-menu-button:focus {
+  box-shadow: none;
+  border: none;
+}
 
 .navbar-logo {
-  height: 100px;
+  height: 70px;
 }
 
 .navbar-button {
