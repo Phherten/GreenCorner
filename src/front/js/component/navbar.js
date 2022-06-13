@@ -10,7 +10,7 @@ export const Navbar = () => {
   }
 
   return (
-    <div>
+    <div className="navbar-font">
       <nav className="navbar navbar-expand-lg home-navbar">
         <div className="container-fluid">
           <div class="order-0">
@@ -81,14 +81,20 @@ export const Navbar = () => {
                   >
                     <i class="fa fa-user"></i>
                   </button>
-                  <ul class="dropdown-menu dropdown-menu-end">
+                  <ul class="dropdown-menu dropdown-menu-end navbar-user-twobuttons">
                     <li>
-                      <button class="dropdown-item" type="button">
+                      <button
+                        class="dropdown-item navbar-button-user-login"
+                        type="button"
+                      >
                         Iniciar Sesión
                       </button>
                     </li>
                     <li>
-                      <button class="dropdown-item" type="button">
+                      <button
+                        class="dropdown-item navbar-button-user-login"
+                        type="button"
+                      >
                         Registrarse
                       </button>
                     </li>

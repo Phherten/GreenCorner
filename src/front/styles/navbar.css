@@ -1,6 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Brawler&family=Indie+Flower&family=Montserrat:ital,wght@0,100;0,200;0,300;0,500;1,100&family=Moo+Lah+Lah&family=Noto+Sans+JP:wght@100&family=Orelega+One&family=Prompt:wght@100;800&family=Roboto:wght@100;500&family=Square+Peg&display=swap");
 .home-navbar {
-  background-color: black;
+  background-color: transparent;
+}
+
+.navbar-font {
+  font-family: "Montserrat", sans-serif;
 }
 .navbar-menu-button {
   background-color: none;
@@ -83,4 +87,13 @@
   color: #000000;
   font-family: "Montserrat", sans-serif;
   font-weight: 900;
+}
+
+.navbar-user-twobuttons {
+  background-color: transparent;
+  border: none;
+}
+
+.navbar-button-user-login {
+  color: white;
 }
