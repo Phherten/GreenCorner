@@ -17,3 +17,31 @@ class User(db.Model):
             "email": self.email,
             # do not serialize the password, its a security breach
         }
+
+class InfoPlant(db.Model):
+    __tablename__ = "info_plant"
+    id = db.Column(db.Integer, primary_key=True)
+    nombre_comun = db.Column(db.String(250))
+    nombre_cientifico = db.Column(db.String(250), unique=True)
+    riego = db.Column(db.String(250))
+    luz = db.Column(db.String(250))
+    poda = db.Column(db.String(250))
+    abono = db.Column(db.String(250))
+    transplante = db.Column(db.String(250))
+
+    def save(self):
+        if not self.id:
+            db.session.add(self)
+        db.session.commit()
+
+    def update(self, nombre_comun, riego, luz, poda, abono, transplante):
+        self.nombre_comun = nombre_comun
+        self.riego = riego
+        self.luz = luz
+        self.poda = poda
+        self.abono = abono
+        self.transplante = transplante
+
+    @staticmethod
+    def get_by_nombre_cientifico(nombre_cientifico):
+        return InfoPlant.query.filter_by(nombre_cientifico=nombre_cientifico).first()
