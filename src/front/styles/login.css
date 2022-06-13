@@ -1,4 +1,21 @@
-body {
+.fondoLogin {
   background-size: cover;
-  background-image: url("https://img.freepik.com/foto-gratis/hojas-plantas-mostera-verde-vibrante-contra-fondo-blanco_512343-1532.jpg?w=996");
+  background-image: url("https://fondosmil.com/fondo/26795.jpg");
+  background-attachment: fixed;
+}
+.cardLogin {
+  background-color: darkolivegreen;
+  opacity: 0.9;
+}
+
+.boton:hover {
+  background-color: #ffe175 !important;
+  color: black !important;
+}
+.botones:hover {
+  color: #ffe175 !important;
+}
+.logoLogin {
+  height: 200px;
+  object-fit: cover;
 }
