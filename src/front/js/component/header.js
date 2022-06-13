@@ -18,8 +18,8 @@ export const Header = () => {
           <br />
           porque un hogar lleno de plantas es un lugar lleno de vida.
         </h4>
-        <button type="button" class="btn btn-primary">
-          Más información
+        <button type="button" class="btn btn-primary header-button-More">
+          Saber más
         </button>
       </div>
     </div>
