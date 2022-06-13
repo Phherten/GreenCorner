@@ -1,8 +1,12 @@
 
 import click
-from api.models import db, User, InfoPlant
+
+from api.models import db, Plagas, User, InfoPlant
 import csv
 import os
+
+
+
 
 
 """
@@ -32,6 +36,32 @@ def setup_commands(app):
 
         print("All test users created")
 
+
+    '''ejecutar: flask insert-plagas src/resources/info_plagas.csv'''
+    @app.cli.command("insert-plagas")
+    @click.argument("filename")
+    def insert_plagas_information(filename):
+        with open(filename) as file:  
+            reader = csv.reader(file)
+            is_first = True
+            data = []
+            for row in reader:
+                if is_first:
+                    is_first = False
+                    continue
+                plagas = Plagas.get_by_nombre(row[0])
+                if plagas is None:
+                    plagas = Plagas(
+                        nombre=row[0],
+                        sintomas=row[1],
+                        prevencion=row[2],
+                        tratamiento=row[3]
+                        )
+                else:
+                    plagas.update(row[1], row[2], row[3])
+
+                plagas.save()
+                
         ### Insert the code to populate others tables if needed
     '''ejecutar: flask nombre ../resources/datso.csv'''
     @app.cli.command("insert-plants")
@@ -39,8 +69,7 @@ def setup_commands(app):
     def insert_plants_information(filename):
         with open(filename) as file:  
             reader = csv.reader(file)
-            is_first = True
-            
+            is_first = True            
             for row in reader:
                 if is_first:
                     is_first = False
@@ -64,3 +93,4 @@ def setup_commands(app):
                 
             
             
+
