@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Brawler&family=Indie+Flower&family=Montserrat:ital,wght@0,100;0,200;0,300;0,500;1,100&family=Moo+Lah+Lah&family=Noto+Sans+JP:wght@100&family=Orelega+One&family=Prompt:wght@100;800&family=Roboto:wght@100;500&family=Square+Peg&display=swap");
+
+* {
+  font-family: "Montserrat", sans-serif;
+}
+.fondoLogin {
+  background-size: cover;
+  background-image: url("https://fondosmil.com/fondo/26795.jpg");
+  background-attachment: fixed;
+}
+.cardLogin {
+  background-color: darkolivegreen;
+  opacity: 0.9;
+}
+
+.boton:hover {
+  background-color: #ffe175 !important;
+  color: black !important;
+}
+.botones:hover {
+  color: #ffe175 !important;
+}
+.logoLogin {
+  height: 200px;
+  object-fit: cover;
+}
