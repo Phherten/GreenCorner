@@ -65,7 +65,7 @@ export const Navbar = () => {
                   <input
                     type="text"
                     placeholder="Buscar"
-                    class="form-control"
+                    class="form-control navbar-form-control"
                   />
                   <i class="fa fa-search"></i>
                 </div>

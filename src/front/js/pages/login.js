@@ -15,8 +15,8 @@ export const Login = () => {
           <img
             src={Logo}
             alt="logo"
-            width="400"
-            height="200"
+            width="220"
+            height="110"
             className="logoLogin"
           ></img>
         </Link>

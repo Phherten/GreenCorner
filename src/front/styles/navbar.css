@@ -50,19 +50,19 @@
   right: 13px;
   top: 15px;
 }
-.form-control {
+.navbar-form-control {
   height: 50px;
   background-color: #eeeeee2a;
   border: none;
   color: #000000;
 }
 
-.form-control:focus {
+.navbar-form-control:focus {
   background-color: #eeeeee69;
   box-shadow: none;
   border: none;
 }
-.form-control::placeholder {
+.navbar-form-control::placeholder {
   color: #000000;
   font-family: "Montserrat", sans-serif;
   font-weight: 900;
