@@ -83,20 +83,24 @@ export const Navbar = () => {
                   </button>
                   <ul class="dropdown-menu dropdown-menu-end navbar-user-twobuttons">
                     <li>
-                      <button
-                        class="dropdown-item navbar-button-user-login"
-                        type="button"
-                      >
-                        Iniciar Sesión
-                      </button>
+                      <Link to={"/login"}>
+                        <button
+                          class="dropdown-item navbar-button-user-login"
+                          type="button"
+                        >
+                          Iniciar Sesión
+                        </button>
+                      </Link>
                     </li>
                     <li>
-                      <button
-                        class="dropdown-item navbar-button-user-login"
-                        type="button"
-                      >
-                        Registrarse
-                      </button>
+                      <Link to={"/registro"}>
+                        <button
+                          class="dropdown-item navbar-button-user-login"
+                          type="button"
+                        >
+                          Registrarse
+                        </button>
+                      </Link>
                     </li>
                   </ul>
                 </div>
