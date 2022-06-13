@@ -1,8 +1,13 @@
 
 import click
-from api.models import db, Plagas
+
+from api.models import db, Plagas, User, InfoPlant
 import csv
 import os
+
+
+
+
 
 """
 In this file, you can add as many commands as you want using the @app.cli.command decorator
@@ -31,6 +36,7 @@ def setup_commands(app):
 
         print("All test users created")
 
+
     '''ejecutar: flask insert-plagas src/resources/info_plagas.csv'''
     @app.cli.command("insert-plagas")
     @click.argument("filename")
@@ -56,5 +62,35 @@ def setup_commands(app):
 
                 plagas.save()
                 
-
         ### Insert the code to populate others tables if needed
+    '''ejecutar: flask nombre ../resources/datso.csv'''
+    @app.cli.command("insert-plants")
+    @click.argument("filename")
+    def insert_plants_information(filename):
+        with open(filename) as file:  
+            reader = csv.reader(file)
+            is_first = True            
+            for row in reader:
+                if is_first:
+                    is_first = False
+                    continue
+                info_plant = InfoPlant.get_by_nombre_cientifico(row[1])
+                if info_plant is None:
+                    info_plant = InfoPlant(
+                        nombre_comun=row[0],
+                        nombre_cientifico=row[1],
+                        riego=row[2],
+                        luz=row[3],
+                        poda=row[4],
+                        abono=row[5],
+                        trasplante=row[6]
+                        )
+                else:
+                    info_plant.update(row[0], row[2], row[3], row[4], row[5], row[6])
+
+                info_plant.save()
+               
+                
+            
+            
+
