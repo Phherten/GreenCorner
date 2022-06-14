@@ -4,7 +4,7 @@ import rigoImageUrl from "../../img/rigo-baby.jpg";
 import "../../styles/home.css";
 import { Card } from "../component/card";
 
-export const Interior = () => {
+export const Suculentas = () => {
   const { store, actions } = useContext(Context);
 
   return (
