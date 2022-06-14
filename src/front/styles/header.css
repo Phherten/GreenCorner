@@ -52,3 +52,10 @@
   color: #ffe175;
   margin-left: 10px;
 }
+
+.header-logoLetrasAmarillo {
+  justify-content: center;
+  margin-left: 800px;
+  margin-bottom: 320px;
+  height: 300px;
+}

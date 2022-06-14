@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/header.css";
 import fondo from "../../img/header_background.jpg";
+import logoHeader from "../../img/Logo_letras_amarillo.png";
 
 export const Header = () => {
   const { store, actions } = useContext(Context);
@@ -22,6 +23,9 @@ export const Header = () => {
           Saber más
           <i class="fa fa-arrow-right header-icon-arrow"></i>
         </button>
+        <div>
+          <img className="header-logoLetrasAmarillo" src={logoHeader} />
+        </div>
       </div>
     </div>
   );
