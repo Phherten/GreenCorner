@@ -14,12 +14,13 @@ export const Header = () => {
         <h4 className="header-paragrap">
           Nuestro mundo siempre ha sido verde, intentemos expandir este color.
           <br />
-          Por eso te ayudamos a cuidar tus plantas,
+          Por eso te ayudamos a cuidar de tus plantas,
           <br />
           porque un hogar lleno de plantas es un lugar lleno de vida.
         </h4>
         <button type="button" class="btn btn-primary header-button-More">
           Saber más
+          <i class="fa fa-arrow-right header-icon-arrow"></i>
         </button>
       </div>
     </div>

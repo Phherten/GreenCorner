@@ -11,18 +11,20 @@
 }
 .header-title {
   color: #ffe175;
-  margin-top: -390px;
+  margin-top: -500px;
   font-family: "Montserrat", sans-serif;
   font-size: 50px;
   font-style: solid;
-  margin-left: 45px;
+  margin-left: 100px;
+  text-shadow: black 0.1em 0.1em 0.2em;
 }
 
 .header-paragrap {
   color: white;
   font-family: "Montserrat", sans-serif;
   font-size: 30px;
-  margin-left: 45px;
+  margin-left: 100px;
+  text-shadow: black 0.1em 0.1em 0.2em;
 }
 
 .header-button-More {
@@ -32,4 +34,19 @@
   font-family: "Montserrat", sans-serif;
   font-size: 25px;
   margin-left: 1000px;
+}
+
+.header-button-More:hover {
+  color: #ffe175;
+  background-color: transparent;
+  border: none;
+}
+.header-button-More:focus {
+  border: none;
+  background-color: transparent;
+}
+
+.header-icon-arrow {
+  color: #ffe175;
+  margin-left: 10px;
 }
