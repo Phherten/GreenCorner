@@ -48,19 +48,27 @@ class InfoPlant(db.Model):
     poda = db.Column(db.String(250))
     abono = db.Column(db.String(250))
     trasplante = db.Column(db.String(250))
+    tipo = db.Column(db.String(250))
+    imagen = db.Column(db.String(250))
+    periodo_verano = db.Column(db.Integer)
+    periodo_invierno = db.Column(db.Integer)
 
     def save(self):
         if not self.id:
             db.session.add(self)
         db.session.commit()
 
-    def update(self, nombre_comun, riego, luz, poda, abono, trasplante):
+    def update(self, nombre_comun, riego, luz, poda, abono, trasplante, tipo, imagen, periodo_verano, periodo_invierno):
         self.nombre_comun = nombre_comun
         self.riego = riego
         self.luz = luz
         self.poda = poda
         self.abono = abono
         self.trasplante = trasplante
+        self.tipo = tipo
+        self.imagen = imagen
+        self.periodo_verano = periodo_verano
+        self.periodo_invierno = periodo_invierno
     
     
     def serialize(self):
@@ -72,7 +80,12 @@ class InfoPlant(db.Model):
             "luz": self.luz,
             "poda": self.poda,
             "abono": self.abono,
-            "trasplante": self.trasplante
+            "trasplante": self.trasplante,
+            "tipo": self.tipo,
+            "imagen": self.imagen,
+            "periodo_verano": self.periodo_verano,
+            "periodo_invierno": self.periodo_invierno
+
             # do not serialize the password, its a security breach
         }
 
