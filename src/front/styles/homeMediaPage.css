@@ -8,4 +8,13 @@
 
 .media-page-plantas {
   width: 500px;
+  margin-top: 10px;
+  margin-left: -25px;
+}
+.media-page-line-h {
+  height: 100px;
+  width: 50%;
+  background-color: black;
+  margin-bottom: -80px;
+  margin-left: 350px;
 }

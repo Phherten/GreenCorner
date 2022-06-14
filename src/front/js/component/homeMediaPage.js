@@ -12,13 +12,15 @@ export const HomeMediaPage = () => {
     <div className="container-fluid home-media-page">
       <div className="row home-col-media-page-white">
         <div className="col-md-3 home-col-media-page-photo">
+          <hr className="media-page-line-h"></hr>
           <img src={plantasMediaPage} className="media-page-plantas" />
         </div>
-        <div className="col-md-1"></div>
+
         <div className="col-md-3"></div>
         <div className="col-md-1"></div>
-        <div className="col-md-3"></div>
+        <div className="col-md-4"></div>
         <div className="col-md-1"></div>
+        <div className="col-md-3"></div>
       </div>
       <div className="row home-col-media-page-dark">
         <div className="col-md-1"></div>
