@@ -8,12 +8,13 @@
   max-width: 100%;
   height: auto;
   margin-top: -100px;
+  box-shadow: 0 25px 25px 0 rgba(0, 0, 0, 0.15);
 }
 .header-title {
   color: #ffe175;
   margin-top: -500px;
   font-family: "Montserrat", sans-serif;
-  font-size: 50px;
+  font-size: 3.5em;
   font-style: solid;
   margin-left: 100px;
   text-shadow: black 0.1em 0.1em 0.2em;
@@ -40,6 +41,7 @@
   color: #ffe175;
   background-color: transparent;
   border: none;
+  margin-bottom: 150px;
 }
 .header-button-More:focus {
   border: none;
