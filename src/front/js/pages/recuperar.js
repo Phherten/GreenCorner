@@ -5,7 +5,7 @@ import "../../styles/login.css";
 import { Link } from "react-router-dom";
 import Logo from "../../img/Logo_letras_amarillo.png";
 
-export const Login = () => {
+export const Recuperar = () => {
   const { store, actions } = useContext(Context);
 
   return (
@@ -22,44 +22,26 @@ export const Login = () => {
         </Link>
       </div>
       <div id="template-bg-1">
-        <div className="d-flex flex-column min-vh-100  align-items-center">
+        <div className="d-flex flex-column min-vh-100 align-items-center">
           <div className="card p-4 text-light bg-dark cardLogin mb-5 w-lg-25">
             <div className="card-header">
-              <h2>Iniciar sesión </h2>
+              <h2>Recuperar Contraseña </h2>
             </div>
             <div className="card-body w-100">
               <form name="login" action="" method="post">
                 <div className="input-group form-group mt-3">
-                  <div className="bg-secondary rounded-start">
-                    <span className="m-3">
-                      <i className="fas fa-user mt-2"></i>
-                    </span>
-                  </div>
+                  <div className="bg-secondary rounded-start"></div>
                   <input
-                    type="text"
+                    type="email"
                     className="form-control"
-                    placeholder="Usuario"
+                    placeholder="Email"
                     name="username"
                   />
                 </div>
-                <div className="input-group form-group mt-3">
-                  <div className="bg-secondary rounded-start">
-                    <span className="m-3">
-                      <i className="fas fa-key mt-2"></i>
-                    </span>
-                  </div>
-                  <input
-                    type="password"
-                    className="form-control"
-                    placeholder="Contraseña"
-                    name="password"
-                  />
-                </div>
-
                 <div className="form-group mt-3">
                   <input
                     type="submit"
-                    value="Acceder"
+                    value="Enviar Contraseña"
                     className="btn bg-secondary boton float-end text-white w-100"
                     name="login-btn"
                   />
@@ -69,9 +51,9 @@ export const Login = () => {
               <div></div>
               <div className="card-footer">
                 <div>
-                  <Link to={"/recuperar/"}>
-                    <button className="btn btn-transparent botones text-white mt-3">
-                      Olvidaste la contraseña
+                  <Link to={"/login/"}>
+                    <button className="btn btn-transparent botones text-white mt-3 ">
+                      ¿Ya estas registrado?
                     </button>
                   </Link>
                 </div>

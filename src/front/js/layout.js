@@ -8,6 +8,12 @@ import { Single } from "./pages/single";
 import { Login } from "./pages/login";
 import { Registro } from "./pages/registro";
 import injectContext from "./store/appContext";
+import { Interior } from "./pages/interior";
+import { NavbarFondo } from "./component/navbarFondo";
+import { Recuperar } from "./pages/recuperar";
+import { Exterior } from "./pages/exterior";
+import { Suculentas } from "./pages/suculentas";
+import { Cuidados } from "./pages/cuidados";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
@@ -33,8 +39,27 @@ const Layout = () => {
             <Route exact path="/registro">
               <Registro />
             </Route>
-            <Route exact path="/single/:theid">
+            <Route exact path="/recuperar">
+              <Recuperar />
+            </Route>
+            <Route exact path="/interior/:theid">
               <Single />
+            </Route>
+            <Route exact path="/interior">
+              <NavbarFondo />
+              <Interior />
+            </Route>
+            <Route exact path="/exterior">
+              <NavbarFondo />
+              <Exterior />
+            </Route>
+            <Route exact path="/suculentas">
+              <NavbarFondo />
+              <Suculentas />
+            </Route>
+            <Route exact path="/cuidados">
+              <NavbarFondo />
+              <Cuidados />
             </Route>
             <Route>
               <h1>Not found!</h1>
