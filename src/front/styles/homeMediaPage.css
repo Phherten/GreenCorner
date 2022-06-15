@@ -15,26 +15,20 @@
   height: auto;
   margin-top: 10px;
 }
-.media-page-line-h {
-  border-top: 3px solid black;
-  opacity: 1;
-  width: 100%;
-  position: relative;
-  margin-bottom: -65px;
-  margin-left: 350px;
-}
 
-.home-col-media-page-card-one {
-  margin-left: 50px;
+.card-home-col-media-page-card-interior {
   margin-top: 100px;
-  width: 260px;
+  width: 100%;
+  height: auto;
   background-color: #e1e4e9;
   border: none;
   border-radius: 7px;
 }
 
 .media-page-planta-tarjetas-interior-foto {
-  width: 300px;
+  width: 100%;
+  height: auto;
+
   background-color: transparent;
   margin-top: -80px;
   margin-right: -20px;
@@ -44,7 +38,27 @@
 .media-page-card-text-interior {
   justify-content: center;
   color: black;
-  margin-left: 70px;
-  margin-top: 10px;
+
   font-size: 30px;
+  text-align: center;
+}
+
+.card-home-col-media-page-card-exterior {
+  margin-top: 50px;
+  width: 100%;
+  height: 80px;
+  background-color: #e1e4e9;
+  border: none;
+  border-radius: 7px;
+}
+
+.media-page-planta-tarjetas-exterior-foto {
+  width: 50%;
+  height: auto;
+  background-color: transparent;
+  margin-left: 100px;
+}
+
+.card-home-col-media-page-card-suculentas {
+  margin-top: 150px;
 }
