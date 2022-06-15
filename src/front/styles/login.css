@@ -24,3 +24,6 @@
   height: 200px;
   object-fit: cover;
 }
+.input-registro {
+  border-radius: 5px !important;
+}
