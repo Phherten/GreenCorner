@@ -31,30 +31,17 @@ export const HomeMediaPage = () => {
 
         <div className="col-md-1"></div>
 
-        <div className="col-md-3">
-          <div class="card mb-3 card-home-col-media-page-card-exterior">
-            <div class="row">
-              <div class="col-md-12">
-                <div>
-                  <p class="media-page-card-text-exterior">EXTERIOR</p>{" "}
-                </div>
-              </div>
+        <div className="col-md-3 mt-100">
+          <div class="row">
+            <div class="col-md-8 card-home-col-media-page-card-exterior ">
+              <p class="media-page-card-text-exterior">EXTERIOR</p>{" "}
             </div>
-            <img
-              src={plantaRedondaExterior}
-              className="media-page-planta-tarjetas-exterior-foto"
-            />
-            <div class="row">
-              <div class="col-md-12">
-                <div>
-                  <p class="media-page-card-text-suculentas">SUCULENTAS</p>{" "}
-                </div>
-              </div>
+            <div className="col-md-4">
+              <img
+                src={plantaRedondaExterior}
+                className="media-page-planta-tarjetas-exterior-foto"
+              />
             </div>
-            <img
-              src={plantaRedondaExterior}
-              className="media-page-planta-tarjetas-exterior-foto"
-            />
           </div>
         </div>
         <div className="col-md-1"></div>
