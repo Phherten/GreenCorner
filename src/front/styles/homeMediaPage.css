@@ -3,13 +3,18 @@
 }
 
 .home-col-media-page-white {
-  background-color: rgb(255, 255, 255);
+  background-color: #efeeef;
+  display: flex;
+  margin-top: -3em;
 }
 
 .home-col-media-page-dark {
   background-color: #1f2824;
-  margin-top: -5em;
-  position: absolute;
+  margin-top: -3em;
+  position: relative;
+}
+.columna-linea-negra-media-page {
+  margin: 0 0 0 0;
 }
 .media-page-linea-larga {
   position: relative;
@@ -21,9 +26,12 @@
 .media-page-plantas {
   width: 100%;
   height: auto;
-  margin-top: 10px;
+  margin-top: 0.5em;
 }
 
+.tarjetas-interior-ext-suculentas {
+  margin-left: 5em;
+}
 .card-home-col-media-page-card-interior {
   margin-top: 100px;
   width: 100%;
@@ -31,6 +39,7 @@
   background-color: #e1e4e9;
   border: none;
   border-radius: 7px;
+  margin-right: -2em;
 }
 
 .media-page-planta-tarjetas-interior-foto {
@@ -104,14 +113,14 @@
 .media-page-planta-suelta {
   height: 250px;
   width: 195px;
-  margin-left: 92em;
+  margin-left: 106em;
 
   margin-top: -10em;
 }
 
 .media-page-text {
   color: #ffe175;
-  margin-left: 18em;
+  margin-left: 23.5em;
   font-size: 40px;
   margin-top: -5em;
 }
@@ -119,58 +128,33 @@
 .media-page-lineas-larga-blancas {
   position: relative;
   width: 520px;
-  margin-left: 70em;
+  margin-left: 80em;
   margin-top: -15em;
 }
 
-.card-home-media-page-card-cuidado-plantas {
-  text-align: center;
-  width: 100%;
-  max-height: 30em;
-  background-color: #e1e4e9;
-  border: none;
-  border-radius: 7px;
-  margin-top: 80px;
-}
 .media-page-card-cuidados-plagas-notificaciones {
   font-size: 28px;
+  margin-top: 1em;
 }
 
 .media-page-planta-tarjetas-cuidados-foto {
-  width: 300px;
-}
-.media-page-planta-tarjetas-plagas-foto {
-  width: 300px;
-}
-
-.card-home-media-page-card-plagas {
-  text-align: center;
   width: 80%;
-  height: 360px;
-  max-height: 30em;
-  background-color: #e1e4e9;
-  border: none;
-  border-radius: 7px;
-  margin-top: 80px;
 }
-
-.card-home-media-page-card-notificaciones-riego {
-  text-align: center;
-  width: 130%;
-  background-color: #e1e4e9;
-  border: none;
-  border-radius: 7px;
-  margin-top: 80px;
-}
-
 .media-page-planta-tarjetas-plagas-foto {
-  width: 250px;
-  height: 290px;
-  margin-top: -25em;
-  margin-left: 10em;
-  margin-right: 10em;
+  width: 100%;
 }
 
 .media-page-planta-tarjetas-riego-foto {
-  width: 130%;
+  width: 75%;
+}
+
+.media-page-cards-cuidados-plagas-notificaciones {
+  text-align: center;
+  width: 20em;
+  background-color: #e1e4e9;
+  border: none;
+  border-radius: 7px;
+  margin-top: 80px;
+  margin-bottom: 10em;
+  margin-left: 5em;
 }
