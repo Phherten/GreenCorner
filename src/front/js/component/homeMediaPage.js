@@ -69,6 +69,7 @@ export const HomeMediaPage = () => {
       </div>
       <div className="row home-col-media-page-dark">
         <img src={hojaSueltas} className="media-page-planta-suelta" />
+
         <div>
           <img src={lineaDos} className="media-page-lineas-larga-blancas" />
 
@@ -88,7 +89,7 @@ export const HomeMediaPage = () => {
               className="media-page-planta-tarjetas-cuidados-foto"
             />
           </div>
-          <div className="tarjetas col-xs col-sm col-md col-lg-1 m-0.5"></div>
+          <div className=" col-xs col-sm col-md col-lg-1 m-0.5"></div>
           <div className="media-page-cards-cuidados-plagas-notificaciones col-xs col-sm col-md col-lg-3 m-0.5">
             <p class="media-page-card-cuidados-plagas-notificaciones">PLAGAS</p>
             <img
@@ -96,7 +97,7 @@ export const HomeMediaPage = () => {
               className="media-page-planta-tarjetas-plagas-foto"
             />
           </div>
-          <div className="tarjetas media-page-cards-cuidados-plagas-notificacionescol-xs col-sm col-md col-lg-1 m-0.5"></div>
+          <div className=" media-page-cards-cuidados-plagas-notificacionescol-xs col-sm col-md col-lg-1 m-0.5"></div>
           <div className="media-page-cards-cuidados-plagas-notificaciones col-xs col-sm col-md col-lg-3 m-0.5">
             <p class="media-page-card-cuidados-plagas-notificaciones">
               NOTIFICACIONES DE RIEGO
