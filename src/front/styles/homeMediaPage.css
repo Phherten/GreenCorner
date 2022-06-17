@@ -1,0 +1,160 @@
+.home-media-page {
+  padding: 0;
+}
+
+.home-col-media-page-white {
+  background-color: #efeeef;
+  display: flex;
+  margin-top: -3em;
+}
+
+.home-col-media-page-dark {
+  background-color: #1f2824;
+  margin-top: -3em;
+  position: relative;
+}
+.columna-linea-negra-media-page {
+  margin: 0 0 0 0;
+}
+.media-page-linea-larga {
+  position: relative;
+  width: 520px;
+  margin-left: -10em;
+  margin-top: -9em;
+}
+
+.media-page-plantas {
+  width: 100%;
+  height: auto;
+  margin-top: 0.5em;
+}
+
+.tarjetas-interior-ext-suculentas {
+  margin-left: 5em;
+}
+.card-home-col-media-page-card-interior {
+  margin-top: 100px;
+  width: 100%;
+  height: auto;
+  background-color: #e1e4e9;
+  border: none;
+  border-radius: 7px;
+  margin-right: -2em;
+}
+
+.media-page-planta-tarjetas-interior-foto {
+  width: 100%;
+  height: auto;
+
+  background-color: transparent;
+  margin-top: -80px;
+  margin-right: -20px;
+
+  margin-bottom: -15px;
+}
+.media-page-card-text-interior {
+  justify-content: center;
+  color: black;
+
+  font-size: 30px;
+  text-align: center;
+}
+
+.card-home-col-media-page-card-exterior {
+  width: 80%;
+  max-height: 10em;
+  background-color: #e1e4e9;
+  border: none;
+  border-radius: 7px;
+  margin-top: 100px;
+}
+
+.media-page-planta-tarjetas-exterior-foto {
+  width: 150%;
+  height: auto;
+  background-color: transparent;
+  margin-left: 13em;
+  margin-top: -18em;
+}
+
+.media-page-card-text-exterior {
+  color: black;
+  margin-left: -5em;
+  font-size: 30px;
+  text-align: center;
+  margin-top: 3.5em;
+}
+
+.card-home-col-media-page-card-suculentas {
+  width: 80%;
+  max-height: 10em;
+  background-color: #e1e4e9;
+  border: none;
+  border-radius: 7px;
+  margin-top: 80px;
+}
+
+.media-page-planta-tarjetas-suculentas-foto {
+  width: 200%;
+  height: auto;
+  background-color: transparent;
+  margin-left: 11.5em;
+  margin-top: -18em;
+}
+
+.media-page-card-text-suculentas {
+  color: black;
+  margin-left: -3em;
+  font-size: 30px;
+  text-align: center;
+  margin-top: 3.5em;
+}
+
+.media-page-planta-suelta {
+  height: 250px;
+  width: 195px;
+  margin-left: 106em;
+
+  margin-top: -10em;
+}
+
+.media-page-text {
+  color: #ffe175;
+  margin-left: 23.5em;
+  font-size: 40px;
+  margin-top: -5em;
+}
+
+.media-page-lineas-larga-blancas {
+  position: relative;
+  width: 520px;
+  margin-left: 80em;
+  margin-top: -15em;
+}
+
+.media-page-card-cuidados-plagas-notificaciones {
+  font-size: 28px;
+  margin-top: 1em;
+}
+
+.media-page-planta-tarjetas-cuidados-foto {
+  width: 80%;
+}
+.media-page-planta-tarjetas-plagas-foto {
+  width: 100%;
+}
+
+.media-page-planta-tarjetas-riego-foto {
+  width: 75%;
+}
+
+.media-page-cards-cuidados-plagas-notificaciones {
+  text-align: center;
+  width: 20em;
+  background-color: #e1e4e9;
+  border: none;
+  border-radius: 7px;
+  margin-top: 80px;
+  margin-bottom: 10em;
+  margin-left: 5em;
+}
