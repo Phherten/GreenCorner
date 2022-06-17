@@ -18,11 +18,32 @@ import regadera from "../../img/regadera.png";
 export const HomeMediaPage = () => {
   const { store, actions } = useContext(Context);
   return (
-    <div class="container">
-      <div class="row">
-        <div class="col-sm">One of three columns</div>
-        <div class="col-sm">One of three columns</div>
-        <div class="col-sm">One of three columns</div>
+    <div>
+      <div class="container-fluid p-0 m-0">
+        <div class="row p-0 m-0">
+          <div class="col-sm-4 p-0">
+            <img src={plantasMediaPage} className="media-page-plantas" />
+          </div>
+          <div class="col-sm tarjetas-interior-ext-suculentas">
+            <div class="card-home-col-media-page-card-interior">
+              <img
+                src={plantaInteriorHomeTarjeta}
+                className="media-page-planta-tarjetas-interior-foto"
+              />
+              <div class="card-body">
+                <p class="media-page-card-text-interior">INTERIOR</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4">One of three columns</div>
+        </div>
+      </div>
+      <div class="container-fluid">
+        <div class="row p-0 m-0">
+          <div class="col-sm">One of three columns</div>
+          <div class="col-sm">One of three columns</div>
+          <div class="col-sm">One of three columns</div>
+        </div>
       </div>
     </div>
   );
