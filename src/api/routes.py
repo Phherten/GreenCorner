@@ -36,6 +36,15 @@ def obtain_plants():
     for info in info_plants:
         response.append(info.serialize())
 
-
     return jsonify(response), 200
 
+@api.route('/search', methods=['GET'])
+def search_plants():
+    peticion = request.get_json(force=True)
+    
+    resultado = InfoPlant.get_by_name(peticion["nombre_parcial"])
+    response = []
+    for info in resultado:
+        response.append(info.serialize())
+
+    return jsonify(response) ,200

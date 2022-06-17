@@ -1,4 +1,5 @@
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import or_
 
 db = SQLAlchemy()
 
@@ -97,5 +98,23 @@ class InfoPlant(db.Model):
     @staticmethod
     def get_all():
         return InfoPlant.query.all()
+
+    '''
+    SELECT * FROM table WHERE column LIKE '%Mons% OR column_2 LIKE '%Mons%''
+    '''
+    @staticmethod
+    def get_by_name(nombre_parcial):
+        search = f'%{nombre_parcial}%'
+        plants = InfoPlant.query.filter( 
+            or_(
+                InfoPlant.nombre_cientifico.ilike(search), 
+                InfoPlant.nombre_comun.ilike(search)
+                )
+            ).all()
+
+        return plants
+        
+    
+
 
 
