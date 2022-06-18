@@ -28,42 +28,48 @@ export const HomeMediaPage = () => {
           <img src={lineas} className="media-page-linea-larga" />
         </div>
         <div className="tarjetas-interior-ext-suculentas col-md-2">
-          <div class="card-home-col-media-page-card-interior">
-            <img
-              src={plantaInteriorHomeTarjeta}
-              className="media-page-planta-tarjetas-interior-foto"
-            />
-            <div class="card-body">
-              <p class="media-page-card-text-interior">INTERIOR</p>
+          <Link to={"/interior"}>
+            <div class="card-home-col-media-page-card-interior">
+              <img
+                src={plantaInteriorHomeTarjeta}
+                className="media-page-planta-tarjetas-interior-foto"
+              />
+              <div class="card-body">
+                <p class="media-page-card-text-interior">INTERIOR</p>
+              </div>
             </div>
-          </div>
+          </Link>
         </div>
 
         <div className="col-md-1"></div>
 
         <div className="col-md-3 mt-100">
-          <div class="row">
-            <div class="col-md-8 card-home-col-media-page-card-exterior ">
-              <p class="media-page-card-text-exterior">EXTERIOR</p>{" "}
+          <Link to={"/exterior"}>
+            <div class="row">
+              <div class="col-md-8 card-home-col-media-page-card-exterior ">
+                <p class="media-page-card-text-exterior">EXTERIOR</p>{" "}
+              </div>
+              <div className="col-md-4">
+                <img
+                  src={plantaRedondaExterior}
+                  className="media-page-planta-tarjetas-exterior-foto"
+                />
+              </div>
             </div>
-            <div className="col-md-4">
-              <img
-                src={plantaRedondaExterior}
-                className="media-page-planta-tarjetas-exterior-foto"
-              />
+          </Link>
+          <Link to={"/suculentas"}>
+            <div class="row">
+              <div class="col-md-8 card-home-col-media-page-card-suculentas">
+                <p class="media-page-card-text-suculentas">SUCULENTAS</p>{" "}
+              </div>
+              <div className="col-md-4">
+                <img
+                  src={plantaSuculenta}
+                  className="media-page-planta-tarjetas-suculentas-foto"
+                />
+              </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="col-md-8 card-home-col-media-page-card-suculentas">
-              <p class="media-page-card-text-suculentas">SUCULENTAS</p>{" "}
-            </div>
-            <div className="col-md-4">
-              <img
-                src={plantaSuculenta}
-                className="media-page-planta-tarjetas-suculentas-foto"
-              />
-            </div>
-          </div>
+          </Link>
         </div>
         <div className="col-md-1"></div>
       </div>
