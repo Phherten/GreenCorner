@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { Context } from "../store/appContext";
 import rigoImageUrl from "../../img/hojas.png";
 import "../../styles/login.css";
@@ -7,6 +7,35 @@ import Logo from "../../img/Logo_letras_amarillo.png";
 
 export const Registro = () => {
   const { store, actions } = useContext(Context);
+  const [datos, setDatos] = useState({
+    username: "",
+    secondName: "",
+    email: "",
+    password: "",
+  });
+
+  const handleInputChange = (event) => {
+    // console.log(event.target.name)
+    // console.log(event.target.value)
+    setDatos({
+      ...datos,
+      [event.target.name]: event.target.value,
+    });
+  };
+
+  const enviarDatos = (event) => {
+    event.preventDefault();
+    console.log(
+      "enviando datos..." +
+        datos.username +
+        " " +
+        datos.secondName +
+        " " +
+        datos.email +
+        " " +
+        datos.password
+    );
+  };
 
   return (
     <div className="container-fluid fondoLogin">
@@ -28,14 +57,19 @@ export const Registro = () => {
               <h2>Registro </h2>
             </div>
             <div className="card-body w-100">
-              <form name="login" action="" method="post">
+              <form
+                name="login"
+                // action=""
+                onSubmit={enviarDatos}
+              >
                 <div className="input-group form-group mt-3">
                   <div className="bg-secondary rounded-start"></div>
                   <input
                     type="text"
                     className="form-control"
                     placeholder="Nombre"
-                    name="username"
+                    name="secondName"
+                    onChange={handleInputChange}
                   />
                 </div>
                 <div className="input-group form-group mt-3">
@@ -45,6 +79,7 @@ export const Registro = () => {
                     className="form-control"
                     placeholder="Apellidos"
                     name="username"
+                    onChange={handleInputChange}
                   />
                 </div>
                 <div className="input-group form-group mt-3">
@@ -53,7 +88,8 @@ export const Registro = () => {
                     type="email"
                     className="form-control"
                     placeholder="Email"
-                    name="username"
+                    name="email"
+                    onChange={handleInputChange}
                   />
                 </div>
 
@@ -64,6 +100,7 @@ export const Registro = () => {
                     className="form-control"
                     placeholder="Contraseña"
                     name="password"
+                    onChange={handleInputChange}
                   />
                 </div>
                 <div className="input-group form-group mt-3">
@@ -82,6 +119,12 @@ export const Registro = () => {
                     value="Registrar"
                     className="btn bg-secondary boton float-end text-white w-100"
                     name="login-btn"
+                    onClick={actions.adduser(
+                      datos.username,
+                      datos.secondName,
+                      datos.email,
+                      datos.password
+                    )}
                   />
                 </div>
               </form>

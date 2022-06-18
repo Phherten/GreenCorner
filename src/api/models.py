@@ -101,3 +101,19 @@ class User(db.Model):
             "email": self.email,
             # do not serialize the password, its a security breach
         }
+    
+    def save(self):
+        if not self.id:
+            db.session.add(self)
+        db.session.commit()
+
+    def update(self, email, password):
+        self.email = email
+        self.password = password
+    
+    "SELECT * FROM info_plant WHERE nombre_cientifico = 'nomber_cientifico' LIMIT 1"
+    @staticmethod
+    def get_by_email(nombre_cientifico):
+        return User.query.filter_by(email = email).first()
+      
+    

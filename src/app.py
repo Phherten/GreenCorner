@@ -86,6 +86,27 @@ def iniciar_sesion():
     else:
         return "El usuario no existe", 400
 
+@app.route('/registro', methods = ['POST'])
+def guardar_registro():
+    request_body = request.get_json()
+    print(request_body)
+    user = User.query.filter_by(email = request_body['email']).first()
+
+    if user is None:
+        user = User(
+            username = request_body['username'],
+            second_name = request_body['secondName'],
+            email = request_body['email'],
+            password = request_body['password'],
+            is_active = True
+            )
+        user.save()
+        return "Usuario registrado"
+    else:
+        return "Este usuario ya existe"
+
+
+
 #Bearer token
 @app.route ('/privada', methods = ['GET'])
 @jwt_required()
