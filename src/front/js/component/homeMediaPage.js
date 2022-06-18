@@ -19,84 +19,76 @@ export const HomeMediaPage = () => {
   const { store, actions } = useContext(Context);
   return (
     <div>
-      <div class="container-fluid p-0 m-0">
-        <div class="row p-0 m-0">
-          <div class="col-sm-4 p-0">
+      <div className="container-fluid p-0 m-0 media-page-container">
+        <div className="row p-0 m-0">
+          <div className="col-sm-4 p-0 media-page-plant-photo">
             <img src={plantasMediaPage} className="media-page-plantas" />
           </div>
-          <div class="col-sm tarjetas-interior-ext-suculentas">
-            <div class="card-home-col-media-page-card-interior">
+          <div className="col-sm ">
+            <div
+              className="card media-page-tarjetas-interior"
+              style={{ width: `20rem` }}
+            >
               <img
                 src={plantaInteriorHomeTarjeta}
                 className="media-page-planta-tarjetas-interior-foto"
               />
-              <div class="card-body">
-                <p class="media-page-card-text-interior">INTERIOR</p>
+              <div className="card-body">
+                <p className="media-page-card-text-interior">INTERIOR</p>
               </div>
             </div>
           </div>
-          <div class="col-sm-4">One of three columns</div>
+          <div className="col-sm">
+            <div className="card mb-3 card-home-col-media-page-card-exterior">
+              <div className="row  g-0">
+                <div className="col-8">
+                  <div className="card-body">
+                    <p className="card-text media-page-card-text-exterior">
+                      EXTERIOR
+                    </p>
+                  </div>
+                </div>
+
+                <div className="col-4 ">
+                  <img
+                    src={plantaRedondaExterior}
+                    className="media-page-planta-tarjetas-exterior-suculenta-foto"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="card mb-3 card-home-col-media-page-card-exterior">
+              <div className="row  g-0">
+                <div className="col-8">
+                  <div className="card-body">
+                    <p className="card-text media-page-card-text-exterior">
+                      SUCULENTAS
+                    </p>
+                  </div>
+                </div>
+
+                <div className="col-4 ">
+                  <img
+                    src={plantaSuculenta}
+                    className="media-page-planta-tarjetas-exterior-suculenta-foto"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="container-fluid">
-        <div class="row p-0 m-0">
-          <div class="col-sm">One of three columns</div>
-          <div class="col-sm">One of three columns</div>
-          <div class="col-sm">One of three columns</div>
+      <div className="container-fluid">
+        <div className="row p-0 m-0">
+          <div className="col-sm">One of three columns</div>
+          <div className="col-sm">One of three columns</div>
+          <div className="col-sm">One of three columns</div>
         </div>
       </div>
     </div>
   );
   /*
-  return (
-    <div className="container-fluid home-media-page">
-      <div className=" row home-col-media-page-white">
-        <div className="col-md-4 home-col-media-page-photo">
-          <img src={plantasMediaPage} className="media-page-plantas" />
-        </div>
-        <div className="columna-linea-negra-media-page col-md-1">
-          <img src={lineas} className="media-page-linea-larga" />
-        </div>
-        <div className="tarjetas-interior-ext-suculentas col-md-2">
-          <div class="card-home-col-media-page-card-interior">
-            <img
-              src={plantaInteriorHomeTarjeta}
-              className="media-page-planta-tarjetas-interior-foto"
-            />
-            <div class="card-body">
-              <p class="media-page-card-text-interior">INTERIOR</p>
-            </div>
-          </div>
-        </div>
-
-        <div className="col-md-1"></div>
-
-        <div className="col-md-3 mt-100">
-          <div class="row">
-            <div class="col-md-8 card-home-col-media-page-card-exterior ">
-              <p class="media-page-card-text-exterior">EXTERIOR</p>{" "}
-            </div>
-            <div className="col-md-4">
-              <img
-                src={plantaRedondaExterior}
-                className="media-page-planta-tarjetas-exterior-foto"
-              />
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-8 card-home-col-media-page-card-suculentas">
-              <p class="media-page-card-text-suculentas">SUCULENTAS</p>{" "}
-            </div>
-            <div className="col-md-4">
-              <img
-                src={plantaSuculenta}
-                className="media-page-planta-tarjetas-suculentas-foto"
-              />
-            </div>
-          </div>
-        </div>
-        <div className="col-md-1"></div>
-      </div>
+  
 
       <div className="container-fluid home-col-media-page-dark">
         <img src={hojaSueltas} className="media-page-planta-suelta" />
@@ -112,7 +104,7 @@ export const HomeMediaPage = () => {
         <div className="row">
           <div className="col-xs col-sm col-md-1 col-lg-1 m-0.5"></div>
           <div className="media-page-cards-cuidados-plagas-notificaciones col-xs col-sm col-md-3 col-lg-3 m-0.5">
-            <p class="media-page-card-cuidados-plagas-notificaciones">
+            <p className="media-page-card-cuidados-plagas-notificaciones">
               CUIDADO DE PLANTAS
             </p>
             <img
@@ -122,7 +114,7 @@ export const HomeMediaPage = () => {
           </div>
           <div className="col-xs col-sm col-md-1 col-lg-1 m-0.5"></div>
           <div className="media-page-cards-cuidados-plagas-notificaciones col-xs col-sm col-md-3 col-lg-3 m-0.5">
-            <p class="media-page-card-cuidados-plagas-notificaciones">PLAGAS</p>
+            <p className="media-page-card-cuidados-plagas-notificaciones">PLAGAS</p>
             <img
               src={plagas}
               className="media-page-planta-tarjetas-plagas-foto"
@@ -130,7 +122,7 @@ export const HomeMediaPage = () => {
           </div>
           <div className="col-xs col-sm col-md-1 col-lg-1 m-0.5"></div>
           <div className="media-page-cards-cuidados-plagas-notificaciones col-xs col-sm col-md-3 col-lg-3 m-0.5">
-            <p class="media-page-card-cuidados-plagas-notificaciones">
+            <p className="media-page-card-cuidados-plagas-notificaciones">
               NOTIFICACIONES DE RIEGO
             </p>
             <img

@@ -26,20 +26,10 @@
 .media-page-plantas {
   width: 100%;
   height: auto;
-  margin-top: 0.5rem;
 }
 
 .tarjetas-interior-ext-suculentas {
   margin-left: 5em;
-}
-.card-home-col-media-page-card-interior {
-  margin-top: 6.25rem;
-  width: 100%;
-  height: auto;
-  background-color: #e1e4e9;
-  border: none;
-  border-radius: 0.438rem;
-  margin-right: -2rem;
 }
 
 .media-page-planta-tarjetas-interior-foto {
@@ -54,35 +44,34 @@
 }
 .media-page-card-text-interior {
   justify-content: center;
-  color: black;
-
+  color: rgb(0, 0, 0);
+  font-weight: 300;
   font-size: 1.875rem;
   text-align: center;
 }
 
 .card-home-col-media-page-card-exterior {
-  width: 80%;
+  width: 28rem;
   max-height: 10rem;
   background-color: #e1e4e9;
   border: none;
   border-radius: 0.438rem;
-  margin-top: 6.25rem;
+  margin-top: 8rem;
 }
 
-.media-page-planta-tarjetas-exterior-foto {
-  width: 150%;
+.media-page-planta-tarjetas-exterior-suculenta-foto {
+  width: 110%;
   height: auto;
   background-color: transparent;
-  margin-left: 13rem;
-  margin-top: -18rem;
+  margin-top: -2rem;
 }
 
 .media-page-card-text-exterior {
-  color: black;
-  margin-left: -5rem;
+  color: rgb(0, 0, 0);
+  font-weight: 300;
   font-size: 1.875rem;
-  text-align: center;
-  margin-top: 3.5em;
+  margin-top: 5rem;
+  justify-content: center;
 }
 
 .card-home-col-media-page-card-suculentas {
@@ -161,4 +150,20 @@
 
 .media-page-plantas1 {
   width: 450%;
+}
+
+.media-page-tarjetas-interior {
+  margin-top: 8rem;
+  width: 100%;
+  height: auto;
+  background-color: #e1e4e9;
+  border: none;
+  border-radius: 0.438rem;
+  margin-left: 6rem;
+  justify-content: center;
+}
+@media (max-width: 992px) {
+  .media-page-plant-photo {
+    display: none;
+  }
 }
