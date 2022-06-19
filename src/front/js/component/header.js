@@ -19,9 +19,9 @@ export const Header = () => {
           <br />
           porque un hogar lleno de plantas es un lugar lleno de vida.
         </h4>
-        <button type="button" class="btn btn-primary header-button-More">
+        <button type="button" className="btn btn-primary header-button-More">
           Saber más
-          <i class="fa fa-arrow-right header-icon-arrow"></i>
+          <i className="fa fa-arrow-right header-icon-arrow"></i>
         </button>
         <div>
           <img className="header-logoLetrasAmarillo" src={logoHeader} />

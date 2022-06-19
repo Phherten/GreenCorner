@@ -95,7 +95,7 @@ def guardar_registro():
     if user is None:
         user = User(
             username = request_body['username'],
-            second_name = request_body['secondName'],
+            second_name = request_body['second_name'],
             email = request_body['email'],
             password = request_body['password'],
             is_active = True

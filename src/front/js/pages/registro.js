@@ -9,7 +9,7 @@ export const Registro = () => {
   const { store, actions } = useContext(Context);
   const [datos, setDatos] = useState({
     username: "",
-    secondName: "",
+    second_name: "",
     email: "",
     password: "",
   });
@@ -29,7 +29,7 @@ export const Registro = () => {
       "enviando datos..." +
         datos.username +
         " " +
-        datos.secondName +
+        datos.second_name +
         " " +
         datos.email +
         " " +
@@ -57,18 +57,14 @@ export const Registro = () => {
               <h2>Registro </h2>
             </div>
             <div className="card-body w-100">
-              <form
-                name="login"
-                // action=""
-                onSubmit={enviarDatos}
-              >
+              <form name="login" action="" onSubmit={enviarDatos}>
                 <div className="input-group form-group mt-3">
                   <div className="bg-secondary rounded-start"></div>
                   <input
                     type="text"
                     className="form-control"
                     placeholder="Nombre"
-                    name="secondName"
+                    name="username"
                     onChange={handleInputChange}
                   />
                 </div>
@@ -78,7 +74,7 @@ export const Registro = () => {
                     type="text"
                     className="form-control"
                     placeholder="Apellidos"
-                    name="username"
+                    name="second_name"
                     onChange={handleInputChange}
                   />
                 </div>
@@ -119,12 +115,14 @@ export const Registro = () => {
                     value="Registrar"
                     className="btn bg-secondary boton float-end text-white w-100"
                     name="login-btn"
-                    onClick={actions.adduser(
-                      datos.username,
-                      datos.secondName,
-                      datos.email,
-                      datos.password
-                    )}
+                    onClick={() => {
+                      actions.adduser(
+                        datos.username,
+                        datos.second_name,
+                        datos.email,
+                        datos.password
+                      );
+                    }}
                   />
                 </div>
               </form>
