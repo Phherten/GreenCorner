@@ -78,32 +78,28 @@ export const HomeMediaPage = () => {
           </div>
         </div>
       </div>
-      <div className="container-fluid">
-        <div className="row p-0 m-0">
-          <div className="col-sm">One of three columns</div>
-          <div className="col-sm">One of three columns</div>
-          <div className="col-sm">One of three columns</div>
-        </div>
-      </div>
-    </div>
-  );
-  /*
-  
 
       <div className="container-fluid home-col-media-page-dark">
-        <img src={hojaSueltas} className="media-page-planta-suelta" />
-
-        <div>
-          <img src={lineaDos} className="media-page-lineas-larga-blancas" />
-
-          <h4 className="media-page-text">
-            Encuentra información sobre tus plantas
-          </h4>
+        <div className="row">
+          <div className="col d-flex justify-content-end">
+            <img src={hojaSueltas} className="media-page-planta-suelta" />
+          </div>
         </div>
 
         <div className="row">
-          <div className="col-xs col-sm col-md-1 col-lg-1 m-0.5"></div>
-          <div className="media-page-cards-cuidados-plagas-notificaciones col-xs col-sm col-md-3 col-lg-3 m-0.5">
+          <div className="col d-flex justify-content-end">
+            <img src={lineaDos} className="media-page-lineas-larga-blancas" />
+          </div>
+        </div>
+        <div className="row">
+          <div className="col d-flex justify-content-end">
+            <h4 className="media-page-text">
+              Encuentra información sobre tus plantas
+            </h4>
+          </div>
+        </div>
+        <div className="row p-0 m-0">
+          <div className="media-page-cards-cuidados-plagas-notificaciones col-sm m-5 p-5">
             <p className="media-page-card-cuidados-plagas-notificaciones">
               CUIDADO DE PLANTAS
             </p>
@@ -112,16 +108,16 @@ export const HomeMediaPage = () => {
               className="media-page-planta-tarjetas-cuidados-foto"
             />
           </div>
-          <div className="col-xs col-sm col-md-1 col-lg-1 m-0.5"></div>
-          <div className="media-page-cards-cuidados-plagas-notificaciones col-xs col-sm col-md-3 col-lg-3 m-0.5">
-            <p className="media-page-card-cuidados-plagas-notificaciones">PLAGAS</p>
+          <div className="media-page-cards-cuidados-plagas-notificaciones  col-sm m-5 p-5">
+            <p className="media-page-card-cuidados-plagas-notificaciones">
+              PLAGAS
+            </p>
             <img
               src={plagas}
               className="media-page-planta-tarjetas-plagas-foto"
             />
           </div>
-          <div className="col-xs col-sm col-md-1 col-lg-1 m-0.5"></div>
-          <div className="media-page-cards-cuidados-plagas-notificaciones col-xs col-sm col-md-3 col-lg-3 m-0.5">
+          <div className="media-page-cards-cuidados-plagas-notificaciones col-sm  m-5 p-5">
             <p className="media-page-card-cuidados-plagas-notificaciones">
               NOTIFICACIONES DE RIEGO
             </p>
@@ -133,5 +129,5 @@ export const HomeMediaPage = () => {
         </div>
       </div>
     </div>
-  );*/
+  );
 };
