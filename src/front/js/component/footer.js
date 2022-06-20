@@ -21,6 +21,39 @@ export const Footer = () => {
               4Geeks Academy
             </a>
           </div>
+          <section class="mb-4 text-center">
+            <a
+              class="btn btn-outline-light btn-floating m-1"
+              href="#!"
+              role="button"
+            >
+              <i class="fab fa-facebook-f"></i>
+            </a>
+
+            <a
+              class="btn btn-outline-light btn-floating m-1"
+              href="#!"
+              role="button"
+            >
+              <i class="fab fa-twitter"></i>
+            </a>
+
+            <a
+              class="btn btn-outline-light btn-floating m-1"
+              href="#!"
+              role="button"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+
+            <a
+              class="btn btn-outline-light btn-floating m-1"
+              href="#!"
+              role="button"
+            >
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </section>
         </footer>
       </section>
     </div>
