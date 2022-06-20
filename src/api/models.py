@@ -98,7 +98,6 @@ class InfoPlant(db.Model):
     @staticmethod
     def get_all():
         return InfoPlant.query.all()
-
     '''
     SELECT * FROM table WHERE column LIKE '%Mons% OR column_2 LIKE '%Mons%''
     '''
@@ -118,3 +117,44 @@ class InfoPlant(db.Model):
 
 
 
+
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(80), unique=False, nullable=False)
+    second_name = db.Column(db.String(80), unique=False, nullable=False)
+    email = db.Column(db.String(120), unique=True, nullable=False)
+    password = db.Column(db.String(80), unique=False, nullable=False)
+    is_active = db.Column(db.Boolean(), unique=False, nullable=False)
+
+    def __repr__(self):
+        return f'<User {self.email}>'
+
+
+    def serialize(self):
+        return {
+            "id": self.id,
+            "username": self.username,
+            "second_name": self.second_name,
+            "email": self.email
+            # do not serialize the password, its a security breach
+        }
+    
+    def save(self):
+        if not self.id:
+            db.session.add(self)
+        db.session.commit()
+
+
+
+    def update(self, username, second_name, email, password):
+        self.username = username
+        self.second_name = second_name
+        self.email = email
+        self.password = password
+    
+    "SELECT * FROM info_plant WHERE nombre_cientifico = 'nomber_cientifico' LIMIT 1"
+    @staticmethod
+    def get_by_email(nombre_cientifico):
+        return User.query.filter_by(email = email).first()
+      
+    

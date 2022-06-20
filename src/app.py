@@ -7,10 +7,12 @@ from flask_migrate import Migrate
 from flask_swagger import swagger
 from flask_cors import CORS
 from api.utils import APIException, generate_sitemap
-from api.models import db, Plagas
+from api.models import db, Plagas, User, InfoPlant
 from api.routes import api
 from api.admin import setup_admin
 from api.commands import setup_commands
+import datetime #ayuda a trabajar con fecha y hora
+from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity
 
 #from models import Person
 
@@ -39,6 +41,8 @@ setup_admin(app)
 # add the admin
 setup_commands(app)
 
+jwt = JWTManager(app)
+
 # Add all endpoints form the API with a "api" prefix
 app.register_blueprint(api, url_prefix='/api')
 
@@ -62,6 +66,53 @@ def serve_any_other_file(path):
     response = send_from_directory(static_file_dir, path)
     response.cache_control.max_age = 0 # avoid cache memory
     return response
+
+@app.route('/login', methods = ['POST'])
+def iniciar_sesion():
+    request_body = request.get_json()
+    print(request_body)
+    user = User.query.filter_by(email = request_body['email']).first()
+    if user:
+        if user.password == request_body['password']:
+            tiempo = datetime.timedelta(minutes = 2)
+            acceso = create_access_token(identity = request_body['email'], expires_delta = tiempo)
+            return jsonify ({
+                "duracion": tiempo.total_seconds(),
+                "mensaje": "Inicio de sesion correcto",
+                "token": acceso
+            })
+        else:
+            return "La contraseña no es correcta"
+    else:
+        return "El usuario no existe", 400
+
+@app.route('/registro', methods = ['POST'])
+def guardar_registro():
+    request_body = request.get_json()
+    print(request_body)
+    user = User.query.filter_by(email = request_body['email']).first()
+
+    if user is None:
+        user = User(
+            username = request_body['username'],
+            second_name = request_body['second_name'],
+            email = request_body['email'],
+            password = request_body['password'],
+            is_active = True
+            )
+        user.save()
+        return "Usuario registrado"
+    else:
+        return "Este usuario ya existe"
+
+
+
+#Bearer token
+@app.route ('/privada', methods = ['GET'])
+@jwt_required()
+def privada():
+    identidad = get_jwt_identity()
+    return jsonify({"acceso": "Bienvenido ," + identidad})
 
 
 # this only runs if `$ python src/main.py` is executed
