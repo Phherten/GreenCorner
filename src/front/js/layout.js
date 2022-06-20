@@ -14,6 +14,8 @@ import { Recuperar } from "./pages/recuperar";
 import { Exterior } from "./pages/exterior";
 import { Suculentas } from "./pages/suculentas";
 import { Cuidados } from "./pages/cuidados";
+import { Ficha } from "./pages/ficha";
+import { Ficha_plagas } from "./pages/ficha_plagas";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
@@ -42,8 +44,13 @@ const Layout = () => {
             <Route exact path="/recuperar">
               <Recuperar />
             </Route>
-            <Route exact path="/interior/:theid">
-              <Single />
+            <Route exact path="/ficha/:theid">
+              <NavbarFondo />
+              <Ficha />
+            </Route>
+            <Route exact path="/ficha_plagas/:theid">
+              <NavbarFondo />
+              <Ficha_plagas />
             </Route>
             <Route exact path="/interior">
               <NavbarFondo />

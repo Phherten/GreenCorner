@@ -100,3 +100,24 @@
 .navbar-button-user-login {
   color: white;
 }
+
+.dropdown-text {
+  color: black !important;
+  font-size: 18px;
+}
+.dropdown-text:hover {
+  background-color: transparent !important;
+  color: #ffe175 !important;
+  text-shadow: 1px 1px 3px black;
+}
+
+.fondo-dropdown {
+  opacity: 0.8;
+}
+a {
+  text-decoration: none !important;
+}
+
+.icono-user:hover {
+  background-color: rgba(224, 224, 224, 0.669) !important;
+}

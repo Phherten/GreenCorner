@@ -1,4 +1,5 @@
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import or_
 
 db = SQLAlchemy()
 
@@ -48,19 +49,27 @@ class InfoPlant(db.Model):
     poda = db.Column(db.String(250))
     abono = db.Column(db.String(250))
     trasplante = db.Column(db.String(250))
+    tipo = db.Column(db.String(250))
+    imagen = db.Column(db.String(250))
+    periodo_verano = db.Column(db.Integer)
+    periodo_invierno = db.Column(db.Integer)
 
     def save(self):
         if not self.id:
             db.session.add(self)
         db.session.commit()
 
-    def update(self, nombre_comun, riego, luz, poda, abono, trasplante):
+    def update(self, nombre_comun, riego, luz, poda, abono, trasplante, tipo, imagen, periodo_verano, periodo_invierno):
         self.nombre_comun = nombre_comun
         self.riego = riego
         self.luz = luz
         self.poda = poda
         self.abono = abono
         self.trasplante = trasplante
+        self.tipo = tipo
+        self.imagen = imagen
+        self.periodo_verano = periodo_verano
+        self.periodo_invierno = periodo_invierno
     
     
     def serialize(self):
@@ -72,7 +81,12 @@ class InfoPlant(db.Model):
             "luz": self.luz,
             "poda": self.poda,
             "abono": self.abono,
-            "trasplante": self.trasplante
+            "trasplante": self.trasplante,
+            "tipo": self.tipo,
+            "imagen": self.imagen,
+            "periodo_verano": self.periodo_verano,
+            "periodo_invierno": self.periodo_invierno
+
             # do not serialize the password, its a security breach
         }
 
@@ -84,7 +98,25 @@ class InfoPlant(db.Model):
     @staticmethod
     def get_all():
         return InfoPlant.query.all()
+    '''
+    SELECT * FROM table WHERE column LIKE '%Mons% OR column_2 LIKE '%Mons%''
+    '''
+    @staticmethod
+    def get_by_name(nombre_parcial):
+        search = f'%{nombre_parcial}%'
+        plants = InfoPlant.query.filter( 
+            or_(
+                InfoPlant.nombre_cientifico.ilike(search), 
+                InfoPlant.nombre_comun.ilike(search)
+                )
+            ).all()
+
+        return plants
+        
     
+
+
+
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -96,6 +128,7 @@ class User(db.Model):
 
     def __repr__(self):
         return f'<User {self.email}>'
+
 
     def serialize(self):
         return {
@@ -110,6 +143,8 @@ class User(db.Model):
         if not self.id:
             db.session.add(self)
         db.session.commit()
+
+
 
     def update(self, username, second_name, email, password):
         self.username = username

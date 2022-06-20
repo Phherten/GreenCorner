@@ -97,7 +97,7 @@ export const Registro = () => {
                   <div className="bg-secondary rounded-start"></div>
                   <input
                     type="text"
-                    className="form-control"
+                    className="form-control input-registro"
                     placeholder="Nombre"
                     name="username"
                     onChange={handleInputChange}
@@ -107,7 +107,7 @@ export const Registro = () => {
                   <div className="bg-secondary rounded-start"></div>
                   <input
                     type="text"
-                    className="form-control"
+                    className="form-control input-registro"
                     placeholder="Apellidos"
                     name="second_name"
                     onChange={handleInputChange}
@@ -117,7 +117,7 @@ export const Registro = () => {
                   <div className="bg-secondary rounded-start"></div>
                   <input
                     type="email"
-                    className="form-control"
+                    className="form-control input-registro"
                     placeholder="Email"
                     name="email"
                     onChange={handleInputChange}
@@ -128,7 +128,7 @@ export const Registro = () => {
                   <div className="bg-secondary rounded-start"></div>
                   <input
                     type="password"
-                    className="form-control"
+                    className="form-control input-registro"
                     placeholder="Contraseña"
                     name="password"
                     // onChange={handleInputChange}
@@ -139,7 +139,7 @@ export const Registro = () => {
                   <div className="bg-secondary rounded-start"></div>
                   <input
                     type="password"
-                    className="form-control"
+                    className="form-control input-registro"
                     placeholder="Confirmar Contraseña"
                     name="password2"
                     onChange={(e) => setPass2(e.target.value)}

@@ -1,6 +1,9 @@
 const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
+
+      seccion: [],
+
       message: null,
       demo: [
         {
@@ -17,6 +20,7 @@ const getState = ({ getStore, getActions, setStore }) => {
     },
     actions: {
       // Use getActions to call a function within a fuction
+
       adduser: (username, second_name, email, password) => {
         var myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
@@ -44,15 +48,17 @@ const getState = ({ getStore, getActions, setStore }) => {
           .catch((error) => console.log("error", error));
       },
 
+
       exampleFunction: () => {
         getActions().changeColor(0, "green");
       },
 
-      getMessage: () => {
+
+      getMessage: (seccion) => {
         // fetching data from the backend
-        fetch(process.env.BACKEND_URL + "/api/hello")
+        fetch(process.env.BACKEND_URL + "/api/" + seccion)
           .then((resp) => resp.json())
-          .then((data) => setStore({ message: data.message }))
+          .then((data) => setStore({ seccion: data }))
           .catch((error) =>
             console.log("Error loading message from backend", error)
           );

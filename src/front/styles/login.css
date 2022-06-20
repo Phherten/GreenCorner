@@ -2,6 +2,7 @@
 */
 * {
   font-family: "Montserrat", sans-serif;
+  font-weight: 200;
 }
 .fondoLogin {
   background-size: cover;
@@ -23,4 +24,7 @@
 .logoLogin {
   height: 200px;
   object-fit: cover;
+}
+.input-registro {
+  border-radius: 5px !important;
 }

@@ -83,10 +83,14 @@ def setup_commands(app):
                         luz=row[3],
                         poda=row[4],
                         abono=row[5],
-                        trasplante=row[6]
+                        trasplante=row[6],
+                        tipo=row[7],
+                        imagen=row[8],
+                        periodo_verano=row[9],
+                        periodo_invierno=row[10]
                         )
                 else:
-                    info_plant.update(row[0], row[2], row[3], row[4], row[5], row[6])
+                    info_plant.update(row[0], row[2], row[3], row[4], row[5], row[6], row[7], row[8], row[9], row[10])
 
                 info_plant.save()
                

@@ -10,9 +10,9 @@ export const NavbarFondo = () => {
   }
 
   return (
-    <div className="navbar-font">
+    <div className="navbar-font sombraNavbar">
       <nav className="navbar navbar-expand-lg fondo-navbar">
-        <div className="container-fluid">
+        <div className="container-fluid ">
           <div class="order-0">
             <a className="navbar-brand " href="">
               <button
@@ -84,7 +84,7 @@ export const NavbarFondo = () => {
                 <div class="btn-group ">
                   <button
                     type="button"
-                    class="btn btn-secondary navbar-user-button dropdown-toggle"
+                    class="btn btn-secondary navbar-user-button dropdown-toggle icono-user"
                     data-bs-toggle="dropdown"
                     data-bs-display="static"
                     aria-expanded="false"
@@ -92,26 +92,28 @@ export const NavbarFondo = () => {
                     <i class="fa fa-user"></i>
                   </button>
                   <ul class="dropdown-menu dropdown-menu-end navbar-user-twobuttons">
-                    <li>
-                      <Link to={"/login"}>
-                        <button
-                          class="dropdown-item navbar-button-user-login"
-                          type="button"
-                        >
-                          Iniciar Sesión
-                        </button>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to={"/registro"}>
-                        <button
-                          class="dropdown-item navbar-button-user-login"
-                          type="button"
-                        >
-                          Registrarse
-                        </button>
-                      </Link>
-                    </li>
+                    <div className="fondo-dropdown bg-light rounded ">
+                      <li>
+                        <Link to={"/login"}>
+                          <button
+                            class="dropdown-item navbar-button-user-login dropdown-text pt-3 ps-3 pe-3"
+                            type="button"
+                          >
+                            <p className="text-drop">Iniciar Sesión</p>
+                          </button>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to={"/registro"}>
+                          <button
+                            class="dropdown-item navbar-button-user-login dropdown-text pb-3"
+                            type="button"
+                          >
+                            Registrarse
+                          </button>
+                        </Link>
+                      </li>
+                    </div>
                   </ul>
                 </div>
               </li>

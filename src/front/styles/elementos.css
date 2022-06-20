@@ -1,4 +1,28 @@
 .card-elemento {
-  box-shadow: 5px 5px 10px;
+  box-shadow: 5px 5px 10px black !important;
   opacity: 0, 9;
+}
+
+.card-elemento:hover {
+  box-shadow: 7px 7px 10px black !important;
+  opacity: 0, 9;
+  transform: scale(1.1);
+  transition: transform 0.2s;
+}
+.imagen-ficha {
+  box-shadow: -2px 0px 20px black;
+}
+.w400 {
+  font-weight: 400 !important;
+}
+.titulo {
+  border-bottom: 2px solid #ffe175;
+}
+.w400i {
+  font-weight: 400 !important;
+  font-style: italic !important;
+}
+
+.sombraNavbar {
+  box-shadow: 0px 2px 20px black !important;
 }
