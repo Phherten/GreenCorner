@@ -36,7 +36,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         };
 
         fetch(
-          "https://3001-phherten-finalproyect-dxndf8tehl5.ws-eu47.gitpod.io/registro",
+          "https://3001-phherten-finalproyect-lt6m11jbrt0.ws-eu47.gitpod.io/registro",
           requestOptions
         )
           .then((response) => response.text())
