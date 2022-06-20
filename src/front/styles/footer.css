@@ -1,0 +1,15 @@
+.footer-home {
+  background-color: #1f2824;
+}
+
+.footer-text {
+  color: #ffe175;
+}
+
+.text-footer-web {
+  text-decoration: none;
+  color: #ffe175;
+}
+.text-footer-web:hover {
+  text-decoration: none;
+}
