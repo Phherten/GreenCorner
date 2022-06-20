@@ -10,9 +10,9 @@ export const NavbarFondo = () => {
   }
 
   return (
-    <div className="navbar-font">
+    <div className="navbar-font sombraNavbar">
       <nav className="navbar navbar-expand-lg fondo-navbar">
-        <div className="container-fluid">
+        <div className="container-fluid ">
           <div class="order-0">
             <a className="navbar-brand " href="">
               <button

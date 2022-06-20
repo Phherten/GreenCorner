@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "../../styles/footer.css";
 import logoFooter from "../../img/Logo_letras_amarillo.png";
 
+
 export const Footer = () => {
   return (
     <div className="container-fluid footer-home">
@@ -59,3 +60,4 @@ export const Footer = () => {
     </div>
   );
 };
+
