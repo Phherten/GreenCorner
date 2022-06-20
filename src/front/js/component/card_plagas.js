@@ -5,13 +5,13 @@ import "../../styles/elementos.css";
 import Hoja from "../../img/hoja.png";
 import { Link } from "react-router-dom";
 
-export const Card = (props) => {
+export const Card_plagas = (props) => {
   const { store, actions } = useContext(Context);
 
   return (
     <div class="col-xs col-lg-4 col-xl-3 mb-2 mt-3" key={props.i}>
       <Link
-        to={"/ficha/" + props.id}
+        to={"/ficha_plagas/" + props.id}
         className="col-xs col-lg-4 col-xl-3 mb-2 mt-3"
       >
         <div className="card card-elemento" style={{ minWidth: "25rm" }}>
