@@ -31,39 +31,11 @@ export const Registro = () => {
     // verificarcontraseña(datos.password, datos.password2);
     if (pass1 === pass2) {
       // mostrardatos();
-      actions.adduser(
-        datos.username,
-        datos.second_name,
-        datos.email,
-        datos.password
-      );
+      actions.adduser(datos.username, datos.second_name, datos.email, pass1);
     } else {
       return alert("Las contraseñas deben coincidir");
     }
   };
-
-  // const mostrardatos = (event) => {
-  //   event.preventDefault();
-  //   console.log(
-  //     "enviando datos..." +
-  //       datos.username +
-  //       " " +
-  //       datos.second_name +
-  //       " " +
-  //       datos.email +
-  //       " " +
-  //       datos.password
-  //   );
-  // };
-
-  // const verificarcontraseña = (password, password2) => {
-  //   console.log("Entra en verificar");
-  //   if (password === password2) {
-  //     return true;
-  //   } else {
-  //     return false;
-  //   }
-  // };
 
   return (
     <div className="container-fluid fondoLogin">
@@ -85,7 +57,6 @@ export const Registro = () => {
               <h2>Registro </h2>
             </div>
             <div className="card-body w-100">
-              {/* <form name="login" action=""> */}
               <form
                 name="login"
                 action=""
@@ -131,7 +102,6 @@ export const Registro = () => {
                     className="form-control input-registro"
                     placeholder="Contraseña"
                     name="password"
-                    // onChange={handleInputChange}
                     onChange={(e) => setPass1(e.target.value)}
                   />
                 </div>
@@ -152,7 +122,6 @@ export const Registro = () => {
                     value="Registrar"
                     className="btn bg-secondary boton float-end text-white w-100"
                     name="login-btn"
-                    // onClick={enviardatos()}
                   />
                 </div>
               </form>

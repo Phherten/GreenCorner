@@ -1,7 +1,6 @@
 const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
-
       seccion: [],
 
       message: null,
@@ -39,20 +38,15 @@ const getState = ({ getStore, getActions, setStore }) => {
           redirect: "follow",
         };
 
-        fetch(
-          "https://3001-phherten-finalproyect-lt6m11jbrt0.ws-eu47.gitpod.io/registro",
-          requestOptions
-        )
+        fetch(process.env.BACKEND_URL + "/api/registro", requestOptions)
           .then((response) => response.text())
           .then((result) => console.log(result))
           .catch((error) => console.log("error", error));
       },
 
-
       exampleFunction: () => {
         getActions().changeColor(0, "green");
       },
-
 
       getMessage: (seccion) => {
         // fetching data from the backend
