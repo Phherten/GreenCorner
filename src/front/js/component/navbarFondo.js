@@ -109,7 +109,7 @@ export const NavbarFondo = () => {
                             class="dropdown-item navbar-button-user-login dropdown-text pb-3"
                             type="button"
                           >
-                            Registrarse
+                            <p className="text-drop">Registrarse</p>
                           </button>
                         </Link>
                       </li>

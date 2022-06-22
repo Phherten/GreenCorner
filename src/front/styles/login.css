@@ -13,10 +13,16 @@
   background-color: darkolivegreen;
   opacity: 0.9;
 }
+.boton {
+  border: none;
+}
 
 .boton:hover {
   background-color: #ffe175 !important;
   color: black !important;
+  border: none;
+  transform: scale(1.1);
+  transition: transform 0.2s;
 }
 .botones:hover {
   color: #ffe175 !important;
@@ -27,4 +33,12 @@
 }
 .input-registro {
   border-radius: 5px !important;
+}
+.imagen-card {
+  -webkit-filter: drop-shadow(5px 5px 5px #222);
+  filter: drop-shadow(5px 5px 5px #222);
+}
+
+.texto-card {
+  color: black !important;
 }
