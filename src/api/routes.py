@@ -48,3 +48,22 @@ def search_plants():
         response.append(info.serialize())
 
     return jsonify(response) ,200
+
+@api.route('/registro', methods = ['POST'])
+def guardar_registro():
+    request_body = request.get_json()
+    print(request_body)
+    user = User.query.filter_by(email = request_body['email']).first()
+
+    if user is None:
+        user = User(
+            username = request_body['username'],
+            second_name = request_body['second_name'],
+            email = request_body['email'],
+            password = request_body['password'],
+            is_active = True
+            )
+        user.save()
+        return "Usuario registrado"
+    else:
+        return "Este usuario ya existe"
