@@ -26,54 +26,60 @@ export const HomeMediaPage = () => {
           </div>
           <div className="col-sm ">
             <div
-              className="card media-page-tarjetas-interior"
+              className="card media-page-tarjetas-interior boxes-with-shadows"
               style={{ width: `20rem` }}
             >
-              <img
-                src={plantaInteriorHomeTarjeta}
-                className="media-page-planta-tarjetas-interior-foto"
-              />
-              <div className="card-body">
-                <p className="media-page-card-text-interior">INTERIOR</p>
-              </div>
+              <a href="/interior">
+                <img
+                  src={plantaInteriorHomeTarjeta}
+                  className="media-page-planta-tarjetas-interior-foto"
+                />
+                <div className="card-body">
+                  <p className="media-page-card-text-interior">INTERIOR</p>
+                </div>
+              </a>
             </div>
           </div>
           <div className="col-sm">
-            <div className="card mb-3 card-home-col-media-page-card-exterior">
-              <div className="row  g-0">
-                <div className="col-8">
-                  <div className="card-body">
-                    <p className="card-text media-page-card-text-exterior">
-                      EXTERIOR
-                    </p>
+            <div className="card mb-3 card-home-col-media-page-card-exterior boxes-with-shadows">
+              <a href="/exterior">
+                <div className="row  g-0">
+                  <div className="col-8">
+                    <div className="card-body">
+                      <p className="card-text media-page-card-text-exterior">
+                        EXTERIOR
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="col-4 ">
+                    <img
+                      src={plantaRedondaExterior}
+                      className="media-page-planta-tarjetas-exterior-suculenta-foto"
+                    />
                   </div>
                 </div>
-
-                <div className="col-4 ">
-                  <img
-                    src={plantaRedondaExterior}
-                    className="media-page-planta-tarjetas-exterior-suculenta-foto"
-                  />
-                </div>
-              </div>
+              </a>
             </div>
-            <div className="card mb-3 card-home-col-media-page-card-exterior">
-              <div className="row  g-0">
-                <div className="col-8">
-                  <div className="card-body">
-                    <p className="card-text media-page-card-text-exterior">
-                      SUCULENTAS
-                    </p>
+            <div className="card mb-3 card-home-col-media-page-card-exterior boxes-with-shadows">
+              <a href="/suculentas">
+                <div className="row  g-0">
+                  <div className="col-8">
+                    <div className="card-body">
+                      <p className="card-text media-page-card-text-exterior">
+                        SUCULENTAS
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="col-4 ">
+                    <img
+                      src={plantaSuculenta}
+                      className="media-page-planta-tarjetas-exterior-suculenta-foto"
+                    />
                   </div>
                 </div>
-
-                <div className="col-4 ">
-                  <img
-                    src={plantaSuculenta}
-                    className="media-page-planta-tarjetas-exterior-suculenta-foto"
-                  />
-                </div>
-              </div>
+              </a>
             </div>
           </div>
         </div>
