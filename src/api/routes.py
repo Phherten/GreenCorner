@@ -77,7 +77,7 @@ def iniciar_sesion():
     user = User.query.filter_by(email = request_body['email']).first()
     if user:
         if user.password == request_body['password']:
-            tiempo = datetime.timedelta(minutes = 2)
+            tiempo = datetime.timedelta(minutes = 1)
             acceso = create_access_token(identity = request_body['email'], expires_delta = tiempo)
             return jsonify ({
                 "duracion": tiempo.total_seconds(),
@@ -85,9 +85,9 @@ def iniciar_sesion():
                 "token": acceso
             })
         else:
-            return "La contraseña no es correcta"
+            return jsonify({"error": "La contraseña no es correcta"})
     else:
-        return "El usuario no existe", 400
+        return jsonify({"error": "El usuario no existe"}), 400
 
 #Bearer token
 @api.route ('/privada', methods = ['GET'])

@@ -47,6 +47,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
 
       loguser: (email, password) => {
+        const store = getStore();
         var myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
 
@@ -64,7 +65,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 
         fetch(process.env.BACKEND_URL + "/api/login", requestOptions)
           .then((response) => response.json())
-          .then((result) => console.log(result))
+          .then((result) => {
+            console.log(result.token);
+            setStore({ token: result.token });
+          })
+          .then(() => console.log(store.token))
+          // .then((data) => console.log(data))
+          // .then((data) => setStore({ token: data }))
+          // .then(console.log(store.token))
           .catch((error) => console.log("error", error));
       },
 
