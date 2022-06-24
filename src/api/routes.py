@@ -105,4 +105,4 @@ def iniciar_sesion():
 @jwt_required()
 def privada():
     identidad = get_jwt_identity()
-    return jsonify({"acceso": "Bienvenido ," + identidad})
+    return jsonify({"mensaje": "Tienes permiso para entrar", "permiso": True, "email": identidad})

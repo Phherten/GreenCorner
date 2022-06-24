@@ -6,7 +6,11 @@ const getState = ({ getStore, getActions, setStore }) => {
       seccion: [],
 
       token: "",
-      permiso: true,
+
+      permiso: false,
+      usuario: "",
+
+
       busqueda: [],
       message: null,
       demo: [
@@ -71,11 +75,35 @@ const getState = ({ getStore, getActions, setStore }) => {
           .then((result) => {
             console.log(result.token);
             setStore({ token: result.token });
+            sessionStorage.setItem("token", result.token);
           })
           .then(() => console.log(store.token))
           // .then((data) => console.log(data))
           // .then((data) => setStore({ token: data }))
           // .then(console.log(store.token))
+          .catch((error) => console.log("error", error));
+      },
+
+      privado: () => {
+        var myHeaders = new Headers();
+        myHeaders.append(
+          "Authorization",
+          `Bearer ${sessionStorage.getItem("token")}`
+        );
+
+        var requestOptions = {
+          method: "GET",
+          headers: myHeaders,
+          redirect: "follow",
+        };
+
+        fetch(process.env.BACKEND_URL + "/api/privada", requestOptions)
+          .then((response) => response.json())
+          .then((result) => {
+            console.log(result);
+            setStore({ permiso: result.permiso });
+            setStore({ usuario: result.email });
+          })
           .catch((error) => console.log("error", error));
       },
 
