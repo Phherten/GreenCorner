@@ -63,7 +63,7 @@ def setup_commands(app):
                 plagas.save()
                 
         ### Insert the code to populate others tables if needed
-    '''ejecutar: flask nombre ../resources/datso.csv'''
+    '''ejecutar: flask insert-plants src/resources/info_plants.csv'''
     @app.cli.command("insert-plants")
     @click.argument("filename")
     def insert_plants_information(filename):

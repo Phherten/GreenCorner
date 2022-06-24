@@ -1,12 +1,35 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { Context } from "../store/appContext";
 import rigoImageUrl from "../../img/hojas.png";
 import "../../styles/login.css";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import Logo from "../../img/Logo_letras_amarillo.png";
 
 export const Login = () => {
+  const history = useHistory();
+  const [error, guardarError] = useState(false);
+
   const { store, actions } = useContext(Context);
+  const [datos, setDatos] = useState({
+    email: "",
+    password: "",
+  });
+
+  const handleInputChange = (event) => {
+    setDatos({
+      ...datos,
+      [event.target.name]: event.target.value,
+    });
+  };
+
+  const enviardatos = (e) => {
+    console.log("Entra en enviardatos");
+    actions.loguser(datos.email, datos.password);
+    e.preventDefault();
+    // actualizarUsuarioLogeado(true);
+    guardarError(false);
+    history.push("/privada"); // <-- Objeto history
+  };
 
   return (
     <div className="container-fluid fondoLogin">
@@ -28,7 +51,7 @@ export const Login = () => {
               <h2>Iniciar sesión </h2>
             </div>
             <div className="card-body w-100">
-              <form name="login" action="" method="post">
+              <form name="login" onSubmit={enviardatos}>
                 <div className="input-group form-group mt-3">
                   <div className="bg-secondary rounded-start">
                     <span className="m-3">
@@ -38,8 +61,9 @@ export const Login = () => {
                   <input
                     type="text"
                     className="form-control"
-                    placeholder="Usuario"
-                    name="username"
+                    placeholder="Email"
+                    name="email"
+                    onChange={handleInputChange}
                   />
                 </div>
                 <div className="input-group form-group mt-3">
@@ -53,6 +77,7 @@ export const Login = () => {
                     className="form-control"
                     placeholder="Contraseña"
                     name="password"
+                    onChange={handleInputChange}
                   />
                 </div>
 
