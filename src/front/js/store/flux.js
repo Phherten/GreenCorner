@@ -6,7 +6,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       seccion: [],
 
       token: "",
-
+      permiso: true,
       busqueda: [],
       message: null,
       demo: [
