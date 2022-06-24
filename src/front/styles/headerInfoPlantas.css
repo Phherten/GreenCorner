@@ -1,0 +1,14 @@
+.title-header-info-plantas {
+  justify-content: end !important;
+  align-items: center !important;
+  font-weight: 300;
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.summary-header-info-plantas {
+  font-weight: 200;
+  text-align: center;
+  margin-top: 4rem;
+  margin-left: 1rem;
+}

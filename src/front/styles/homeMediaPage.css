@@ -53,6 +53,13 @@
   border: none;
   border-radius: 0.438rem;
   margin-top: 8rem;
+  box-shadow: 5px 5px 10px black !important;
+}
+
+.boxes-with-shadows:hover {
+  box-shadow: 7px 7px 10px black !important;
+  transform: scale(1.1);
+  transition: transform 0.2s;
 }
 
 .media-page-planta-tarjetas-exterior-suculenta-foto {
@@ -154,6 +161,7 @@
   border-radius: 0.438rem;
   margin-left: 6rem;
   justify-content: center;
+  box-shadow: 5px 5px 10px black !important;
 }
 @media (max-width: 1140px) {
   .media-page-plant-photo {

@@ -1,0 +1,10 @@
+.cuidados-plantas-page-foto {
+  width: 100%;
+  height: auto;
+  margin-left: 1rem;
+}
+
+.cuidado-plantas-header-texto {
+  justify-content: center !important;
+  align-items: center !important;
+}

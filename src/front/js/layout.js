@@ -19,6 +19,7 @@ import { Ficha_plagas } from "./pages/ficha_plagas";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
+import { CuidadosPlantas } from "./pages/cuidadosPlantas";
 
 //create your first component
 const Layout = () => {
@@ -67,6 +68,18 @@ const Layout = () => {
             <Route exact path="/cuidados">
               <NavbarFondo />
               <Cuidados />
+            </Route>
+            <Route exact path="/cuidados-plantas">
+              <NavbarFondo />
+              <CuidadosPlantas />
+            </Route>
+            <Route exact path="/plagas">
+              <NavbarFondo />
+              <CuidadosPlantas />
+            </Route>
+            <Route exact path="/notificaciones-riego">
+              <NavbarFondo />
+              <CuidadosPlantas />
             </Route>
             <Route>
               <h1>Not found!</h1>

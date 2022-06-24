@@ -26,54 +26,60 @@ export const HomeMediaPage = () => {
           </div>
           <div className="col-sm ">
             <div
-              className="card media-page-tarjetas-interior"
+              className="card media-page-tarjetas-interior boxes-with-shadows"
               style={{ width: `20rem` }}
             >
-              <img
-                src={plantaInteriorHomeTarjeta}
-                className="media-page-planta-tarjetas-interior-foto"
-              />
-              <div className="card-body">
-                <p className="media-page-card-text-interior">INTERIOR</p>
-              </div>
+              <a href="/interior">
+                <img
+                  src={plantaInteriorHomeTarjeta}
+                  className="media-page-planta-tarjetas-interior-foto"
+                />
+                <div className="card-body">
+                  <p className="media-page-card-text-interior">INTERIOR</p>
+                </div>
+              </a>
             </div>
           </div>
           <div className="col-sm">
-            <div className="card mb-3 card-home-col-media-page-card-exterior">
-              <div className="row  g-0">
-                <div className="col-8">
-                  <div className="card-body">
-                    <p className="card-text media-page-card-text-exterior">
-                      EXTERIOR
-                    </p>
+            <div className="card mb-3 card-home-col-media-page-card-exterior boxes-with-shadows">
+              <a href="/exterior">
+                <div className="row  g-0">
+                  <div className="col-8">
+                    <div className="card-body">
+                      <p className="card-text media-page-card-text-exterior">
+                        EXTERIOR
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="col-4 ">
+                    <img
+                      src={plantaRedondaExterior}
+                      className="media-page-planta-tarjetas-exterior-suculenta-foto"
+                    />
                   </div>
                 </div>
-
-                <div className="col-4 ">
-                  <img
-                    src={plantaRedondaExterior}
-                    className="media-page-planta-tarjetas-exterior-suculenta-foto"
-                  />
-                </div>
-              </div>
+              </a>
             </div>
-            <div className="card mb-3 card-home-col-media-page-card-exterior">
-              <div className="row  g-0">
-                <div className="col-8">
-                  <div className="card-body">
-                    <p className="card-text media-page-card-text-exterior">
-                      SUCULENTAS
-                    </p>
+            <div className="card mb-3 card-home-col-media-page-card-exterior boxes-with-shadows">
+              <a href="/suculentas">
+                <div className="row  g-0">
+                  <div className="col-8">
+                    <div className="card-body">
+                      <p className="card-text media-page-card-text-exterior">
+                        SUCULENTAS
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="col-4 ">
+                    <img
+                      src={plantaSuculenta}
+                      className="media-page-planta-tarjetas-exterior-suculenta-foto"
+                    />
                   </div>
                 </div>
-
-                <div className="col-4 ">
-                  <img
-                    src={plantaSuculenta}
-                    className="media-page-planta-tarjetas-exterior-suculenta-foto"
-                  />
-                </div>
-              </div>
+              </a>
             </div>
           </div>
         </div>
@@ -99,32 +105,45 @@ export const HomeMediaPage = () => {
           </div>
         </div>
         <div className="row p-0 m-0">
-          <div className="media-page-cards-cuidados-plagas-notificaciones col-sm m-5 p-5">
-            <p className="media-page-card-cuidados-plagas-notificaciones">
-              CUIDADO DE PLANTAS
-            </p>
-            <img
-              src={florMaceta}
-              className="media-page-planta-tarjetas-cuidados-foto"
-            />
+          <div className=" col-sm m-5 ">
+            <a href="/cuidados-plantas">
+              <div className="media-page-cards-cuidados-plagas-notificaciones boxes-with-shadows p-5">
+                <p className="media-page-card-cuidados-plagas-notificaciones">
+                  CUIDADO DE PLANTAS
+                </p>
+                <img
+                  src={florMaceta}
+                  className="media-page-planta-tarjetas-cuidados-foto"
+                />
+              </div>
+            </a>
           </div>
-          <div className="media-page-cards-cuidados-plagas-notificaciones  col-sm m-5 p-5">
-            <p className="media-page-card-cuidados-plagas-notificaciones">
-              PLAGAS
-            </p>
-            <img
-              src={plagas}
-              className="media-page-planta-tarjetas-plagas-foto"
-            />
+
+          <div className=" col-sm m-5 ">
+            <a href="/plagas">
+              <div className="media-page-cards-cuidados-plagas-notificaciones boxes-with-shadows p-5">
+                <p className="media-page-card-cuidados-plagas-notificaciones">
+                  PLAGAS
+                </p>
+                <img
+                  src={plagas}
+                  className="media-page-planta-tarjetas-plagas-foto"
+                />
+              </div>
+            </a>
           </div>
-          <div className="media-page-cards-cuidados-plagas-notificaciones col-sm  m-5 p-5">
-            <p className="media-page-card-cuidados-plagas-notificaciones">
-              NOTIFICACIONES DE RIEGO
-            </p>
-            <img
-              src={regadera}
-              className="media-page-planta-tarjetas-riego-foto"
-            />
+          <div className=" col-sm m-5 ">
+            <a href="/notificaciones-riego">
+              <div className="media-page-cards-cuidados-plagas-notificaciones boxes-with-shadows p-5">
+                <p className="media-page-card-cuidados-plagas-notificaciones">
+                  NOTIFICACIONES DE RIEGO
+                </p>
+                <img
+                  src={regadera}
+                  className="media-page-planta-tarjetas-riego-foto"
+                />
+              </div>
+            </a>
           </div>
         </div>
       </div>
