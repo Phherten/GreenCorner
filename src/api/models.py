@@ -44,7 +44,7 @@ class InfoPlant(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     nombre_comun = db.Column(db.String(250))
     nombre_cientifico = db.Column(db.String(250), unique=True)
-    riego = db.Column(db.String(250))
+    riego = db.Column(db.String(900))
     luz = db.Column(db.String(250))
     poda = db.Column(db.String(250))
     abono = db.Column(db.String(250))
