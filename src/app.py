@@ -67,33 +67,6 @@ def serve_any_other_file(path):
     response.cache_control.max_age = 0 # avoid cache memory
     return response
 
-@app.route('/login', methods = ['POST'])
-def iniciar_sesion():
-    request_body = request.get_json()
-    print(request_body)
-    user = User.query.filter_by(email = request_body['email']).first()
-    if user:
-        if user.password == request_body['password']:
-            tiempo = datetime.timedelta(minutes = 2)
-            acceso = create_access_token(identity = request_body['email'], expires_delta = tiempo)
-            return jsonify ({
-                "duracion": tiempo.total_seconds(),
-                "mensaje": "Inicio de sesion correcto",
-                "token": acceso
-            })
-        else:
-            return "La contraseña no es correcta"
-    else:
-        return "El usuario no existe", 400
-
-
-#Bearer token
-@app.route ('/privada', methods = ['GET'])
-@jwt_required()
-def privada():
-    identidad = get_jwt_identity()
-    return jsonify({"acceso": "Bienvenido ," + identidad})
-
 
 # this only runs if `$ python src/main.py` is executed
 if __name__ == '__main__':
