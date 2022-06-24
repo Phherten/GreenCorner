@@ -40,11 +40,22 @@ def obtain_plants():
 
     return jsonify(response), 200
 
+
+@api.route('/plants/<int:id>', methods=['GET'])
+def plant_id(id):
+    plant = InfoPlant.get_by_id(id)
+    if plant is None:
+        return 'not found', 404
+
+    
+    return jsonify(plant.serialize()), 200
+
+    
+
 @api.route('/search', methods=['GET'])
 def search_plants():
-    peticion = request.get_json(force=True)
     
-    resultado = InfoPlant.get_by_name(peticion["nombre_parcial"])
+    resultado = InfoPlant.get_by_name(request.args.get("nombre_parcial"))
     response = []
     for info in resultado:
         response.append(info.serialize())

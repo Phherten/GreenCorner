@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../../styles/navbar.css";
 import logo from "../../img/Logo_amarillo.png";
+import { BusadorPlantaPorNombre } from "./search";
 
 export const NavbarFondo = () => {
   function handleClick(e) {
@@ -72,12 +74,7 @@ export const NavbarFondo = () => {
             <ul class="navbar-nav ms-auto">
               <li>
                 <div class="navbar-search-button">
-                  <input
-                    type="text"
-                    placeholder="Buscar"
-                    class="form-control navbar-form-control"
-                  />
-                  <i class="fa fa-search"></i>
+                  <BusadorPlantaPorNombre />
                 </div>
               </li>
               <li>

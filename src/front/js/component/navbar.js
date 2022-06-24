@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../../styles/navbar.css";
 import logo from "../../img/Logo_amarillo.png";
+import { BusadorPlantaPorNombre } from "./search";
 
 export const Navbar = () => {
   function handleClick(e) {
@@ -69,22 +70,15 @@ export const Navbar = () => {
           <div className="navbar-collapse collapse w-100 order-3">
             <ul className="navbar-nav ms-auto">
               <li>
-                <div className="navbar-search-button">
-                  <input
-                    type="text"
-                    placeholder="Buscar"
-                    className="form-control navbar-form-control"
-                  />
-                  <i className="fa fa-search"></i>
+                <div class="navbar-search-button">
+                  <BusadorPlantaPorNombre />
                 </div>
               </li>
               <li>
-
                 <div className="btn-group ">
                   <button
                     type="button"
                     className="btn btn-secondary navbar-user-button dropdown-toggle"
-
                     data-bs-toggle="dropdown"
                     data-bs-display="static"
                     aria-expanded="false"
@@ -113,7 +107,6 @@ export const Navbar = () => {
                         </button>
                       </Link>
                     </li>
-
                   </ul>
                 </div>
               </li>

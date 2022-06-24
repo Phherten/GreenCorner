@@ -8,7 +8,6 @@ export const Header = () => {
   const { store, actions } = useContext(Context);
 
   return (
-
     <div
       className="container-fluid header-background"
       style={{ backgroundImage: `url(${fondo})` }}
@@ -34,7 +33,6 @@ export const Header = () => {
               <img className="header-logoLetrasAmarillo" src={logoHeader} />
             </div>
           </div>
-
         </div>
       </div>
     </div>

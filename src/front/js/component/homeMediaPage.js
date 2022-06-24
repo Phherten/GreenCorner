@@ -105,32 +105,45 @@ export const HomeMediaPage = () => {
           </div>
         </div>
         <div className="row p-0 m-0">
-          <div className="media-page-cards-cuidados-plagas-notificaciones col-sm m-5 p-5">
-            <p className="media-page-card-cuidados-plagas-notificaciones">
-              CUIDADO DE PLANTAS
-            </p>
-            <img
-              src={florMaceta}
-              className="media-page-planta-tarjetas-cuidados-foto"
-            />
+          <div className=" col-sm m-5 ">
+            <a href="/cuidados-plantas">
+              <div className="media-page-cards-cuidados-plagas-notificaciones boxes-with-shadows p-5">
+                <p className="media-page-card-cuidados-plagas-notificaciones">
+                  CUIDADO DE PLANTAS
+                </p>
+                <img
+                  src={florMaceta}
+                  className="media-page-planta-tarjetas-cuidados-foto"
+                />
+              </div>
+            </a>
           </div>
-          <div className="media-page-cards-cuidados-plagas-notificaciones  col-sm m-5 p-5">
-            <p className="media-page-card-cuidados-plagas-notificaciones">
-              PLAGAS
-            </p>
-            <img
-              src={plagas}
-              className="media-page-planta-tarjetas-plagas-foto"
-            />
+
+          <div className=" col-sm m-5 ">
+            <a href="/plagas">
+              <div className="media-page-cards-cuidados-plagas-notificaciones boxes-with-shadows p-5">
+                <p className="media-page-card-cuidados-plagas-notificaciones">
+                  PLAGAS
+                </p>
+                <img
+                  src={plagas}
+                  className="media-page-planta-tarjetas-plagas-foto"
+                />
+              </div>
+            </a>
           </div>
-          <div className="media-page-cards-cuidados-plagas-notificaciones col-sm  m-5 p-5">
-            <p className="media-page-card-cuidados-plagas-notificaciones">
-              NOTIFICACIONES DE RIEGO
-            </p>
-            <img
-              src={regadera}
-              className="media-page-planta-tarjetas-riego-foto"
-            />
+          <div className=" col-sm m-5 ">
+            <a href="/notificaciones-riego">
+              <div className="media-page-cards-cuidados-plagas-notificaciones boxes-with-shadows p-5">
+                <p className="media-page-card-cuidados-plagas-notificaciones">
+                  NOTIFICACIONES DE RIEGO
+                </p>
+                <img
+                  src={regadera}
+                  className="media-page-planta-tarjetas-riego-foto"
+                />
+              </div>
+            </a>
           </div>
         </div>
       </div>

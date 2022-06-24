@@ -112,6 +112,10 @@ class InfoPlant(db.Model):
             ).all()
 
         return plants
+
+    @staticmethod
+    def get_by_id(id):
+        return InfoPlant.query.filter_by(id=id).first()
         
     
 
