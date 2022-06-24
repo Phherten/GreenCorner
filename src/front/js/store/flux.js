@@ -6,8 +6,10 @@ const getState = ({ getStore, getActions, setStore }) => {
       seccion: [],
 
       token: "",
+
       permiso: false,
       usuario: "",
+
 
       busqueda: [],
       message: null,
