@@ -1,7 +1,10 @@
 const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
+      plant: null,
+      current_plant: null,
       seccion: [],
+      busqueda: [],
       message: null,
       demo: [
         {
@@ -31,6 +34,26 @@ const getState = ({ getStore, getActions, setStore }) => {
             console.log("Error loading message from backend", error)
           );
       },
+
+      getPlantById: (id) => {
+        fetch(process.env.BACKEND_URL + `/api/plants/${id}`)
+          .then((resp) => resp.json())
+          .then((data) => setStore({ plant: data }))
+          .catch((error) =>
+            console.log("Error loading message from backend", error)
+          );
+      },
+
+      getInfoPlantByNombreParcial: (nombre_parcial) => {
+        fetch(
+          process.env.BACKEND_URL +
+            `/api/search?nombre_parcial=${nombre_parcial}`
+        )
+          .then((response) => response.json())
+          .then((result) => setStore({ busqueda: result }))
+          .catch((error) => console.log("error", error));
+      },
+
       changeColor: (index, color) => {
         //get the store
         const store = getStore();
