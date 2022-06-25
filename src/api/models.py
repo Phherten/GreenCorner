@@ -39,6 +39,27 @@ class Plagas(db.Model):
         return Plagas.query.filter_by(nombre=nombre).first()
                   
 
+class Plant(db.Model):
+    __tablename__ = "plant"
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    info_plant_id = db.Column(db.Integer, db.ForeignKey('info_plant.id'))
+
+    @staticmethod
+    def get_by_user(user_id):
+        return Plant.query.filter_by(user_id=user_id).all()
+
+    def serialize(self):
+        return {
+            "id": self.id,
+            "user_id": self.user_id,
+            "info_plant_id": self.info_plant_id}
+
+    def save(self):
+        if not self.id:
+            db.session.add(self)
+        db.session.commit()
+
 class InfoPlant(db.Model):
     __tablename__ = "info_plant"
     id = db.Column(db.Integer, primary_key=True)
@@ -53,6 +74,7 @@ class InfoPlant(db.Model):
     imagen = db.Column(db.String(250))
     periodo_verano = db.Column(db.Integer)
     periodo_invierno = db.Column(db.Integer)
+    plant = db.relationship(Plant)
 
     def save(self):
         if not self.id:
@@ -129,6 +151,7 @@ class User(db.Model):
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(80), unique=False, nullable=False)
     is_active = db.Column(db.Boolean(), unique=False, nullable=False)
+    plant = db.relationship(Plant)
 
     def __repr__(self):
         return f'<User {self.email}>'

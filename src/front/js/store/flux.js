@@ -1,6 +1,7 @@
 const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
+      one_plant: null,
       plant: null,
       current_plant: null,
       seccion: [],
@@ -64,6 +65,15 @@ const getState = ({ getStore, getActions, setStore }) => {
         fetch(process.env.BACKEND_URL + `/api/plants/${id}`)
           .then((resp) => resp.json())
           .then((data) => setStore({ plant: data }))
+          .catch((error) =>
+            console.log("Error loading message from backend", error)
+          );
+      },
+
+      getPlant: () => {
+        fetch(process.env.BACKEND_URL + `/api/plant`)
+          .then((resp) => resp.json())
+          .then((data) => setStore({ one_plant: data }))
           .catch((error) =>
             console.log("Error loading message from backend", error)
           );

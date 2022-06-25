@@ -14,6 +14,7 @@ export const Ficha = (props) => {
   }, [theid]);
 
   return (
+    
     <div className="container-fluid">
       <div className="row">
         <div

@@ -3,7 +3,7 @@ This module takes care of starting the API Server, Loading the DB and Adding the
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
 
-from api.models import db, Plagas, InfoPlant, User
+from api.models import db, Plagas, InfoPlant, User, Plant
 
 
 from api.utils import generate_sitemap, APIException
@@ -48,8 +48,6 @@ def plant_id(id):
     
     return jsonify(plant.serialize()), 200
 
-    
-
 @api.route('/search', methods=['GET'])
 def search_plants():
     
@@ -78,3 +76,28 @@ def guardar_registro():
         return "Usuario registrado"
     else:
         return "Este usuario ya existe"
+
+@api.route('/user_plants', methods = ['GET'])
+def get_user_plants():
+    user_id = request.args.get("user")
+
+    user_plants = Plant.get_by_user(user_id)
+
+    response = []
+    for plant in user_plants:
+        response.append(plant.serialize())   
+
+    return jsonify(response), 200
+
+@api.route('/plant/save', methods = ['POST'])
+def add_new_plant():
+    data = request.get_json()
+
+    plant = Plant(
+        user_id = data["user_id"],
+        info_plant_id = data["info_plant_id"]
+    )
+
+    plant.save()
+
+    return "Planta agregada a la colección", 200
