@@ -78,7 +78,6 @@ def guardar_registro():
         return "Usuario registrado"
     else:
         return "Este usuario ya existe"
-<<<<<<< HEAD
 
 @api.route('/user_plants', methods = ['GET'])
 def get_user_plants():
@@ -104,7 +103,6 @@ def add_new_plant():
     plant.save()
 
     return "Planta agregada a la colección", 200
-=======
     
 @api.route('/login', methods = ['POST'])
 def iniciar_sesion():
@@ -131,4 +129,3 @@ def iniciar_sesion():
 def privada():
     identidad = get_jwt_identity()
     return jsonify({"mensaje": "Tienes permiso para entrar", "permiso": True, "email": identidad})
->>>>>>> 945c4901fafc8b89ced3e3145c06aedd17cd0443
