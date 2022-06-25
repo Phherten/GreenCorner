@@ -80,10 +80,13 @@ def guardar_registro():
         return "Este usuario ya existe"
 
 @api.route('/user_plants', methods = ['GET'])
+@jwt_required()
 def get_user_plants():
-    user_id = request.args.get("user")
+    
+    email = get_jwt_identity()
+    user = User.get_by_email(email)
 
-    user_plants = Plant.get_by_user(user_id)
+    user_plants = Plant.get_by_user(user.id)
 
     response = []
     for plant in user_plants:
@@ -92,12 +95,18 @@ def get_user_plants():
     return jsonify(response), 200
 
 @api.route('/plant/save', methods = ['POST'])
+@jwt_required()
 def add_new_plant():
     data = request.get_json()
 
+    email = get_jwt_identity()
+    user = User.get_by_email(email)
+
     plant = Plant(
-        user_id = data["user_id"],
-        info_plant_id = data["info_plant_id"]
+        user_id = user.id,
+        info_plant_id = data["info_plant_id"],
+        alias = data["alias"],
+        fecha_registro = datetime.datetime.now()
     )
 
     plant.save()
@@ -111,7 +120,7 @@ def iniciar_sesion():
     user = User.query.filter_by(email = request_body['email']).first()
     if user:
         if user.password == request_body['password']:
-            tiempo = datetime.timedelta(minutes = 1)
+            tiempo = datetime.timedelta(minutes = 60)
             acceso = create_access_token(identity = request_body['email'], expires_delta = tiempo)
             return jsonify ({
                 "duracion": tiempo.total_seconds(),

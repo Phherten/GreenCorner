@@ -1,5 +1,6 @@
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import or_
+from datetime import datetime
 
 db = SQLAlchemy()
 
@@ -44,6 +45,10 @@ class Plant(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     info_plant_id = db.Column(db.Integer, db.ForeignKey('info_plant.id'))
+    alias = db.Column(db.String(250))
+    
+    fecha_registro=db.Column(db.DateTime)
+
 
     @staticmethod
     def get_by_user(user_id):
@@ -53,7 +58,10 @@ class Plant(db.Model):
         return {
             "id": self.id,
             "user_id": self.user_id,
-            "info_plant_id": self.info_plant_id}
+            "info_plant_id": self.info_plant_id,
+            "alias": self.alias,
+            "fecha_registro": self.fecha_registro.strftime("%d/%m/%Y, %H:%M:%S")
+            }
 
     def save(self):
         if not self.id:
@@ -74,7 +82,6 @@ class InfoPlant(db.Model):
     imagen = db.Column(db.String(250))
     periodo_verano = db.Column(db.Integer)
     periodo_invierno = db.Column(db.Integer)
-    plant = db.relationship(Plant)
 
     def save(self):
         if not self.id:
@@ -181,7 +188,7 @@ class User(db.Model):
     
     "SELECT * FROM info_plant WHERE nombre_cientifico = 'nomber_cientifico' LIMIT 1"
     @staticmethod
-    def get_by_email(nombre_cientifico):
+    def get_by_email(email):
         return User.query.filter_by(email = email).first()
       
     
