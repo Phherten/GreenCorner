@@ -3,7 +3,7 @@ This module takes care of starting the API Server, Loading the DB and Adding the
 """
 from flask import Flask, request, jsonify, url_for, Blueprint, send_from_directory
 
-from api.models import db, Plagas, InfoPlant, User
+from api.models import db, Plagas, InfoPlant, User, Misplantas
 
 
 from api.utils import generate_sitemap, APIException
@@ -106,3 +106,18 @@ def iniciar_sesion():
 def privada():
     identidad = get_jwt_identity()
     return jsonify({"mensaje": "Tienes permiso para entrar", "permiso": True, "email": identidad})
+
+@api.route ('/mis_plantas', methods = ['POST'])
+def mis_plantas():
+    request_body = request.get_json()
+    print(request_body)
+    misplantas = Misplantas(
+            user_id = request_body['user_id'],
+            plant_id = request_body['plant_id'],
+            fecha_registro = request_body['fecha_registro'],
+        
+            )
+    misplantas.save()
+    return "Planta registrada"
+    
+    

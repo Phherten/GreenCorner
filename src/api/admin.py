@@ -2,7 +2,7 @@
 import os
 from flask_admin import Admin
 
-from .models import db, Plagas, InfoPlant, User
+from .models import db, Plagas, InfoPlant, User, Misplantas
 
 from flask_admin.contrib.sqla import ModelView
 
@@ -17,7 +17,7 @@ def setup_admin(app):
     admin.add_view(ModelView(Plagas, db.session))
     admin.add_view(ModelView(InfoPlant, db.session))
     admin.add_view(ModelView(User, db.session))
- 
+    admin.add_view(ModelView(Misplantas, db.session))
 
     # You can duplicate that line to add mew models
     # admin.add_view(ModelView(YourModelName, db.session))
