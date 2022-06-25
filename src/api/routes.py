@@ -1,12 +1,14 @@
 """
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
-from flask import Flask, request, jsonify, url_for, Blueprint
+from flask import Flask, request, jsonify, url_for, Blueprint, send_from_directory
 
 from api.models import db, Plagas, InfoPlant, User, Plant
 
 
 from api.utils import generate_sitemap, APIException
+import datetime #ayuda a trabajar con fecha y hora
+from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity
 
 api = Blueprint('api', __name__)
 
@@ -76,6 +78,7 @@ def guardar_registro():
         return "Usuario registrado"
     else:
         return "Este usuario ya existe"
+<<<<<<< HEAD
 
 @api.route('/user_plants', methods = ['GET'])
 def get_user_plants():
@@ -101,3 +104,31 @@ def add_new_plant():
     plant.save()
 
     return "Planta agregada a la colección", 200
+=======
+    
+@api.route('/login', methods = ['POST'])
+def iniciar_sesion():
+    request_body = request.get_json()
+    print(request_body)
+    user = User.query.filter_by(email = request_body['email']).first()
+    if user:
+        if user.password == request_body['password']:
+            tiempo = datetime.timedelta(minutes = 1)
+            acceso = create_access_token(identity = request_body['email'], expires_delta = tiempo)
+            return jsonify ({
+                "duracion": tiempo.total_seconds(),
+                "mensaje": "Inicio de sesion correcto",
+                "token": acceso
+            })
+        else:
+            return jsonify({"error": "La contraseña no es correcta"})
+    else:
+        return jsonify({"error": "El usuario no existe"}), 400
+
+#Bearer token
+@api.route ('/privada', methods = ['GET'])
+@jwt_required()
+def privada():
+    identidad = get_jwt_identity()
+    return jsonify({"mensaje": "Tienes permiso para entrar", "permiso": True, "email": identidad})
+>>>>>>> 945c4901fafc8b89ced3e3145c06aedd17cd0443

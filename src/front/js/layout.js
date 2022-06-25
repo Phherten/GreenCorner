@@ -16,6 +16,7 @@ import { Suculentas } from "./pages/suculentas";
 import { Cuidados } from "./pages/cuidados";
 import { Ficha } from "./pages/ficha";
 import { Ficha_plagas } from "./pages/ficha_plagas";
+import { Privada } from "./pages/privada";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
@@ -35,6 +36,10 @@ const Layout = () => {
             <Route exact path="/">
               <Navbar />
               <Home />
+            </Route>
+            <Route exact path="/privada">
+              <Navbar />
+              <Privada />
             </Route>
             <Route exact path="/login">
               <Login />
