@@ -10,7 +10,7 @@ export const Privada = () => {
 
   useEffect(() => {
     actions.privado();
-  });
+  }, []);
 
   return (
     <div>
