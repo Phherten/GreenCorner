@@ -10,7 +10,6 @@ const getState = ({ getStore, getActions, setStore }) => {
       permiso: false,
       usuario: "",
 
-
       busqueda: [],
       message: null,
       demo: [
@@ -82,6 +81,10 @@ const getState = ({ getStore, getActions, setStore }) => {
           // .then((data) => setStore({ token: data }))
           // .then(console.log(store.token))
           .catch((error) => console.log("error", error));
+      },
+
+      logout: () => {
+        sessionStorage.removeItem("token");
       },
 
       privado: () => {
