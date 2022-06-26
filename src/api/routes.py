@@ -85,7 +85,7 @@ def get_user_plants():
     
     email = get_jwt_identity()
     user = User.get_by_email(email)
-
+    
     user_plants = Plant.get_by_user(user.id)
 
     response = []
@@ -143,6 +143,20 @@ def iniciar_sesion():
             return jsonify({"error": "La contraseña no es correcta"})
     else:
         return jsonify({"error": "El usuario no existe"}), 400
+
+@api.route('/calendar/<int:id>', methods = ['POST'])
+#@jwt_required()
+def add_to_calendar(id):
+   # data = request.get_json()
+    #user = User.get_by_email(email)
+    planta = Plant.query.get(id)
+    print(planta)
+    return "Riego agendado", 200
+
+
+
+
+
 
 #Bearer token
 @api.route ('/privada', methods = ['GET'])
