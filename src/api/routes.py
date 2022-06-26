@@ -3,7 +3,7 @@ This module takes care of starting the API Server, Loading the DB and Adding the
 """
 from flask import Flask, request, jsonify, url_for, Blueprint, send_from_directory
 
-from api.models import db, Plagas, InfoPlant, User
+from api.models import db, Plagas, InfoPlant, User, Plant
 
 
 from api.utils import generate_sitemap, APIException
@@ -50,8 +50,6 @@ def plant_id(id):
     
     return jsonify(plant.serialize()), 200
 
-    
-
 @api.route('/search', methods=['GET'])
 def search_plants():
     
@@ -80,6 +78,40 @@ def guardar_registro():
         return "Usuario registrado"
     else:
         return "Este usuario ya existe"
+
+@api.route('/user_plants', methods = ['GET'])
+@jwt_required()
+def get_user_plants():
+    
+    email = get_jwt_identity()
+    user = User.get_by_email(email)
+
+    user_plants = Plant.get_by_user(user.id)
+
+    response = []
+    for plant in user_plants:
+        response.append(plant.serialize())   
+
+    return jsonify(response), 200
+
+@api.route('/plant/save', methods = ['POST'])
+@jwt_required()
+def add_new_plant():
+    data = request.get_json()
+
+    email = get_jwt_identity()
+    user = User.get_by_email(email)
+
+    plant = Plant(
+        user_id = user.id,
+        info_plant_id = data["info_plant_id"],
+        alias = data["alias"],
+        fecha_registro = datetime.datetime.now()
+    )
+
+    plant.save()
+
+    return "Planta agregada a la colección", 200
     
 @api.route('/login', methods = ['POST'])
 def iniciar_sesion():
@@ -88,7 +120,7 @@ def iniciar_sesion():
     user = User.query.filter_by(email = request_body['email']).first()
     if user:
         if user.password == request_body['password']:
-            tiempo = datetime.timedelta(minutes = 1)
+            tiempo = datetime.timedelta(minutes = 60)
             acceso = create_access_token(identity = request_body['email'], expires_delta = tiempo)
             return jsonify ({
                 "duracion": tiempo.total_seconds(),

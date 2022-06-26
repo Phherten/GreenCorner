@@ -10,7 +10,6 @@ const getState = ({ getStore, getActions, setStore }) => {
       permiso: false,
       usuario: "",
 
-
       busqueda: [],
       message: null,
       demo: [
