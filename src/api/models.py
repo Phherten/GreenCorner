@@ -1,5 +1,5 @@
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import or_
+from sqlalchemy import or_, orm
 from datetime import datetime
 
 db = SQLAlchemy()
@@ -49,6 +49,8 @@ class Plant(db.Model):
     
     fecha_registro=db.Column(db.DateTime)
 
+    info_plant = orm.relationship('InfoPlant')
+
 
     @staticmethod
     def get_by_user(user_id):
@@ -59,6 +61,7 @@ class Plant(db.Model):
             "id": self.id,
             "user_id": self.user_id,
             "info_plant_id": self.info_plant_id,
+            "info_plant": self.info_plant.serialize(),
             "alias": self.alias,
             "fecha_registro": self.fecha_registro.strftime("%d/%m/%Y, %H:%M:%S")
             }
