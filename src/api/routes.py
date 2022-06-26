@@ -5,7 +5,7 @@ from flask import Flask, request, jsonify, url_for, Blueprint, send_from_directo
 
 from api.models import db, Plagas, InfoPlant, User, Plant
 
-
+import json 
 from api.utils import generate_sitemap, APIException
 import datetime #ayuda a trabajar con fecha y hora
 from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity
@@ -149,9 +149,10 @@ def iniciar_sesion():
 def add_to_calendar(id):
    # data = request.get_json()
     #user = User.get_by_email(email)
-    planta = Plant.query.get(id)
-    print(planta)
-    return "Riego agendado", 200
+    planta = InfoPlant.query.get(id)
+    
+    
+    return jsonify(planta.serialize()), 200
 
 
 
