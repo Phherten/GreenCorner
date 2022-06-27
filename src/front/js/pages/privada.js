@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../store/appContext";
 import { CardColeccion } from "../component/cardColeccion";
 import "../../styles/home.css";
@@ -7,10 +7,19 @@ import { Header } from "../component/header";
 
 export const Privada = () => {
   const { store, actions } = useContext(Context);
+  const [load, setLoad] = useState(false);
 
   useEffect(() => {
-    actions.privado();
+
+
+    setTimeout(() => {
+      actions.privado();
+      setLoad(true);
+    }, 3000);
+
+
     actions.getPlantsUser();
+
   }, []);
 
   const calculateDays = (plant) => {
@@ -32,6 +41,7 @@ export const Privada = () => {
   };
 
   return (
+
     <div style={{ minHeight: "800px" }}>
       <div className="container d-flex mb-xs-1 mb-5 mt-4 ">
         <div className="row d-flex justify-content-center">
@@ -53,11 +63,11 @@ export const Privada = () => {
                 );
               })}
             </>
-          ) : (
-            "404 la página no existe"
+          ) : load ? ("404 la página no existe"):(<div class="spinner-border" role="status"><span class="sr-only">Loading...</span></div>
           )}
         </div>
       </div>
+
     </div>
   );
 };
