@@ -12,6 +12,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
       busqueda: [],
       message: null,
+      user_plants: [],
       demo: [
         {
           title: "FIRST",
@@ -106,6 +107,27 @@ const getState = ({ getStore, getActions, setStore }) => {
           .catch((error) => console.log("error", error));
       },
 
+      getPlantsUser: () => {
+        var myHeaders = new Headers();
+        myHeaders.append(
+          "Authorization",
+          `Bearer ${sessionStorage.getItem("token")}`
+        );
+
+        var requestOptions = {
+          method: "GET",
+          headers: myHeaders,
+          redirect: "follow",
+        };
+
+        fetch(process.env.BACKEND_URL + "/api/user_plants", requestOptions)
+          .then((response) => response.json())
+          .then((result) => {
+            setStore({ user_plants: result });
+          })
+          .catch((error) => console.log("error", error));
+      },
+
       exampleFunction: () => {
         getActions().changeColor(0, "green");
       },
@@ -152,6 +174,34 @@ const getState = ({ getStore, getActions, setStore }) => {
 
         //reset the global store
         setStore({ demo: demo });
+      },
+
+      addPlant: (info_plant_id, alias) => {
+        var myHeaders = new Headers();
+        myHeaders.append(
+          "Authorization",
+          `Bearer ${sessionStorage.getItem("token")}`
+        );
+        myHeaders.append("Content-Type", "application/json");
+
+        var raw = JSON.stringify({
+          info_plant_id: info_plant_id,
+          alias: alias,
+        });
+
+        var requestOptions = {
+          method: "POST",
+          headers: myHeaders,
+          body: raw,
+          redirect: "follow",
+        };
+
+        fetch(process.env.BACKEND_URL + "/api/plant/save", requestOptions)
+          .then((response) => response.json())
+          .then((result) => {
+            console.log(result);
+          })
+          .catch((error) => console.log("error", error));
       },
     },
   };
