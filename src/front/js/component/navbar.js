@@ -100,10 +100,13 @@ export const Navbar = () => {
                         </Link>
                       </li>
                       <li>
-                        <Link to={"/privada"}>
+                        <Link to={"/login"}>
                           <button
                             className="dropdown-item navbar-button-user-login"
                             type="button"
+                            onClick={() => {
+                              actions.logout();
+                            }}
                           >
                             Cerrar Sesión
                           </button>
