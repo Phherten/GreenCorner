@@ -4,6 +4,11 @@ const getState = ({ getStore, getActions, setStore }) => {
       plant: null,
       current_plant: null,
       seccion: [],
+      modal: {
+        estado: false,
+        nombre: "",
+        id: 0,
+      },
 
       token: "",
 
@@ -27,6 +32,12 @@ const getState = ({ getStore, getActions, setStore }) => {
     },
     actions: {
       // Use getActions to call a function within a fuction
+      setModal: (estado, nombre, id) => {
+        setStore({
+          modal: { estado: estado, nombre: nombre, id: id },
+        });
+        console.log(store.modal);
+      },
 
       adduser: (username, second_name, email, password) => {
         var myHeaders = new Headers();
@@ -122,6 +133,35 @@ const getState = ({ getStore, getActions, setStore }) => {
           .catch((error) =>
             console.log("Error loading message from backend", error)
           );
+      },
+
+      addPlantUser: (planta, alias) => {
+        var myHeaders = new Headers();
+        myHeaders.append(
+          "Authorization",
+          `Bearer ${sessionStorage.getItem("token")}`
+        );
+        myHeaders.append("Content-Type", "application/json");
+
+        var raw = JSON.stringify({
+          info_plant_id: planta,
+          alias: alias,
+        });
+
+        var requestOptions = {
+          method: "POST",
+          headers: myHeaders,
+          body: raw,
+          redirect: "follow",
+        };
+
+        fetch(
+          "https://3001-phherten-finalproyect-1w1p6bube8y.ws-eu47.gitpod.io/api/plant/save/",
+          requestOptions
+        )
+          .then((response) => response.text())
+          .then((result) => console.log(result))
+          .catch((error) => console.log("error", error));
       },
 
       getPlantById: (id) => {
