@@ -8,6 +8,13 @@ import { Link } from "react-router-dom";
 
 export const CardColeccion = (props) => {
   const { store, actions } = useContext(Context);
+
+  const handleDelete = (event) => {
+    event.preventDefault();
+    actions.deletePlantById(props.plant_id);
+    props.callback();
+  };
+
   return (
     <Link
       to={"/ficha/" + props.id}
@@ -30,11 +37,13 @@ export const CardColeccion = (props) => {
             : `${props.dias_por_regar} día`}{" "}
           para regar
         </p>
-        <div class="d-grid gap-2 m-3 pt-3">
-          <button class="btn btn-secondary boton" type="button">
-            <h5 className="p-1 pb-0">Eliminar</h5>
-          </button>
-        </div>
+        <Link onClick={handleDelete}>
+          <div class="d-grid gap-2 m-3 pt-3">
+            <button class="btn btn-secondary boton" type="button">
+              <h5 className="p-1 pb-0">Eliminar</h5>
+            </button>
+          </div>
+        </Link>
       </div>
     </Link>
   );

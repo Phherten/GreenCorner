@@ -72,6 +72,14 @@ class Plant(db.Model):
         if not self.id:
             db.session.add(self)
         db.session.commit()
+    
+    def delete(self):
+        db.session.delete(self)
+        db.session.commit()
+
+    @staticmethod
+    def get_by_id(id):
+        return Plant.query.filter_by(id=id).first()
 
 class InfoPlant(db.Model):
     __tablename__ = "info_plant"
