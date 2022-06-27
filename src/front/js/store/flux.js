@@ -28,6 +28,9 @@ const getState = ({ getStore, getActions, setStore }) => {
     actions: {
       // Use getActions to call a function within a fuction
 
+      resetBusqueda: () => {
+        setStore({ busqueda: [] });
+      },
       adduser: (username, second_name, email, password) => {
         var myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");

@@ -10,11 +10,11 @@ export const Ficha = (props) => {
   const { theid } = useParams();
 
   useEffect(() => {
+    actions.resetBusqueda();
     actions.getPlantById(theid);
   }, [theid]);
 
   return (
-    
     <div className="container-fluid">
       <div className="row">
         <div
