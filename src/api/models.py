@@ -1,5 +1,6 @@
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import or_
+from sqlalchemy import or_, orm
+from datetime import datetime
 
 db = SQLAlchemy()
 
@@ -38,6 +39,39 @@ class Plagas(db.Model):
     def get_by_nombre(nombre):
         return Plagas.query.filter_by(nombre=nombre).first()
                   
+
+class Plant(db.Model):
+    __tablename__ = "plant"
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    info_plant_id = db.Column(db.Integer, db.ForeignKey('info_plant.id'))
+    alias = db.Column(db.String(250))
+    user = db.relationship("User")
+    
+    fecha_registro=db.Column(db.DateTime)
+
+    info_plant = orm.relationship('InfoPlant')
+
+
+    @staticmethod
+    def get_by_user(user_id):
+        return Plant.query.filter_by(user_id=user_id).all()
+
+    def serialize(self):
+        return {
+            "id": self.id,
+            "user_id": self.user_id,
+            "info_plant_id": self.info_plant_id,
+            "info_plant": self.info_plant.serialize(),
+            "alias": self.alias,
+            "fecha_registro": self.fecha_registro.strftime("%d/%m/%Y, %H:%M:%S"),
+            "user":self.user,
+            }
+
+    def save(self):
+        if not self.id:
+            db.session.add(self)
+        db.session.commit()
 
 class InfoPlant(db.Model):
     __tablename__ = "info_plant"
@@ -129,6 +163,7 @@ class User(db.Model):
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(80), unique=False, nullable=False)
     is_active = db.Column(db.Boolean(), unique=False, nullable=False)
+    plant = db.relationship(Plant)
 
     def __repr__(self):
         return f'<User {self.email}>'
@@ -158,7 +193,7 @@ class User(db.Model):
     
     "SELECT * FROM info_plant WHERE nombre_cientifico = 'nomber_cientifico' LIMIT 1"
     @staticmethod
-    def get_by_email(nombre_cientifico):
+    def get_by_email(email):
         return User.query.filter_by(email = email).first()
       
     

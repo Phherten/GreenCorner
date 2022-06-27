@@ -10,10 +10,12 @@ export const Privada = () => {
   const [load, setLoad] = useState(false);
 
   useEffect(() => {
+
     setTimeout(() => {
       actions.privado();
       setLoad(true);
     }, 3000);
+
   }, []);
 
   return (
