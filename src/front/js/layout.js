@@ -38,7 +38,7 @@ const Layout = () => {
               <Home />
             </Route>
             <Route exact path="/privada">
-              <Navbar />
+              <NavbarFondo />
               <Privada />
             </Route>
 
