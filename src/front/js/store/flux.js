@@ -10,6 +10,8 @@ const getState = ({ getStore, getActions, setStore }) => {
         id: 0,
       },
 
+      user_plants: [],
+
       token: "",
 
       permiso: false,
@@ -155,11 +157,8 @@ const getState = ({ getStore, getActions, setStore }) => {
           redirect: "follow",
         };
 
-        fetch(
-          "https://3001-phherten-finalproyect-1w1p6bube8y.ws-eu47.gitpod.io/api/plant/save/",
-          requestOptions
-        )
-          .then((response) => response.text())
+        fetch(process.env.BACKEND_URL + "/api/plant/save/", requestOptions)
+          .then((response) => response.json())
           .then((result) => console.log(result))
           .catch((error) => console.log("error", error));
       },
@@ -196,6 +195,27 @@ const getState = ({ getStore, getActions, setStore }) => {
 
         //reset the global store
         setStore({ demo: demo });
+      },
+
+      getPlantsUser: () => {
+        var myHeaders = new Headers();
+        myHeaders.append(
+          "Authorization",
+          `Bearer ${sessionStorage.getItem("token")}`
+        );
+
+        var requestOptions = {
+          method: "GET",
+          headers: myHeaders,
+          redirect: "follow",
+        };
+
+        fetch(process.env.BACKEND_URL + "/api/user_plants", requestOptions)
+          .then((response) => response.json())
+          .then((result) => {
+            setStore({ user_plants: result });
+          })
+          .catch((error) => console.log("error", error));
       },
     },
   };
