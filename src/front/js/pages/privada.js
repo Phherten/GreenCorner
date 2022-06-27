@@ -4,22 +4,18 @@ import { CardColeccion } from "../component/cardColeccion";
 import "../../styles/home.css";
 import { HomeMediaPage } from "../component/homeMediaPage";
 import { Header } from "../component/header";
+import { Link } from "react-router-dom";
 
 export const Privada = () => {
   const { store, actions } = useContext(Context);
   const [load, setLoad] = useState(false);
 
   useEffect(() => {
-
-
     setTimeout(() => {
       actions.privado();
+      actions.getPlantsUser();
       setLoad(true);
     }, 3000);
-
-
-    actions.getPlantsUser();
-
   }, []);
 
   const calculateDays = (plant) => {
@@ -41,13 +37,17 @@ export const Privada = () => {
   };
 
   return (
-
     <div style={{ minHeight: "800px" }}>
       <div className="container d-flex mb-xs-1 mb-5 mt-4 ">
         <div className="row d-flex justify-content-center">
           {store.permiso ? (
             <>
               <h1>{`Mis plantas`}</h1>
+              {store.user_plants.length === 0 ? (
+                <Link to={"/"}>Haz click para agregar una planta</Link>
+              ) : (
+                <></>
+              )}
               {store.user_plants.map((plant, index) => {
                 let dias_por_regar = calculateDays(plant);
 
@@ -63,11 +63,15 @@ export const Privada = () => {
                 );
               })}
             </>
-          ) : load ? ("404 la página no existe"):(<div class="spinner-border" role="status"><span class="sr-only">Loading...</span></div>
+          ) : load ? (
+            "404 la página no existe"
+          ) : (
+            <div class="spinner-border" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
           )}
         </div>
       </div>
-
     </div>
   );
 };
