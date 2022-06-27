@@ -46,6 +46,7 @@ class Plant(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     info_plant_id = db.Column(db.Integer, db.ForeignKey('info_plant.id'))
     alias = db.Column(db.String(250))
+    user = db.relationship("User")
     
     fecha_registro=db.Column(db.DateTime)
 
@@ -63,7 +64,8 @@ class Plant(db.Model):
             "info_plant_id": self.info_plant_id,
             "info_plant": self.info_plant.serialize(),
             "alias": self.alias,
-            "fecha_registro": self.fecha_registro.strftime("%d/%m/%Y, %H:%M:%S")
+            "fecha_registro": self.fecha_registro.strftime("%d/%m/%Y, %H:%M:%S"),
+            "user":self.user,
             }
 
     def save(self):

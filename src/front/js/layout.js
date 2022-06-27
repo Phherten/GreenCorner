@@ -41,6 +41,7 @@ const Layout = () => {
               <Navbar />
               <Privada />
             </Route>
+
             <Route exact path="/login">
               <Login />
             </Route>
@@ -54,6 +55,7 @@ const Layout = () => {
               <NavbarFondo />
               <Ficha />
             </Route>
+
             <Route exact path="/ficha_plagas/:theid">
               <NavbarFondo />
               <Ficha_plagas />
