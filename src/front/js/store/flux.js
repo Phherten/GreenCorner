@@ -83,6 +83,10 @@ const getState = ({ getStore, getActions, setStore }) => {
           .catch((error) => console.log("error", error));
       },
 
+      logout: () => {
+        sessionStorage.removeItem("token");
+      },
+
       privado: () => {
         var myHeaders = new Headers();
         myHeaders.append(
