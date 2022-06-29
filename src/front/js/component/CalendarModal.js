@@ -21,7 +21,7 @@ export const CalendarModal = (props) => {
   const calendar = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    actions.addToCalendar(props.id);
+    actions.addToCalendar(props.id, props.diasRiego);
     setShow(false);
   };
 

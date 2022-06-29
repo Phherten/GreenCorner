@@ -9,6 +9,9 @@ import json
 from api.utils import generate_sitemap, APIException
 import datetime #ayuda a trabajar con fecha y hora
 from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity
+from api.calendar import calendarNotifications 
+
+
 
 api = Blueprint('api', __name__)
 
@@ -144,13 +147,14 @@ def iniciar_sesion():
     else:
         return jsonify({"error": "El usuario no existe"}), 400
 
-@api.route('/calendar/<int:id>', methods = ['POST'])
-#@jwt_required()
-def add_to_calendar(id):
-   # data = request.get_json()
+@api.route('/calendar', methods = ['POST'])
+@jwt_required()
+def add_to_calendar():
+    data = request.get_json()
     #user = User.get_by_email(email)
-    planta = InfoPlant.query.get(id)
-    
+    planta = Plant.query.get(data['plantId'])
+    print(data)
+    calendarNotifications()
     
     return jsonify(planta.serialize()), 200
 

@@ -15,9 +15,10 @@ from googleapiclient.errors import HttpError
 SCOPES = ['https://www.googleapis.com/auth/calendar.events']
 
 
-def main():
-
-    flow = InstalledAppFlow.from_client_secrets_file('credentials.json', SCOPES)
+def calendarNotifications():
+    
+  
+    flow = InstalledAppFlow.from_client_secrets_file(os.getcwd() + '/src/resources/credentials.json', SCOPES)
     creds = flow.run_local_server(port=0)     
 
 
@@ -56,8 +57,7 @@ def main():
         print('An error occurred: %s' % error)
 
 
-if __name__ == '__main__':
-    main()
+
 
 
 

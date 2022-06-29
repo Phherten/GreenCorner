@@ -282,12 +282,16 @@ const getState = ({ getStore, getActions, setStore }) => {
           .catch((error) => console.log("error", error));
       },
 
-      addToCalendar: (plantId) => {
+      addToCalendar: (plantId, diasRiego) => {
         var myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
-
+        myHeaders.append(
+          "Authorization",
+          `Bearer ${sessionStorage.getItem("token")}`
+        );
         var raw = JSON.stringify({
           plantId: plantId,
+          diasRiego: diasRiego,
         });
 
         var requestOptions = {
