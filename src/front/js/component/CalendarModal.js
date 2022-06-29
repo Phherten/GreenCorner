@@ -7,22 +7,20 @@ export const CalendarModal = (props) => {
   const [show, setShow] = useState(props.mostrar);
   const { store, actions } = useContext(Context);
   const handleClose = (e) => {
-    e.preventDefault();
     e.stopPropagation();
     setShow(false);
   };
 
   const handleShow = (e) => {
-    e.preventDefault();
     e.stopPropagation();
     setShow(true);
   };
 
-  const calendar = (e) => {
-    e.preventDefault();
+  const calendar = async (e) => {
     e.stopPropagation();
-    actions.addToCalendar(props.id, props.diasRiego);
+    await authentication();
     setShow(false);
+    createEvent();
   };
 
   return (
