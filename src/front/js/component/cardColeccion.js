@@ -43,19 +43,11 @@ export const CardColeccion = (props) => {
         </Link>
       </div>
       <div class="d-grid gap-2 m-3 pt-3">
-        <CalendarModal
-          mostrar={false}
-          id={props.id}
-          diasRiego={props.dias_por_regar}
-        />
+        <CalendarModal mostrar={false} id={props.id} />
+        <button class="btn btn-secondary boton" type="button">
+          <h5 className="p-1 pb-0">Eliminar</h5>
+        </button>
       </div>
-      <Link onClick={handleDelete}>
-        <div class="d-grid gap-2 m-3 pt-3">
-          <button class="btn btn-secondary boton" type="button">
-            <h5 className="p-1 pb-0">Eliminar</h5>
-          </button>
-        </div>
-      </Link>
     </div>
   );
 };

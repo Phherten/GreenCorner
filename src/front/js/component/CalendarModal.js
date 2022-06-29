@@ -5,7 +5,7 @@ import "../../styles/CalendarModal.css";
 
 export const CalendarModal = (props) => {
   const [show, setShow] = useState(props.mostrar);
-
+  const { store, actions } = useContext(Context);
   const handleClose = (e) => {
     e.preventDefault();
     e.stopPropagation();
@@ -18,6 +18,13 @@ export const CalendarModal = (props) => {
     setShow(true);
   };
 
+  const calendar = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    actions.addToCalendar(props.id);
+    setShow(false);
+  };
+
   return (
     <>
       <Button
@@ -28,7 +35,7 @@ export const CalendarModal = (props) => {
         <h5 className="p-1 pb-0"> Notificar con Calendar</h5>
       </Button>
 
-      <Modal show={show} backdrop="static" onHide={(e) => handleClose(e)}>
+      <Modal show={show} onHide={(e) => handleClose(e)}>
         <Modal.Header closeButton>
           <Modal.Title> Notificación de riego</Modal.Title>
         </Modal.Header>
@@ -39,7 +46,7 @@ export const CalendarModal = (props) => {
           <Button variant="secondary" onClick={(e) => handleClose(e)}>
             Close
           </Button>
-          <Button variant="primary" onClick={(e) => handleClose(e)}>
+          <Button variant="primary" onClick={(e) => calendar(e)}>
             Crear notificación en mi Calendar
           </Button>
         </Modal.Footer>
