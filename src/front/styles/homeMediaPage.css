@@ -52,8 +52,9 @@
   background-color: #e1e4e9;
   border: none;
   border-radius: 0.438rem;
-  margin-top: 8rem;
+  margin-top: 8.5rem;
   box-shadow: 5px 5px 10px black !important;
+  margin-right: 2rem;
 }
 
 .boxes-with-shadows:hover {
@@ -134,7 +135,7 @@
 }
 
 .media-page-planta-tarjetas-riego-foto {
-  width: 68%;
+  width: 80%;
   height: auto;
 }
 
@@ -163,7 +164,7 @@
   margin-bottom: 5rem;
   justify-content: center;
   box-shadow: 5px 5px 10px black !important;
-  margin-left: 1rem;
+  margin-left: 4rem;
 }
 @media (max-width: 1140px) {
   .media-page-plant-photo {
