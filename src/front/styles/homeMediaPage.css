@@ -75,8 +75,9 @@
   font-size: 1.875rem;
   margin-top: 5rem;
   justify-content: center;
+  margin-bottom: 1rem;
 }
-
+/*
 .card-home-col-media-page-card-suculentas {
   width: 80%;
   max-height: 10em;
@@ -85,7 +86,7 @@
   border-radius: 0.438rem;
   margin-top: 5rem;
 }
-
+*/
 .media-page-planta-tarjetas-suculentas-foto {
   width: 200%;
   height: auto;
@@ -103,11 +104,11 @@
 }
 
 .media-page-planta-suelta {
-  height: 15.625rem;
-  width: 12.188rem;
+  height: 13rem;
+  width: 10rem;
   position: absolute;
   right: 0;
-  margin-top: -10rem;
+  margin-top: -6rem;
 }
 
 .media-page-text {
@@ -133,7 +134,7 @@
 }
 
 .media-page-planta-tarjetas-riego-foto {
-  width: 80%;
+  width: 68%;
   height: auto;
 }
 
@@ -148,10 +149,10 @@
   font-weight: 300;
 }
 
-.media-page-plantas1 {
+/*.media-page-plantas1 {
   width: 450%;
 }
-
+*/
 .media-page-tarjetas-interior {
   margin-top: 8rem;
   width: 100%;
@@ -159,9 +160,10 @@
   background-color: #e1e4e9;
   border: none;
   border-radius: 0.438rem;
-  margin-left: 6rem;
+  margin-bottom: 5rem;
   justify-content: center;
   box-shadow: 5px 5px 10px black !important;
+  margin-left: 1rem;
 }
 @media (max-width: 1140px) {
   .media-page-plant-photo {
@@ -173,4 +175,11 @@
   .media-page-cards-cuidados-plagas-notificaciones {
     margin: 0.5rem 0 0.5rem 0 !important;
   }
+}
+
+.home-media-page-url-cards-cuidados-plagas-notificaciones {
+  color: black;
+}
+.home-media-page-url-cards-cuidados-plagas-notificaciones:hover {
+  color: black;
 }
