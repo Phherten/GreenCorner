@@ -55,7 +55,8 @@ def setup_commands(app):
                         nombre=row[0],
                         sintomas=row[1],
                         prevencion=row[2],
-                        tratamiento=row[3]
+                        tratamiento=row[3],
+                        imagen=row[4]
                         )
                 else:
                     plagas.update(row[1], row[2], row[3])

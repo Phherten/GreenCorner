@@ -4,6 +4,8 @@ import rigoImageUrl from "../../img/hojas.png";
 import "../../styles/login.css";
 import { Link } from "react-router-dom";
 import Logo from "../../img/Logo_letras_amarillo.png";
+import Userfront from "@userfront/core";
+Userfront.init("demo1234");
 
 export const Recuperar = () => {
   const { store, actions } = useContext(Context);
@@ -39,11 +41,19 @@ export const Recuperar = () => {
                   />
                 </div>
                 <div className="form-group mt-3">
-                  <input
-                    type="submit"
+                  <button
+                    type="button"
                     value="Enviar Contraseña"
                     className="btn bg-secondary boton float-end text-white w-100"
                     name="login-btn"
+                    onClick={() =>
+                      console.log(
+                        Userfront.sendVerificationCode({
+                          channel: "email",
+                          email: "phigueraherten@gmail.com",
+                        })
+                      )
+                    }
                   />
                 </div>
               </form>

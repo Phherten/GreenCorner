@@ -10,6 +10,8 @@ class Plagas(db.Model):
     sintomas = db.Column(db.String(250), unique=False, nullable=False)
     prevencion = db.Column(db.String(250), unique=False, nullable=False)
     tratamiento = db.Column(db.String(250), unique=False, nullable=False)
+    imagen = db.Column(db.String(250))
+    
 
     def __repr__(self):
         return f'<Plagas {self.nombre}>'
@@ -19,11 +21,12 @@ class Plagas(db.Model):
             db.session.add(self)
         db.session.commit()
     
-    def update(self, nombre, sintomas, prevencion, tratamiento):
+    def update(self, nombre, sintomas, prevencion, tratamiento, imagen):
         self.nombre = nombre
         self.sintomas = sintomas
         self.prevencion = prevencion
         self.tratamiento = tratamiento
+        self.imagen = imagen
     
     def serialize(self):
         return {
@@ -31,7 +34,8 @@ class Plagas(db.Model):
             "nombre": self.nombre,
             "sintomas": self.sintomas,
             "prevencion": self.prevencion,
-            "tratamiento": self.tratamiento
+            "tratamiento": self.tratamiento,
+            "imagen": self.imagen,
             # do not serialize the password, its a security breach
         }
     

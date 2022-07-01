@@ -17,7 +17,11 @@ export const Card_plagas = (props) => {
         <div className="card card-elemento" style={{ minWidth: "25rm" }}>
           <div className="card-body bg-light text-dark rounded d-flex justify-content-between align-items-center">
             <h4 className="card-title">{props.name}</h4>
-            <img src={props.img} style={{ height: "120px" }} className="p-0" />
+            <img
+              src={props.img}
+              style={{ height: "120px" }}
+              className="p-0 rounded"
+            />
           </div>
         </div>
       </Link>
