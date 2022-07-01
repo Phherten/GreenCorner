@@ -281,31 +281,6 @@ const getState = ({ getStore, getActions, setStore }) => {
           })
           .catch((error) => console.log("error", error));
       },
-
-      addToCalendar: (plantId, diasRiego) => {
-        var myHeaders = new Headers();
-        myHeaders.append("Content-Type", "application/json");
-        myHeaders.append(
-          "Authorization",
-          `Bearer ${sessionStorage.getItem("token")}`
-        );
-        var raw = JSON.stringify({
-          plantId: plantId,
-          diasRiego: diasRiego,
-        });
-
-        var requestOptions = {
-          method: "POST",
-          headers: myHeaders,
-          body: raw,
-          redirect: "follow",
-        };
-
-        fetch(process.env.BACKEND_URL + "/api/calendar", requestOptions)
-          .then((response) => response.text())
-          .then((result) => console.log(result))
-          .catch((error) => console.log("error", error));
-      },
     },
   };
 };

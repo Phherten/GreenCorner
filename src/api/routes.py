@@ -9,7 +9,7 @@ import json
 from api.utils import generate_sitemap, APIException
 import datetime #ayuda a trabajar con fecha y hora
 from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity
-from api.calendar import calendarNotifications 
+
 
 
 
@@ -146,22 +146,6 @@ def iniciar_sesion():
             return jsonify({"error": "La contraseña no es correcta"})
     else:
         return jsonify({"error": "El usuario no existe"}), 400
-
-@api.route('/calendar', methods = ['POST'])
-@jwt_required()
-def add_to_calendar():
-    data = request.get_json()
-    #user = User.get_by_email(email)
-    planta = Plant.query.get(data['plantId'])
-    print(data)
-    calendarNotifications()
-    
-    return jsonify(planta.serialize()), 200
-
-
-
-
-
 
 #Bearer token
 @api.route ('/privada', methods = ['GET'])
