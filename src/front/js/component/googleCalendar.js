@@ -1,5 +1,5 @@
 import React, { ReactNode, SyntheticEvent } from "react";
-import ApiCalendar from "react-google-calendar-api";
+//import ApiCalendar from "react-google-calendar-api";
 
 const config = {
   clientId:
@@ -33,12 +33,10 @@ const event = {
   },
 };
 
-const apiCalendar = new ApiCalendar(config);
+//const apiCalendar = new ApiCalendar(config);
 
-export const authentication = async () => {
-  apiCalendar.handleAuthClick();
-};
+export const authentication = async () => {};
 
 export const createEvent = () => {
-  apiCalendar.createEvent(event);
+  //apiCalendar.createEvent(event);
 };

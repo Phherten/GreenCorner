@@ -16,9 +16,14 @@ export const CalendarModal = (props) => {
     setShow(true);
   };
 
-  const calendar = async (e) => {
-    e.stopPropagation();
-    await authentication();
+  const calendar = (response) => {
+    console.log(response);
+    setShow(false);
+    createEvent();
+  };
+
+  const calendarError = (e) => {
+    console.log(e);
     setShow(false);
     createEvent();
   };
@@ -44,9 +49,16 @@ export const CalendarModal = (props) => {
           <Button variant="secondary" onClick={(e) => handleClose(e)}>
             Close
           </Button>
-          <Button variant="primary" onClick={(e) => calendar(e)}>
-            Crear notificación en mi Calendar
-          </Button>
+          <GoogleLogin
+            clientId="801758075621-s8dkdd8hr5vmtv1tfgarddgk2keqekl5.apps.googleusercontent.com"
+            buttonText="Crear notificación en mi Calendar"
+            onSuccess={calendar}
+            onFailure={calendarError}
+            cookiePolicy={"single_host_origin"}
+            responseType="code"
+            accessType="offline"
+            scope="https://www.googleapis.com/auth/calendar"
+          />
         </Modal.Footer>
       </Modal>
     </>
