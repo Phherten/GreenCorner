@@ -138,3 +138,24 @@ def iniciar_sesion():
 def privada():
     identidad = get_jwt_identity()
     return jsonify({"mensaje": "Tienes permiso para entrar", "permiso": True, "email": identidad})
+
+@api.route ('/recuperar/<mail>', methods = ['GET'])
+def recuperar(mail):
+    expira = datetime.timedelta(minutes = 10)
+    access = create_access_token(identity = mail, expires_delta = expira)
+    data = {
+        "mail": mail,
+        "mensaje": "Si el email existe, te llegará un link para resetear tu contraseña",
+        "token": access
+    }
+    return jsonify(data)
+
+@api.route ('/changePassword', methods = ['POST'])
+@jwt_required()
+def cambiar():
+    identidad = get_jwt_identity()
+    body = request.get_json()
+    change = User.query.filter_by(email = identidad).first()
+    change.password = body['password']
+    db.session.commit()
+    return "Contraseña cambiada"

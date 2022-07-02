@@ -1,6 +1,7 @@
 const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
+      urlRecuperar: "",
       plant: null,
       current_plant: null,
       seccion: [],
@@ -98,6 +99,43 @@ const getState = ({ getStore, getActions, setStore }) => {
 
       logout: () => {
         sessionStorage.removeItem("token");
+      },
+
+      reset: (mail) => {
+        fetch(
+          "https://3001-phherten-finalproyect-gk5ssmsaodu.ws-eu47.gitpod.io/api/recuperar/" +
+            mail
+        )
+          .then((response) => response.text())
+          .then((result) => {
+            localStorage.setItem("recuperar", result);
+          })
+          .catch((error) => console.log("error", error));
+      },
+      resetPass: (pass) => {
+        const localToken = JSON.parse(localStorage.getItem("recuperar"));
+        var myHeaders = new Headers();
+        myHeaders.append("Authorization", `Bearer ${localToken.token}`);
+        myHeaders.append("Content-Type", "application/json");
+
+        var raw = JSON.stringify({
+          password: pass,
+        });
+
+        var requestOptions = {
+          method: "POST",
+          headers: myHeaders,
+          body: raw,
+          redirect: "follow",
+        };
+
+        fetch(
+          "https://3001-phherten-finalproyect-gk5ssmsaodu.ws-eu47.gitpod.io/api/changePassword",
+          requestOptions
+        )
+          .then((response) => response.text())
+          .then((result) => console.log(result))
+          .catch((error) => console.log("error", error));
       },
 
       privado: () => {

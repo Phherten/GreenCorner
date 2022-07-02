@@ -17,6 +17,7 @@ import { Cuidados } from "./pages/cuidados";
 import { Ficha } from "./pages/ficha";
 import { Ficha_plagas } from "./pages/ficha_plagas";
 import { Privada } from "./pages/privada";
+import { Reset } from "./component/reset";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
@@ -50,6 +51,9 @@ const Layout = () => {
             </Route>
             <Route exact path="/recuperar">
               <Recuperar />
+            </Route>
+            <Route exact path="/reset/:token">
+              <Reset />
             </Route>
             <Route exact path="/ficha/:theid">
               <NavbarFondo />
