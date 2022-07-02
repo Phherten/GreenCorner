@@ -172,6 +172,29 @@ const getState = ({ getStore, getActions, setStore }) => {
           );
       },
 
+      deletePlantById: (id) => {
+        var myHeaders = new Headers();
+        myHeaders.append(
+          "Authorization",
+          `Bearer ${sessionStorage.getItem("token")}`
+        );
+        myHeaders.append("Content-Type", "application/json");
+
+        var raw = JSON.stringify({
+          plant_id: id,
+        });
+
+        var requestOptions = {
+          method: "DELETE",
+          headers: myHeaders,
+          body: raw,
+        };
+
+        fetch(process.env.BACKEND_URL + `/api/plant/delete`, requestOptions)
+          .then((resp) => resp.text())
+          .catch((error) => console.log("Error", error));
+      },
+
       getInfoPlantByNombreParcial: (nombre_parcial) => {
         fetch(
           process.env.BACKEND_URL +

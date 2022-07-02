@@ -112,7 +112,19 @@ def add_new_plant():
     plant.save()
 
     return "Planta agregada a la colección", 200
-    
+
+@api.route('/plant/delete', methods = ['DELETE'])
+@jwt_required()
+def delete_plant():
+    data = request.get_json()
+    email = get_jwt_identity()
+    user = User.get_by_email(email)
+    plant = Plant.get_by_id(id=data["plant_id"])
+
+    plant.delete()
+
+    return "Planta eliminada de la colección", 200
+
 @api.route('/login', methods = ['POST'])
 def iniciar_sesion():
     request_body = request.get_json()

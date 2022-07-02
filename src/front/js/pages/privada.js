@@ -8,6 +8,10 @@ import { Link } from "react-router-dom";
 
 export const Privada = () => {
   const { store, actions } = useContext(Context);
+
+  const [shouldRefresh, setShouldRefresh] = useState(false);
+
+
   const [load, setLoad] = useState(false);
 
   useEffect(() => {
@@ -16,7 +20,16 @@ export const Privada = () => {
       actions.getPlantsUser();
       setLoad(true);
     }, 3000);
+
   }, []);
+
+  useEffect(() => {
+    actions.getPlantsUser();
+  }, [shouldRefresh]);
+
+  const callbackDelete = () => {
+    setShouldRefresh(!shouldRefresh);
+  };
 
   const calculateDays = (plant) => {
     let summerMonths = [4, 5, 6, 7, 8, 9];
@@ -56,9 +69,11 @@ export const Privada = () => {
                     name={plant.info_plant.nombre_comun}
                     alias={plant.alias}
                     id={plant.info_plant.id}
+                    plant_id={plant.id}
                     i={index}
                     img={plant.info_plant.imagen}
                     dias_por_regar={dias_por_regar}
+                    callback={callbackDelete}
                   />
                 );
               })}
