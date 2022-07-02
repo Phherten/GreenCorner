@@ -4,6 +4,13 @@ const getState = ({ getStore, getActions, setStore }) => {
       plant: null,
       current_plant: null,
       seccion: [],
+      modal: {
+        estado: false,
+        nombre: "",
+        id: 0,
+      },
+
+      user_plants: [],
 
       token: "",
 
@@ -27,6 +34,12 @@ const getState = ({ getStore, getActions, setStore }) => {
     },
     actions: {
       // Use getActions to call a function within a fuction
+      setModal: (estado, nombre, id) => {
+        setStore({
+          modal: { estado: estado, nombre: nombre, id: id },
+        });
+        console.log(store.modal);
+      },
 
       resetBusqueda: () => {
         setStore({ busqueda: [] });
@@ -127,6 +140,32 @@ const getState = ({ getStore, getActions, setStore }) => {
           );
       },
 
+      addPlantUser: (planta, alias) => {
+        var myHeaders = new Headers();
+        myHeaders.append(
+          "Authorization",
+          `Bearer ${sessionStorage.getItem("token")}`
+        );
+        myHeaders.append("Content-Type", "application/json");
+
+        var raw = JSON.stringify({
+          info_plant_id: planta,
+          alias: alias,
+        });
+
+        var requestOptions = {
+          method: "POST",
+          headers: myHeaders,
+          body: raw,
+          redirect: "follow",
+        };
+
+        fetch(process.env.BACKEND_URL + "/api/plant/save/", requestOptions)
+          .then((response) => response.json())
+          .then((result) => console.log(result))
+          .catch((error) => console.log("error", error));
+      },
+
       getPlantById: (id) => {
         fetch(process.env.BACKEND_URL + `/api/plants/${id}`)
           .then((resp) => resp.json())
@@ -134,6 +173,29 @@ const getState = ({ getStore, getActions, setStore }) => {
           .catch((error) =>
             console.log("Error loading message from backend", error)
           );
+      },
+
+      deletePlantById: (id) => {
+        var myHeaders = new Headers();
+        myHeaders.append(
+          "Authorization",
+          `Bearer ${sessionStorage.getItem("token")}`
+        );
+        myHeaders.append("Content-Type", "application/json");
+
+        var raw = JSON.stringify({
+          plant_id: id,
+        });
+
+        var requestOptions = {
+          method: "DELETE",
+          headers: myHeaders,
+          body: raw,
+        };
+
+        fetch(process.env.BACKEND_URL + `/api/plant/delete`, requestOptions)
+          .then((resp) => resp.text())
+          .catch((error) => console.log("Error", error));
       },
 
       getInfoPlantByNombreParcial: (nombre_parcial) => {
@@ -159,6 +221,27 @@ const getState = ({ getStore, getActions, setStore }) => {
 
         //reset the global store
         setStore({ demo: demo });
+      },
+
+      getPlantsUser: () => {
+        var myHeaders = new Headers();
+        myHeaders.append(
+          "Authorization",
+          `Bearer ${sessionStorage.getItem("token")}`
+        );
+
+        var requestOptions = {
+          method: "GET",
+          headers: myHeaders,
+          redirect: "follow",
+        };
+
+        fetch(process.env.BACKEND_URL + "/api/user_plants", requestOptions)
+          .then((response) => response.json())
+          .then((result) => {
+            setStore({ user_plants: result });
+          })
+          .catch((error) => console.log("error", error));
       },
     },
   };

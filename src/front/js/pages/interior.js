@@ -3,6 +3,7 @@ import { Context } from "../store/appContext";
 import rigoImageUrl from "../../img/rigo-baby.jpg";
 import "../../styles/home.css";
 import { Card } from "../component/card";
+import { ModalCard } from "../component/modal";
 
 export const Interior = () => {
   const { store, actions } = useContext(Context);
@@ -15,12 +16,15 @@ export const Interior = () => {
         <div className="row d-flex justify-content-center">
           {filtrado.map((obj, index) => {
             return (
-              <Card
-                name={obj.nombre_comun}
-                id={obj.id}
-                i={index}
-                img={obj.imagen}
-              />
+              <>
+                <Card
+                  name={obj.nombre_comun}
+                  id={obj.id}
+                  i={index}
+                  img={obj.imagen}
+                />
+                <ModalCard estado={store.modal.estado}></ModalCard>
+              </>
             );
           })}
         </div>

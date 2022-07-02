@@ -105,9 +105,12 @@ export const HomeMediaPage = () => {
           </div>
         </div>
         <div className="row p-0 m-0">
-          <div className=" col-sm m-5 ">
-            <a href="/cuidados-plantas">
-              <div className="media-page-cards-cuidados-plagas-notificaciones boxes-with-shadows p-5">
+          <div className=" col-sm m-1 ">
+            <a
+              className="home-media-page-url-cards-cuidados-plagas-notificaciones"
+              href="/cuidados-plantas"
+            >
+              <div className="media-page-cards-cuidados-plagas-notificaciones boxes-with-shadows p-3">
                 <p className="media-page-card-cuidados-plagas-notificaciones">
                   CUIDADO DE PLANTAS
                 </p>
@@ -119,9 +122,12 @@ export const HomeMediaPage = () => {
             </a>
           </div>
 
-          <div className=" col-sm m-5 ">
-            <a href="/plagas">
-              <div className="media-page-cards-cuidados-plagas-notificaciones boxes-with-shadows p-5">
+          <div className=" col-sm m-1 ">
+            <a
+              className="home-media-page-url-cards-cuidados-plagas-notificaciones"
+              href="/plagas"
+            >
+              <div className="media-page-cards-cuidados-plagas-notificaciones boxes-with-shadows p-3">
                 <p className="media-page-card-cuidados-plagas-notificaciones">
                   PLAGAS
                 </p>
@@ -132,9 +138,12 @@ export const HomeMediaPage = () => {
               </div>
             </a>
           </div>
-          <div className=" col-sm m-5 ">
-            <a href="/notificaciones-riego">
-              <div className="media-page-cards-cuidados-plagas-notificaciones boxes-with-shadows p-5">
+          <div className=" col-sm m-1 ">
+            <a
+              className="home-media-page-url-cards-cuidados-plagas-notificaciones"
+              href="/notificaciones-riego"
+            >
+              <div className="media-page-cards-cuidados-plagas-notificaciones boxes-with-shadows p-3">
                 <p className="media-page-card-cuidados-plagas-notificaciones">
                   NOTIFICACIONES DE RIEGO
                 </p>

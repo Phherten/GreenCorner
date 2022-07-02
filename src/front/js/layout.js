@@ -38,9 +38,10 @@ const Layout = () => {
               <Home />
             </Route>
             <Route exact path="/privada">
-              <Navbar />
+              <NavbarFondo />
               <Privada />
             </Route>
+
             <Route exact path="/login">
               <Login />
             </Route>
@@ -54,6 +55,7 @@ const Layout = () => {
               <NavbarFondo />
               <Ficha />
             </Route>
+
             <Route exact path="/ficha_plagas/:theid">
               <NavbarFondo />
               <Ficha_plagas />
