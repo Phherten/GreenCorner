@@ -8,22 +8,23 @@ import Logo from "../../img/Logo_letras_amarillo.png";
 export const Recuperar = () => {
   const { store, actions } = useContext(Context);
   const [mail, setMail] = useState("");
-  // const [url, setUrl] = useState("");
+  const [url, setUrl] = useState("");
 
-  // function crearURL() {
-  //   console.log("entra en crearURL");
-  //   let storage = JSON.parse(localStorage.getItem("recuperar"));
-  //   storage = storage.token.substring(0, 10);
-  //   setUrl(
-  //     "https://3001-phherten-finalproyect-gk5ssmsaodu.ws-eu47.gitpod.io/reset/" +
-  //       storage
-  //   );
-  // }
-  // useEffect(() => {
-  //   console.log("entra en useEffect");
+  function crearURL() {
+    console.log("entra en crearURL");
+    let storage = JSON.parse(localStorage.getItem("recuperar"));
+    storage = storage.token.substring(0, 10);
+    console.log(storage);
+    setUrl(
+      "https://3000-phherten-finalproyect-gk5ssmsaodu.ws-eu47.gitpod.io/reset/" +
+        storage
+    );
+  }
+  useEffect(() => {
+    console.log("entra en useEffect");
 
-  //   localStorage.getItem("recuperar") && crearURL();
-  // }, []);
+    localStorage.getItem("recuperar") && crearURL();
+  }, []);
 
   return (
     <div className="text-center mt-5">
@@ -41,7 +42,8 @@ export const Recuperar = () => {
       >
         enviar
       </button>
-      {/* {url} */}
+      {url}
+      {/* {localStorage.getItem("recuperar") && crearURL()} */}
     </div>
   );
 
