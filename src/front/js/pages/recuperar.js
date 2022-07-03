@@ -15,7 +15,7 @@ export const Recuperar = () => {
   function crearURL() {
     console.log("entra en crearURL");
     let storage = JSON.parse(localStorage.getItem("recuperar"));
-    storage = storage.token.substring(0, 10);
+    storage = storage.token.substring(265);
     console.log(storage);
     setUrl(
       "https://3000-phherten-finalproyect-gk5ssmsaodu.ws-eu47.gitpod.io/reset/" +
@@ -36,7 +36,7 @@ export const Recuperar = () => {
     emailjs
       .sendForm(
         "service_uvlatvq",
-        "template_bmoobrh",
+        "green corner",
         form.current,
         // url,
         "or3vN3YPJ-tAi-TEz"
@@ -78,7 +78,7 @@ export const Recuperar = () => {
                     type="email"
                     className="form-control"
                     placeholder="Email"
-                    name="username"
+                    name="to_email"
                     onChange={(e) => {
                       console.log("entran en onchange");
 
