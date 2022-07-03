@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../store/appContext";
 import { Button, Modal } from "react-bootstrap";
+import "../../styles/CalendarModal.css";
 
 export const CalendarModal = (props) => {
   const [show, setShow] = useState(props.mostrar);
@@ -19,8 +20,12 @@ export const CalendarModal = (props) => {
 
   return (
     <>
-      <Button variant="primary" onClick={(e) => handleShow(e)}>
-        Notificación
+      <Button
+        className="btn-secondary"
+        variant="primary"
+        onClick={(e) => handleShow(e)}
+      >
+        <h5 className="p-1 pb-0"> Notificar con Calendar</h5>
       </Button>
 
       <Modal show={show} backdrop="static" onHide={(e) => handleClose(e)}>
