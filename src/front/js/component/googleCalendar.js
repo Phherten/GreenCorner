@@ -1,14 +1,16 @@
-import React, { ReactNode, SyntheticEvent } from "react";
-//import ApiCalendar from "react-google-calendar-api";
-
 const config = {
   clientId:
-    "801758075621-s8dkdd8hr5vmtv1tfgarddgk2keqekl5.apps.googleusercontent.com",
-  apiKey: "AIzaSyB_gER1plFP_mLZXIPXPuMEp-OA-E98bCw",
+    "801758075621-irv3m4td53cetc4thrp3egbms3dini9n.apps.googleusercontent.com",
+  apiKey: "AIzaSyAGIWjckAE3k4JPOJLmEg9KnxfAio-VSCw",
   scope: "https://www.googleapis.com/auth/calendar.events",
   discoveryDocs: [
     "https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest",
   ],
+};
+
+let tokenClient;
+const handleCallbackResponse = (response) => {
+  console.log(response);
 };
 const event = {
   summary: "Google I/O 2015",
@@ -32,11 +34,45 @@ const event = {
     ],
   },
 };
+export const initTokenClient = async () => {
+  tokenClient = google.accounts.oauth2.initTokenClient({
+    client_id: config.clientId,
+    scope: config.scope,
+    prompt: "",
+    callback: handleCallbackResponse,
+  });
 
-//const apiCalendar = new ApiCalendar(config);
+  await gapi.client.init({
+    apiKey: config.apiKey,
+    discoveryDocs: [config.discoveryDocs],
+  });
+};
+export const connectToGoogle = async (gapi) => {
+  const tokenVariable = await tokenClient.requestAccessToken();
+  console.log(tokenVariable);
+  tokenClient.callback = async (resp) => {
+    if (resp.error !== undefined) {
+      throw resp;
+    }
+    await tokenClient.requestAccessToken();
 
-export const authentication = async () => {};
+    await addEvent();
+  };
+};
 
-export const createEvent = () => {
-  //apiCalendar.createEvent(event);
+export const addEvent = async () => {
+  let response;
+  try {
+    response = await gapi.client.calendar.events.insert({
+      calendarId: "primary",
+      resource: event,
+    });
+  } catch (err) {
+    console.log(err);
+    return;
+  }
+
+  const events = response;
+  // Flatten to string to display
+  document.getElementById("results").innerText = response;
 };

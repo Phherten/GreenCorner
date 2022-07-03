@@ -5,32 +5,15 @@ import "../../styles/elementos.css";
 import "../../styles/cardColeccion.css";
 import Hoja from "../../img/hoja.png";
 import { Link } from "react-router-dom";
-<<<<<<< HEAD
 import { CalendarModal } from "./CalendarModal.js";
-=======
-import { Calendar, CalendarModal } from "./CalendarModal";
-import { authentication, createEvent } from "./googleCalendar";
-import { GoogleLogin } from "react-google-login";
->>>>>>> 79f9a3a (más cambios en calendar)
 
 export const CardColeccion = (props) => {
   const { store, actions } = useContext(Context);
 
-<<<<<<< HEAD
   const handleDelete = (event) => {
     event.preventDefault();
     actions.deletePlantById(props.plant_id);
     props.callback();
-=======
-  const calendar = (response) => {
-    console.log(response);
-    createEvent();
-  };
-
-  const calendarError = (e) => {
-    console.log(e);
-    createEvent();
->>>>>>> 79f9a3a (más cambios en calendar)
   };
 
   return (
@@ -65,23 +48,15 @@ export const CardColeccion = (props) => {
           id={props.id}
           diasRiego={props.dias_por_regar}
         />
-        <GoogleLogin
-          clientId="801758075621-irv3m4td53cetc4thrp3egbms3dini9n.apps.googleusercontent.com"
-          buttonText="Crear notificación en mi Calendar"
-          onSuccess={calendar}
-          onFailure={calendarError}
-          cookiePolicy={"single_host_origin"}
-          scope="openid email profile https://www.googleapis.com/auth/calendar"
-        />
-        <div
-          class="g-signin2"
-          data-onsuccess={calendar}
-          data-onerror={calendarError}
-        ></div>
-
-        <button class="btn btn-secondary boton" type="button">
-          <h5 className="p-1 pb-0">Eliminar</h5>
-        </button>
+        <div>
+          <Link onClick={handleDelete}>
+            <div class="d-grid gap-2 m-3 pt-3">
+              <button class="btn btn-secondary boton" type="button">
+                <h5 className="p-1 pb-0">Eliminar</h5>
+              </button>
+            </div>
+          </Link>
+        </div>
       </div>
     </div>
   );

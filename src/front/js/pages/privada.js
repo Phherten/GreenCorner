@@ -5,14 +5,34 @@ import "../../styles/home.css";
 import { HomeMediaPage } from "../component/homeMediaPage";
 import { Header } from "../component/header";
 import { Link } from "react-router-dom";
+import useScript from "react-script-hook";
 
 export const Privada = () => {
   const { store, actions } = useContext(Context);
 
   const [shouldRefresh, setShouldRefresh] = useState(false);
 
-
   const [load, setLoad] = useState(false);
+
+  useScript({
+    src: "https://accounts.google.com/gsi/client",
+    onload: () => console.log("GSI loaded!"),
+  });
+
+  useScript({
+    src: "https://apis.google.com/js/api.js",
+    onload: () => console.log("GAPI loaded!"),
+  });
+
+  useScript({
+    src: "https://apis.google.com/js/platform.js",
+    onload: () => console.log("Platform loaded!"),
+  });
+
+  useScript({
+    src: "https://apis.google.com/js/client.js",
+    onload: () => console.log("Client loaded!"),
+  });
 
   useEffect(() => {
     setTimeout(() => {
@@ -20,7 +40,6 @@ export const Privada = () => {
       actions.getPlantsUser();
       setLoad(true);
     }, 3000);
-
   }, []);
 
   useEffect(() => {
