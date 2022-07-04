@@ -105,6 +105,7 @@ export const Navbar = () => {
                             className="dropdown-item navbar-button-user-login"
                             type="button"
                             onClick={() => {
+                              console.log("Entra en logout");
                               actions.logout();
                             }}
                           >

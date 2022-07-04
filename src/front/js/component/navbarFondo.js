@@ -104,10 +104,14 @@ export const NavbarFondo = () => {
                           </Link>
                         </li>
                         <li>
-                          <Link to={"/privada"}>
+                          <Link to={"/login"}>
                             <button
-                              class="dropdown-item navbar-button-user-login dropdown-text pb-3"
+                              className="dropdown-item navbar-button-user-login dropdown-text pb-3"
                               type="button"
+                              onClick={() => {
+                                console.log("Entra en logout");
+                                actions.logout();
+                              }}
                             >
                               <p className="text-drop">Cerrar Sesión</p>
                             </button>
