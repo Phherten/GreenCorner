@@ -125,7 +125,7 @@ export const HomeMediaPage = () => {
           <div className=" col-sm m-1 ">
             <a
               className="home-media-page-url-cards-cuidados-plagas-notificaciones"
-              href="/plagas"
+              href="/cuidados"
             >
               <div className="media-page-cards-cuidados-plagas-notificaciones boxes-with-shadows p-3">
                 <p className="media-page-card-cuidados-plagas-notificaciones">
