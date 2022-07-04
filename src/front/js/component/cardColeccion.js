@@ -44,6 +44,13 @@ export const CardColeccion = (props) => {
             </button>
           </div>
         </Link>
+        <Link onClick={() => actions.apiTelegram()}>
+          <div class="d-grid gap-2 m-3 pt-3">
+            <button class="btn btn-secondary boton" type="button">
+              <h5 className="p-1 pb-0">Notificar Riego Por Telegram</h5>
+            </button>
+          </div>
+        </Link>
       </div>
     </Link>
   );

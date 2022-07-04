@@ -11,6 +11,8 @@ const getState = ({ getStore, getActions, setStore }) => {
         id: 0,
       },
 
+      telegram: [],
+
       user_plants: [],
 
       token: "",
@@ -102,6 +104,29 @@ const getState = ({ getStore, getActions, setStore }) => {
 
       logout: () => {
         sessionStorage.removeItem("token");
+      },
+
+      apiTelegram: () => {
+        const store = getStore();
+        var requestOptions = {
+          method: "GET",
+          redirect: "follow",
+        };
+
+        fetch(
+          "https://api.telegram.org/bot5565830618:AAHcS6I-12nfibE1Dz7-fHiFupWG2BVJfxk/getUpdates",
+          requestOptions
+        )
+          .then((response) => response.json())
+          .then((result) => {
+            setStore({ telegram: result.result });
+            console.log(
+              store.telegram[store.telegram.length - 1].message.text +
+                " " +
+                store.telegram[store.telegram.length - 1].message.chat.id
+            );
+          })
+          .catch((error) => console.log("error", error));
       },
 
       reset: (mail) => {
