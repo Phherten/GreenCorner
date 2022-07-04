@@ -1,78 +1,101 @@
 const config = {
   clientId:
-    "801758075621-irv3m4td53cetc4thrp3egbms3dini9n.apps.googleusercontent.com",
-  apiKey: "AIzaSyAGIWjckAE3k4JPOJLmEg9KnxfAio-VSCw",
+    "830880039897-h3077b0l74n1gei8eemr5qs9kp29mmgv.apps.googleusercontent.com",
+  apiKey: "AIzaSyA1y1DTVmtoCbjhiu_NmOdF2jv3nHGN3r0",
   scope: "https://www.googleapis.com/auth/calendar.events",
-  discoveryDocs: [
+  discoveryDocs:
     "https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest",
-  ],
 };
 
-let tokenClient;
-const handleCallbackResponse = (response) => {
-  console.log(response);
-};
-const event = {
-  summary: "Google I/O 2015",
-  location: "800 Howard St., San Francisco, CA 94103",
-  description: "A chance to hear more about Google's developer products.",
-  start: {
-    dateTime: new Date(),
-    timeZone: "Europe/Berlin",
-  },
-  end: {
-    dateTime: new Date(),
-    timeZone: "Europe/Berlin",
-  },
-  recurrence: ["RRULE:FREQ=DAILY;COUNT=2"],
-
-  reminders: {
-    useDefault: false,
-    overrides: [
-      { method: "email", minutes: 5 },
-      { method: "popup", minutes: 5 },
-    ],
-  },
-};
-export const initTokenClient = async () => {
-  tokenClient = google.accounts.oauth2.initTokenClient({
-    client_id: config.clientId,
-    scope: config.scope,
-    prompt: "",
-    callback: handleCallbackResponse,
-  });
-
-  await gapi.client.init({
-    apiKey: config.apiKey,
-    discoveryDocs: [config.discoveryDocs],
-  });
-};
-export const connectToGoogle = async (gapi) => {
-  const tokenVariable = await tokenClient.requestAccessToken();
-  console.log(tokenVariable);
-  tokenClient.callback = async (resp) => {
-    if (resp.error !== undefined) {
-      throw resp;
+export function initClient(callback) {
+  gapi.load("client:auth2", () => {
+    try {
+      gapi.client
+        .init({
+          apiKey: config.apiKey,
+          clientId: config.clientId,
+          discoveryDocs: [config.discoveryDocs],
+          scope: config.scope,
+          plugin_name: "calendar",
+        })
+        .then(
+          function () {
+            if (typeof callback === "function") {
+              callback(true);
+            }
+          },
+          function (error) {
+            console.log(error.details);
+          }
+        );
+    } catch (error) {
+      console.log(error.details);
     }
-    await tokenClient.requestAccessToken();
+  });
+}
 
-    await addEvent();
-  };
+export const signInToGoogle = async () => {
+  try {
+    let googleuser = await gapi.auth2
+      .getAuthInstance()
+      .signIn({ prompt: "consent" });
+    if (googleuser) {
+      return true;
+    }
+  } catch (error) {
+    console.log(error);
+  }
 };
 
-export const addEvent = async () => {
-  let response;
+export const checkSignInStatus = async () => {
   try {
-    response = await gapi.client.calendar.events.insert({
-      calendarId: "primary",
-      resource: event,
-    });
-  } catch (err) {
-    console.log(err);
-    return;
+    let status = await gapi.auth2.getAuthInstance().isSignedIn.get();
+    return status;
+  } catch (error) {
+    console.log(error);
   }
+};
 
-  const events = response;
-  // Flatten to string to display
-  document.getElementById("results").innerText = response;
+export const signOutFromGoogle = () => {
+  try {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      auth2.disconnect();
+    });
+    return true;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const getSignedInUserEmail = async () => {
+  try {
+    let status = await checkSignInStatus();
+    if (status) {
+      var auth2 = gapi.auth2.getAuthInstance();
+      var profile = auth2.currentUser.get().getBasicProfile();
+      return profile.getEmail();
+    } else {
+      return null;
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const publishTheCalenderEvent = (event) => {
+  try {
+    gapi.client.load("calendar", "v3", () => {
+      var request = gapi.client.calendar.events.insert({
+        calendarId: "primary",
+        resource: event,
+      });
+
+      request.execute(function (event) {
+        console.log("Event created: " + event.htmlLink);
+      });
+    });
+  } catch (error) {
+    console.log(error);
+  }
 };

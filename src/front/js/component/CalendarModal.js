@@ -2,34 +2,19 @@ import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../store/appContext";
 import { Button, Modal } from "react-bootstrap";
 import "../../styles/CalendarModal.css";
-import { connectToGoogle, initTokenClient } from "./googleCalendar";
-import useScript from "react-script-hook";
+import {
+  signInToGoogle,
+  initClient,
+  getSignedInUserEmail,
+  signOutFromGoogle,
+  publishTheCalenderEvent,
+} from "./googleCalendar";
 
 export const CalendarModal = (props) => {
-  const config = {
-    clientId:
-      "801758075621-irv3m4td53cetc4thrp3egbms3dini9n.apps.googleusercontent.com",
-    apiKey: "AIzaSyAGIWjckAE3k4JPOJLmEg9KnxfAio-VSCw",
-    scope: "https://www.googleapis.com/auth/calendar.readonly",
-    discoveryDocs: [
-      "https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest",
-    ],
-  };
-
   const [show, setShow] = useState(props.mostrar);
   const { store, actions } = useContext(Context);
-
-  useScript({
-    src: "https://accounts.google.com/gsi/client",
-    onload: () => console.log("GSI loaded!"),
-  });
-
-  useScript({
-    src: "https://apis.google.com/js/api.js",
-    onload: () => console.log("GAPI loaded!"),
-  });
-
-  let tokenClient;
+  const [signedin, setSignedIn] = useState(false);
+  const [googleAuthedEmail, setgoogleAuthedEmail] = useState(null);
 
   const handleClose = (e) => {
     e.stopPropagation();
@@ -38,75 +23,71 @@ export const CalendarModal = (props) => {
   const addToCalendar = (e) => {
     e.stopPropagation();
     setShow(false);
-    connectToGoogle(window.gapi);
+    getAuthToGoogle();
   };
   const handleShow = (e) => {
     e.stopPropagation();
     setShow(true);
   };
 
-  const initTokenClient = async () => {
-    tokenClient = google.accounts.oauth2.initTokenClient({
-      client_id: config.clientId,
-      scope: config.scope,
-      prompt: "",
-      callback: "",
-    });
-
-    await gapi.client.init({
-      apiKey: config.apiKey,
-      discoveryDocs: [config.discoveryDocs],
-    });
-  };
-
   useEffect(() => {
-    /* global google */
-    /* global gapi */
-    setTimeout(function () {
-      // ...
-    }, 2000);
-    initTokenClient();
+    initClient((success) => {
+      if (success) {
+        getGoogleAuthorizedEmail();
+      }
+    });
   }, []);
 
-  async function addEvent() {
-    let response;
-    try {
-      const event = {
-        summary: "Google I/O 2015",
-        location: "800 Howard St., San Francisco, CA 94103",
-        description: "A chance to hear more about Google's developer products.",
-        start: {
-          dateTime: "2022-07-05T20:00:00-07:00",
-          timeZone: "America/Los_Angeles",
-        },
-        end: {
-          dateTime: "2022-07-05T22:00:00-07:00",
-          timeZone: "America/Los_Angeles",
-        },
-        recurrence: ["RRULE:FREQ=DAILY;COUNT=2"],
-        attendees: [
-          { email: "lpage@example.com" },
-          { email: "sbrin@example.com" },
-        ],
-        reminders: {
-          useDefault: false,
-          overrides: [
-            { method: "email", minutes: 24 * 60 },
-            { method: "popup", minutes: 10 },
-          ],
-        },
-      };
-
-      response = await gapi.client.calendar.events.insert({
-        calendarId: "primary",
-        resource: event,
-      });
-    } catch (err) {
-      console.log(err);
-      return;
+  const getGoogleAuthorizedEmail = async () => {
+    let email = await getSignedInUserEmail();
+    if (email) {
+      setSignedIn(true);
+      setgoogleAuthedEmail(email);
     }
-    console.log(response);
-  }
+  };
+  const getAuthToGoogle = async () => {
+    let successfull = await signInToGoogle();
+    if (successfull) {
+      getGoogleAuthorizedEmail();
+      submit();
+    }
+  };
+
+  const _signOutFromGoogle = () => {
+    let status = signOutFromGoogle();
+    if (status) {
+      setSignedIn(false);
+      setgoogleAuthedEmail(null);
+    }
+  };
+  const submit = () => {
+    let event = {
+      summary: "Google I/O 2015",
+      location: "800 Howard St., San Francisco, CA 94103",
+      description: "A chance to hear more about Google's developer products.",
+      start: {
+        dateTime: "2022-07-10T09:00:00-07:00",
+        timeZone: "America/Los_Angeles",
+      },
+      end: {
+        dateTime: "2022-07-10T17:00:00-07:30",
+        timeZone: "America/Los_Angeles",
+      },
+      recurrence: ["RRULE:FREQ=DAILY;COUNT=2"],
+      attendees: [
+        { email: "lpage@example.com" },
+        { email: "sbrin@example.com" },
+      ],
+      reminders: {
+        useDefault: false,
+        overrides: [
+          { method: "email", minutes: 24 * 60 },
+          { method: "popup", minutes: 10 },
+        ],
+      },
+    };
+    publishTheCalenderEvent(event);
+  };
 
   return (
     <>
