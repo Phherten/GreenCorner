@@ -16,8 +16,8 @@ api = Blueprint('api', __name__)
 @api.route('/notificacion_telegram', methods=['POST'])
 def sendNotification():
     request_body = request.get_json()
-    
-    bot_token = request_body['bot_token']
+
+    bot_token = "5565830618:AAHcS6I-12nfibE1Dz7-fHiFupWG2BVJfxk"
     bot_chatID = request_body['bot_chatID']
     msg = request_body['msg']
     send_text = 'https://api.telegram.org/bot' + bot_token + '/sendMessage?chat_id=' + bot_chatID + '&parse_mode=Markdown&text=' + msg
