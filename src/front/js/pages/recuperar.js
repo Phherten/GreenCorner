@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState, useRef } from "react";
 import { Context } from "../store/appContext";
 import rigoImageUrl from "../../img/hojas.png";
 import "../../styles/login.css";
@@ -7,8 +7,51 @@ import Logo from "../../img/Logo_letras_amarillo.png";
 import Userfront from "@userfront/core";
 Userfront.init("demo1234");
 
+import emailjs from "@emailjs/browser";
+
 export const Recuperar = () => {
   const { store, actions } = useContext(Context);
+  const [mail, setMail] = useState("");
+  const [url, setUrl] = useState("");
+
+  function crearURL() {
+    console.log("entra en crearURL");
+    let storage = JSON.parse(localStorage.getItem("recuperar"));
+    storage = storage.token.substring(265);
+    console.log(storage);
+    setUrl(
+      "https://3000-phherten-finalproyect-gk5ssmsaodu.ws-eu47.gitpod.io/reset/" +
+        storage
+    );
+  }
+  useEffect(() => {
+    console.log("entra en useEffect");
+
+    localStorage.getItem("recuperar") && crearURL();
+  }, []);
+
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_uvlatvq",
+        "green corner",
+        form.current,
+        // url,
+        "or3vN3YPJ-tAi-TEz"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
 
   return (
     <div className="container-fluid fondoLogin">
@@ -30,14 +73,19 @@ export const Recuperar = () => {
               <h2>Recuperar Contraseña </h2>
             </div>
             <div className="card-body w-100">
-              <form name="login" action="" method="post">
+              <form name="login" ref={form} onSubmit={sendEmail}>
                 <div className="input-group form-group mt-3">
                   <div className="bg-secondary rounded-start"></div>
                   <input
                     type="email"
                     className="form-control"
                     placeholder="Email"
-                    name="username"
+                    name="to_email"
+                    onChange={(e) => {
+                      console.log("entran en onchange");
+
+                      setMail(e.target.value);
+                    }}
                   />
                 </div>
                 <div className="form-group mt-3">
@@ -46,16 +94,14 @@ export const Recuperar = () => {
                     value="Enviar Contraseña"
                     className="btn bg-secondary boton float-end text-white w-100"
                     name="login-btn"
-                    onClick={() =>
-                      console.log(
-                        Userfront.sendVerificationCode({
-                          channel: "email",
-                          email: "phigueraherten@gmail.com",
-                        })
-                      )
-                    }
+
+                    onClick={() => {
+                      console.log("entran en onclick");
+                      actions.reset(mail);
+                    }}
                   />
                 </div>
+                <input type="hidden" name="url" id="url" value={url} />
               </form>
               <div className="text-danger"></div>
               <div></div>

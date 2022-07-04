@@ -117,8 +117,17 @@
 }
 a {
   text-decoration: none !important;
+  color: #000000;
+  font-size: 1.2rem;
+}
+a:hover {
+  color: black;
 }
 
 .icono-user:hover {
   background-color: rgba(224, 224, 224, 0.669) !important;
+}
+
+#li-buscador {
+  list-style: none;
 }

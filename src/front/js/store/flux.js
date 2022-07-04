@@ -1,6 +1,7 @@
 const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
+      urlRecuperar: "",
       plant: null,
       current_plant: null,
       seccion: [],
@@ -41,6 +42,9 @@ const getState = ({ getStore, getActions, setStore }) => {
         console.log(store.modal);
       },
 
+      resetBusqueda: () => {
+        setStore({ busqueda: [] });
+      },
       adduser: (username, second_name, email, password) => {
         var myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
@@ -98,6 +102,43 @@ const getState = ({ getStore, getActions, setStore }) => {
 
       logout: () => {
         sessionStorage.removeItem("token");
+      },
+
+      reset: (mail) => {
+        fetch(
+          "https://3001-phherten-finalproyect-gk5ssmsaodu.ws-eu47.gitpod.io/api/recuperar/" +
+            mail
+        )
+          .then((response) => response.text())
+          .then((result) => {
+            localStorage.setItem("recuperar", result);
+          })
+          .catch((error) => console.log("error", error));
+      },
+      resetPass: (pass) => {
+        const localToken = JSON.parse(localStorage.getItem("recuperar"));
+        var myHeaders = new Headers();
+        myHeaders.append("Authorization", `Bearer ${localToken.token}`);
+        myHeaders.append("Content-Type", "application/json");
+
+        var raw = JSON.stringify({
+          password: pass,
+        });
+
+        var requestOptions = {
+          method: "POST",
+          headers: myHeaders,
+          body: raw,
+          redirect: "follow",
+        };
+
+        fetch(
+          "https://3001-phherten-finalproyect-gk5ssmsaodu.ws-eu47.gitpod.io/api/changePassword",
+          requestOptions
+        )
+          .then((response) => response.text())
+          .then((result) => console.log(result))
+          .catch((error) => console.log("error", error));
       },
 
       privado: () => {
@@ -170,6 +211,29 @@ const getState = ({ getStore, getActions, setStore }) => {
           .catch((error) =>
             console.log("Error loading message from backend", error)
           );
+      },
+
+      deletePlantById: (id) => {
+        var myHeaders = new Headers();
+        myHeaders.append(
+          "Authorization",
+          `Bearer ${sessionStorage.getItem("token")}`
+        );
+        myHeaders.append("Content-Type", "application/json");
+
+        var raw = JSON.stringify({
+          plant_id: id,
+        });
+
+        var requestOptions = {
+          method: "DELETE",
+          headers: myHeaders,
+          body: raw,
+        };
+
+        fetch(process.env.BACKEND_URL + `/api/plant/delete`, requestOptions)
+          .then((resp) => resp.text())
+          .catch((error) => console.log("Error", error));
       },
 
       getInfoPlantByNombreParcial: (nombre_parcial) => {

@@ -112,7 +112,19 @@ def add_new_plant():
     plant.save()
 
     return "Planta agregada a la colección", 200
-    
+
+@api.route('/plant/delete', methods = ['DELETE'])
+@jwt_required()
+def delete_plant():
+    data = request.get_json()
+    email = get_jwt_identity()
+    user = User.get_by_email(email)
+    plant = Plant.get_by_id(id=data["plant_id"])
+
+    plant.delete()
+
+    return "Planta eliminada de la colección", 200
+
 @api.route('/login', methods = ['POST'])
 def iniciar_sesion():
     request_body = request.get_json()
@@ -138,3 +150,24 @@ def iniciar_sesion():
 def privada():
     identidad = get_jwt_identity()
     return jsonify({"mensaje": "Tienes permiso para entrar", "permiso": True, "email": identidad})
+
+@api.route ('/recuperar/<mail>', methods = ['GET'])
+def recuperar(mail):
+    expira = datetime.timedelta(minutes = 10)
+    access = create_access_token(identity = mail, expires_delta = expira)
+    data = {
+        "mail": mail,
+        "mensaje": "Si el email existe, te llegará un link para resetear tu contraseña",
+        "token": access
+    }
+    return jsonify(data)
+
+@api.route ('/changePassword', methods = ['POST'])
+@jwt_required()
+def cambiar():
+    identidad = get_jwt_identity()
+    body = request.get_json()
+    change = User.query.filter_by(email = identidad).first()
+    change.password = body['password']
+    db.session.commit()
+    return "Contraseña cambiada"
