@@ -4,6 +4,7 @@ This module takes care of starting the API Server, Loading the DB and Adding the
 from flask import Flask, request, jsonify, url_for, Blueprint, send_from_directory
 
 from api.models import db, Plagas, InfoPlant, User, Plant
+import requests
 
 
 from api.utils import generate_sitemap, APIException
@@ -11,6 +12,19 @@ import datetime #ayuda a trabajar con fecha y hora
 from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity
 
 api = Blueprint('api', __name__)
+
+@api.route('/notificacion_telegram', methods=['POST'])
+def sendNotification():
+    request_body = request.get_json()
+    
+    bot_token = request_body['bot_token']
+    bot_chatID = request_body['bot_chatID']
+    msg = request_body['msg']
+    send_text = 'https://api.telegram.org/bot' + bot_token + '/sendMessage?chat_id=' + bot_chatID + '&parse_mode=Markdown&text=' + msg
+    response = requests.get(send_text)
+    return response.json()
+
+    sendNotification('Mensaje mandado correctamente', '✅')
 
 
 @api.route('/hello', methods=['POST', 'GET'])
