@@ -2,10 +2,11 @@ import React, { useContext, useState, useEffect } from "react";
 import { Context } from "../store/appContext";
 import rigoImageUrl from "../../img/hojas.png";
 import "../../styles/login.css";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import Logo from "../../img/Logo_letras_amarillo.png";
 
 export const Registro = () => {
+  const history = useHistory();
   const { store, actions } = useContext(Context);
   const [datos, setDatos] = useState({
     username: "",
@@ -32,6 +33,7 @@ export const Registro = () => {
     if (pass1 === pass2) {
       // mostrardatos();
       actions.adduser(datos.username, datos.second_name, datos.email, pass1);
+      history.push("/login");
     } else {
       return alert("Las contraseñas deben coincidir");
     }
