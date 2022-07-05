@@ -5,10 +5,13 @@ from flask import Flask, request, jsonify, url_for, Blueprint, send_from_directo
 
 from api.models import db, Plagas, InfoPlant, User, Plant
 
-
+import json 
 from api.utils import generate_sitemap, APIException
 import datetime #ayuda a trabajar con fecha y hora
 from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity
+
+
+
 
 api = Blueprint('api', __name__)
 
@@ -85,7 +88,7 @@ def get_user_plants():
     
     email = get_jwt_identity()
     user = User.get_by_email(email)
-
+    
     user_plants = Plant.get_by_user(user.id)
 
     response = []

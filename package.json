@@ -87,6 +87,7 @@
     "react-dom": "^16.8.4",
     "react-polyfills": "0.0.1",
     "react-router-dom": "^5.2.0",
+    "react-script-hook": "^1.6.0",
     "reactstrap": "^9.1.1",
     "styled-components": "^5.3.5"
   }
