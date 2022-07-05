@@ -4,8 +4,6 @@ import rigoImageUrl from "../../img/hojas.png";
 import "../../styles/login.css";
 import { Link } from "react-router-dom";
 import Logo from "../../img/Logo_letras_amarillo.png";
-import Userfront from "@userfront/core";
-Userfront.init("demo1234");
 
 import emailjs from "@emailjs/browser";
 
@@ -20,7 +18,7 @@ export const Recuperar = () => {
     storage = storage.token.substring(265);
     console.log(storage);
     setUrl(
-      "https://3000-phherten-finalproyect-gk5ssmsaodu.ws-eu47.gitpod.io/reset/" +
+      "https://3000-phherten-finalproyect-up1k26y3luy.ws-eu51.gitpod.io/reset/" +
         storage
     );
   }
@@ -89,12 +87,11 @@ export const Recuperar = () => {
                   />
                 </div>
                 <div className="form-group mt-3">
-                  <button
-                    type="button"
+                  <input
+                    type="submit"
                     value="Enviar Contraseña"
                     className="btn bg-secondary boton float-end text-white w-100"
                     name="login-btn"
-
                     onClick={() => {
                       console.log("entran en onclick");
                       actions.reset(mail);

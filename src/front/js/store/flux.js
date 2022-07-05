@@ -105,10 +105,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
 
       reset: (mail) => {
-        fetch(
-          "https://3001-phherten-finalproyect-gk5ssmsaodu.ws-eu47.gitpod.io/api/recuperar/" +
-            mail
-        )
+        fetch(process.env.BACKEND_URL + "/api/recuperar/" + mail)
           .then((response) => response.text())
           .then((result) => {
             localStorage.setItem("recuperar", result);
@@ -132,10 +129,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           redirect: "follow",
         };
 
-        fetch(
-          "https://3001-phherten-finalproyect-gk5ssmsaodu.ws-eu47.gitpod.io/api/changePassword",
-          requestOptions
-        )
+        fetch(process.env.BACKEND_URL + "/api/changePassword/", requestOptions)
           .then((response) => response.text())
           .then((result) => console.log(result))
           .catch((error) => console.log("error", error));
