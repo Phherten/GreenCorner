@@ -11,7 +11,6 @@ export const Privada = () => {
 
   const [shouldRefresh, setShouldRefresh] = useState(false);
 
-
   const [load, setLoad] = useState(false);
 
   useEffect(() => {
@@ -20,7 +19,6 @@ export const Privada = () => {
       actions.getPlantsUser();
       setLoad(true);
     }, 3000);
-
   }, []);
 
   useEffect(() => {
