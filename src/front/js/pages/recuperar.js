@@ -4,6 +4,7 @@ import rigoImageUrl from "../../img/hojas.png";
 import "../../styles/login.css";
 import { Link } from "react-router-dom";
 import Logo from "../../img/Logo_letras_amarillo.png";
+import swal from "sweetalert";
 
 import emailjs from "@emailjs/browser";
 
@@ -18,7 +19,7 @@ export const Recuperar = () => {
     storage = storage.token.substring(265);
     console.log(storage);
     setUrl(
-      "https://3000-phherten-finalproyect-up1k26y3luy.ws-eu51.gitpod.io/reset/" +
+      "https://3000-phherten-finalproyect-ivnfbpi1v7v.ws-eu51.gitpod.io/reset/" +
         storage
     );
   }
@@ -95,6 +96,12 @@ export const Recuperar = () => {
                     onClick={() => {
                       console.log("entran en onclick");
                       actions.reset(mail);
+                      swal({
+                        title: "Mail Enviado",
+                        text: "Revisa tu bandeja de entrada",
+                        icon: "success",
+                        button: "Aceptar",
+                      });
                     }}
                   />
                 </div>

@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../store/appContext";
 import { Button, Modal } from "react-bootstrap";
 import "../../styles/CalendarModal.css";
+
 import {
   signInToGoogle,
   initClient,
@@ -95,7 +96,7 @@ export const CalendarModal = (props) => {
   return (
     <>
       <Button
-        className="btn-secondary"
+        className="btn-secondary boton"
         variant="primary"
         onClick={(e) => handleShow(e)}
       >

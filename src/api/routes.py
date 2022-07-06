@@ -9,6 +9,7 @@ import json
 from api.utils import generate_sitemap, APIException
 import datetime #ayuda a trabajar con fecha y hora
 from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity
+import requests;
 
 
 
@@ -174,3 +175,16 @@ def cambiar():
     change.password = body['password']
     db.session.commit()
     return "Contraseña cambiada"
+
+@api.route('/notificacion_telegram', methods=['POST'])
+def sendNotification():
+    request_body = request.get_json()
+
+    bot_token = "5565830618:AAHcS6I-12nfibE1Dz7-fHiFupWG2BVJfxk"
+    bot_chatID = "120625919"
+    msg = request_body['msg']
+    send_text = 'https://api.telegram.org/bot' + bot_token + '/sendMessage?chat_id=' + bot_chatID + '&parse_mode=Markdown&text=' + msg
+    response = requests.get(send_text)
+    return response.json()
+
+    sendNotification('Mensaje mandado correctamente', '✅')

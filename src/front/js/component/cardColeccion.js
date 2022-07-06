@@ -6,6 +6,7 @@ import "../../styles/cardColeccion.css";
 import Hoja from "../../img/hoja.png";
 import { Link } from "react-router-dom";
 import { CalendarModal } from "./CalendarModal.js";
+import swal from "sweetalert";
 
 export const CardColeccion = (props) => {
   const { store, actions } = useContext(Context);
@@ -50,6 +51,27 @@ export const CardColeccion = (props) => {
           alias={props.alias !== "" ? props.alias : props.name}
         />
         <div>
+          <button
+            class="btn btn-secondary boton"
+            type="button"
+            onClick={() =>
+              swal({
+                title: "¿Deseas añadir una alerta de riego para esta planta?",
+                buttons: ["No", "Si"],
+              }).then((respuesta) => {
+                if (respuesta == true) {
+                  actions.sendTelegram();
+                  swal({
+                    text: "La notificacion se ha añadido",
+                    icon: "success",
+                  });
+                }
+              })
+            }
+          >
+            <h5 className="p-1 pb-0">Notificar con Telegram</h5>
+          </button>
+
           <Link onClick={handleDelete}>
             <div class="d-grid gap-2 m-3 pt-3">
               <button class="btn btn-secondary boton" type="button">
