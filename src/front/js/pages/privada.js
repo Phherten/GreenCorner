@@ -49,7 +49,7 @@ export const Privada = () => {
 
   return (
     <div style={{ minHeight: "800px" }}>
-      <div className="container d-flex mb-xs-1 mb-5 mt-4 ">
+      <div className="container d-flex mb-xs-1 mb-5 mt-4 justify-content-center">
         <div className="row d-flex justify-content-center">
           {store.permiso ? (
             <>
@@ -79,8 +79,13 @@ export const Privada = () => {
           ) : load ? (
             "404 la página no existe"
           ) : (
-            <div class="spinner-border" role="status">
-              <span class="sr-only">Loading...</span>
+            <div
+              className="d-flex align-items-center"
+              style={{ minHeight: "600px" }}
+            >
+              <div class="spinner-border" role="status">
+                <span class="sr-only">Loading...</span>
+              </div>
             </div>
           )}
         </div>

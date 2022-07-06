@@ -42,12 +42,13 @@ export const Notificaciones_riego = () => {
             Telegram:
           </h5>
           <h5 className="mt-2">
-            Añade a Google Calendar tus plantas y agendaremos un evento
-            automaticamente en tu calendario.
+            Agrega nuestro Bot de Telegram y te notificaremos mediante un
+            mensaje.
             <h5 className="m-3">INSTRUCCIONES:</h5>
-            Abre telegram es tu telefono y busca Greencornerproyect_bot. Pulsa
+            Abre telegram en tu telefono y busca Greencornerproyect_bot. Pulsa
             Start y envianos un mensaje con el mismo correo que has usado en
-            nuestra pagina.
+            nuestra pagina, despues en la sección "mis plantas" agrega las que
+            quieras que te notifiquemos.
           </h5>
         </div>
         <div className="col-md-5">

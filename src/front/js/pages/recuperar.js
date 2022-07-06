@@ -18,7 +18,7 @@ export const Recuperar = () => {
     storage = storage.token.substring(265);
     console.log(storage);
     setUrl(
-      "https://3000-phherten-finalproyect-up1k26y3luy.ws-eu51.gitpod.io/reset/" +
+      "https://3000-phherten-finalproyect-ivnfbpi1v7v.ws-eu51.gitpod.io/reset/" +
         storage
     );
   }

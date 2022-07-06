@@ -30,7 +30,7 @@ export const Navbar = () => {
 
                   <span className="navbar-toggler-icon navbar-menu-button-icon"></span>
                 </button>
-                <img src={logo} className="navbar-logo" />
+                <img src={logo} className="navbar-logo " />
               </a>
             </div>
             <div className="navbar-collapse collapse w-100 order-1 order-lg-1 dual-collapse2">
