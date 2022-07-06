@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 import Logo from "../../img/Logo_letras_amarillo.png";
+import swal from "sweetalert";
 
 export const Reset = () => {
   const { store, actions } = useContext(Context);
@@ -45,12 +46,13 @@ export const Reset = () => {
                 </div>
                 <div className="form-group mt-3">
                   <input
-                    type="submit"
+                    type="button"
                     value="Enviar Contraseña"
                     className="btn bg-secondary boton float-end text-white w-100"
                     name="login-btn"
                     onClick={() => {
                       actions.resetPass(pass);
+                      swal("Contraseña Cambiada");
                     }}
                   />
                 </div>

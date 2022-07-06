@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../store/appContext";
 import styled from "styled-components";
+import swal from "sweetalert";
 
 export const ModalCard = (props) => {
   const { store, actions } = useContext(Context);
@@ -12,7 +13,7 @@ export const ModalCard = (props) => {
         <Overlay>
           <ContenedorModal>
             <BotonCerrar onClick={() => actions.setModal(false)}>
-              <i class="fas fa-times"></i>
+              <i className="fas fa-times"></i>
             </BotonCerrar>
             <h3 className="me-5">Agregar {store.modal.nombre} ?</h3>
             <input
@@ -21,12 +22,18 @@ export const ModalCard = (props) => {
               className="form-control mt-4 mb-4 p-3"
               onChange={(e) => setAlias(e.target.value)}
             ></input>
-            <div class="d-grid gap-2">
+            <div className="d-grid gap-2">
               <button
                 className="btn btn-secondary boton m-3"
                 type="button"
                 onClick={() => (
                   actions.addPlantUser(store.modal.id, alias),
+                  swal({
+                    title: "Planta añadida",
+                    icon: "success",
+                    button: "Aceptar",
+                    timer: "1600",
+                  }),
                   actions.setModal(false, "", 0)
                 )}
               >

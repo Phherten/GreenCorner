@@ -4,6 +4,7 @@ import rigoImageUrl from "../../img/hojas.png";
 import "../../styles/login.css";
 import { Link } from "react-router-dom";
 import Logo from "../../img/Logo_letras_amarillo.png";
+import swal from "sweetalert";
 
 import emailjs from "@emailjs/browser";
 
@@ -95,6 +96,12 @@ export const Recuperar = () => {
                     onClick={() => {
                       console.log("entran en onclick");
                       actions.reset(mail);
+                      swal({
+                        title: "Mail Enviado",
+                        text: "Revisa tu bandeja de entrada",
+                        icon: "success",
+                        button: "Aceptar",
+                      });
                     }}
                   />
                 </div>
