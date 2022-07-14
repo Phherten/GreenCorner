@@ -53,11 +53,7 @@ export const Login = () => {
             <div className="card-body w-100">
               <form name="login" onSubmit={enviardatos}>
                 <div className="input-group form-group mt-3">
-                  <div className="bg-secondary rounded-start">
-                    <span className="m-3">
-                      <i className="fas fa-user mt-2"></i>
-                    </span>
-                  </div>
+                  <div className="bg-secondary rounded-start"></div>
                   <input
                     type="text"
                     className="form-control"
@@ -67,11 +63,7 @@ export const Login = () => {
                   />
                 </div>
                 <div className="input-group form-group mt-3">
-                  <div className="bg-secondary rounded-start">
-                    <span className="m-3">
-                      <i className="fas fa-key mt-2"></i>
-                    </span>
-                  </div>
+                  <div className="bg-secondary rounded-start"></div>
                   <input
                     type="password"
                     className="form-control"

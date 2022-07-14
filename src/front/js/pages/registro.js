@@ -5,6 +5,7 @@ import "../../styles/login.css";
 import { Link, useHistory } from "react-router-dom";
 import Logo from "../../img/Logo_letras_amarillo.png";
 import swal from "sweetalert";
+import "../../styles/login.css";
 
 export const Registro = () => {
   const history = useHistory();

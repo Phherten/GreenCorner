@@ -47,7 +47,15 @@
   width: 50px;
   height: 30px;
 }
+
 .icono_telegram {
   width: 40px;
   height: 40px;
 }
+
+.input-group > .form-control {
+  width: 250px;
+  border-radius: 5px !important;
+}
+
+/* hola */
