@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/header.css";
-import fondo from "../../img/header_background.jpg";
+import fondo from "../../img/fondoNuevoHeader.jpeg";
 import logoHeader from "../../img/Logo_letras_amarillo.png";
 
 export const Header = () => {

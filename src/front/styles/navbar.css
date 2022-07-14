@@ -2,6 +2,11 @@
 .fondo-navbar {
   background-image: url("https://fondosmil.com/fondo/26795.jpg");
 }
+
+.home-navbar {
+  z-index: 1;
+}
+
 .home-navbar {
   background-color: transparent;
 }
@@ -31,12 +36,13 @@
   text-align: center;
   color: rgb(255, 255, 255);
   font-family: "Montserrat", sans-serif;
-  font-size: 20px;
+  font-size: 22px;
   outline: none;
   border: none;
   display: inline-block;
   text-decoration: none;
   font-weight: 300;
+  text-shadow: black 0.2em 0.2em 0.2em;
 }
 
 .navbar-button:hover {

@@ -14,7 +14,7 @@ export const Navbar = () => {
 
   if (store.permiso == true) {
     return (
-      <div className="navbar-font">
+      <div className="navbar-font home-navbar">
         <nav className="navbar navbar-expand-lg home-navbar">
           <div className="container-fluid">
             <div className="order-0">
