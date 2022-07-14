@@ -1,0 +1,19 @@
+.imagen_privada {
+  background-image: url("https://images.pexels.com/photos/4505171/pexels-photo-4505171.jpeg?cs=srgb&dl=pexels-cottonbro-4505171.jpg&fm=jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 48rem;
+  width: 70rem;
+  padding-left: 10rem;
+  padding-top: 15rem;
+  margin-top: 2rem;
+}
+
+.texto_privada {
+  font-size: 2rem;
+  color: white;
+}
+
+#boton_privada {
+  margin-top: 1rem;
+}
