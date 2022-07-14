@@ -12,6 +12,9 @@
   max-width: 100%;
   height: auto;
 }
+.header-background::before {
+  content: "";
+}
 
 .header-title {
   color: #ffe175;
