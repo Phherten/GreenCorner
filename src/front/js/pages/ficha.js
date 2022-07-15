@@ -19,8 +19,6 @@ export const Ficha = (props) => {
       <>
         <ModalCard estado={store.modal.estado}></ModalCard>
 
-
-  return (
         <div className="container-fluid">
           <div className="row">
             <div
@@ -81,7 +79,6 @@ export const Ficha = (props) => {
                 className="img-fluid"
               ></img>
             </div>
-
           </div>
         </div>
       </>

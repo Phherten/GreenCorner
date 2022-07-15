@@ -2,9 +2,11 @@ import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../store/appContext";
 import { CardColeccion } from "../component/cardColeccion";
 import "../../styles/home.css";
+import "../../styles/privada.css";
 import { HomeMediaPage } from "../component/homeMediaPage";
 import { Header } from "../component/header";
 import { Link } from "react-router-dom";
+import planta_maceta_privada from "../../img/planta_maceta_privada.jpg";
 
 export const Privada = () => {
   const { store, actions } = useContext(Context);
@@ -53,28 +55,46 @@ export const Privada = () => {
         <div className="row d-flex justify-content-center">
           {store.permiso ? (
             <>
-              <h1>{`Mis plantas`}</h1>
               {store.user_plants.length === 0 ? (
-                <Link to={"/"}>Haz click para agregar una planta</Link>
-              ) : (
-                <></>
-              )}
-              {store.user_plants.map((plant, index) => {
-                let dias_por_regar = calculateDays(plant);
+                <>
+                  <div className="imagen_privada">
+                    <p className="texto_privada">
+                      Todavía no tienes plantas guardadas,<br></br>
+                      ¿Empezamos a cuidarlas juntos?
+                    </p>
 
-                return (
-                  <CardColeccion
-                    name={plant.info_plant.nombre_comun}
-                    alias={plant.alias}
-                    id={plant.info_plant.id}
-                    plant_id={plant.id}
-                    i={index}
-                    img={plant.info_plant.imagen}
-                    dias_por_regar={dias_por_regar}
-                    callback={callbackDelete}
-                  />
-                );
-              })}
+                    <Link to={"/#plants"}>
+                      <button
+                        class="btn btn-secondary boton"
+                        type="button"
+                        id="boton_privada"
+                      >
+                        Agrega tu primera planta
+                      </button>
+                    </Link>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <h1>Mis plantas</h1>
+                  {store.user_plants.map((plant, index) => {
+                    let dias_por_regar = calculateDays(plant);
+
+                    return (
+                      <CardColeccion
+                        name={plant.info_plant.nombre_comun}
+                        alias={plant.alias}
+                        id={plant.info_plant.id}
+                        plant_id={plant.id}
+                        i={index}
+                        img={plant.info_plant.imagen}
+                        dias_por_regar={dias_por_regar}
+                        callback={callbackDelete}
+                      />
+                    );
+                  })}
+                </>
+              )}
             </>
           ) : load ? (
             "404 la página no existe"

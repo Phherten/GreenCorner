@@ -19,7 +19,7 @@ export const HomeMediaPage = () => {
   const { store, actions } = useContext(Context);
   return (
     <div>
-      <div className="container-fluid p-0 m-0 media-page-container">
+      <div className="container-fluid p-0 m-0 media-page-container" id="plants">
         <div className="row p-0 m-0">
           <div className="col-sm-4 p-0 media-page-plant-photo">
             <img src={plantasMediaPage} className="media-page-plantas" />
@@ -29,7 +29,7 @@ export const HomeMediaPage = () => {
               className="card media-page-tarjetas-interior boxes-with-shadows"
               style={{ width: `20rem` }}
             >
-              <a href="/interior">
+              <Link to={"/interior"}>
                 <img
                   src={plantaInteriorHomeTarjeta}
                   className="media-page-planta-tarjetas-interior-foto"
@@ -37,12 +37,12 @@ export const HomeMediaPage = () => {
                 <div className="card-body">
                   <p className="media-page-card-text-interior">INTERIOR</p>
                 </div>
-              </a>
+              </Link>
             </div>
           </div>
           <div className="col-sm">
             <div className="card mb-3 card-home-col-media-page-card-exterior boxes-with-shadows">
-              <a href="/exterior">
+              <Link to={"/exterior"}>
                 <div className="row  g-0">
                   <div className="col-8">
                     <div className="card-body">
@@ -59,10 +59,10 @@ export const HomeMediaPage = () => {
                     />
                   </div>
                 </div>
-              </a>
+              </Link>
             </div>
             <div className="card mb-3 card-home-col-media-page-card-exterior boxes-with-shadows">
-              <a href="/suculentas">
+              <Link to={"/suculentas"}>
                 <div className="row  g-0">
                   <div className="col-8">
                     <div className="card-body">
@@ -79,7 +79,7 @@ export const HomeMediaPage = () => {
                     />
                   </div>
                 </div>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -106,9 +106,9 @@ export const HomeMediaPage = () => {
         </div>
         <div className="row p-0 m-0">
           <div className=" col-sm m-1 ">
-            <a
+            <Link
+              to={"/cuidado-plantas"}
               className="home-media-page-url-cards-cuidados-plagas-notificaciones"
-              href="/cuidados-plantas"
             >
               <div className="media-page-cards-cuidados-plagas-notificaciones boxes-with-shadows p-3">
                 <p className="media-page-card-cuidados-plagas-notificaciones">
@@ -119,13 +119,13 @@ export const HomeMediaPage = () => {
                   className="media-page-planta-tarjetas-cuidados-foto"
                 />
               </div>
-            </a>
+            </Link>
           </div>
 
           <div className=" col-sm m-1 ">
-            <a
+            <Link
+              to={"/cuidados"}
               className="home-media-page-url-cards-cuidados-plagas-notificaciones"
-              href="/cuidados"
             >
               <div className="media-page-cards-cuidados-plagas-notificaciones boxes-with-shadows p-3">
                 <p className="media-page-card-cuidados-plagas-notificaciones">
@@ -136,12 +136,12 @@ export const HomeMediaPage = () => {
                   className="media-page-planta-tarjetas-plagas-foto"
                 />
               </div>
-            </a>
+            </Link>
           </div>
           <div className=" col-sm m-1 ">
-            <a
+            <Link
+              to={"/notificaciones_riego"}
               className="home-media-page-url-cards-cuidados-plagas-notificaciones"
-              href="/notificaciones_riego"
             >
               <div className="media-page-cards-cuidados-plagas-notificaciones boxes-with-shadows p-3">
                 <p className="media-page-card-cuidados-plagas-notificaciones">
@@ -152,7 +152,7 @@ export const HomeMediaPage = () => {
                   className="media-page-planta-tarjetas-riego-foto"
                 />
               </div>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
