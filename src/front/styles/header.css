@@ -17,17 +17,17 @@
   height: 50rem;
   background-color: rgb(216, 236, 236);
   position: absolute;
-  opacity: 0.1;
+  opacity: 0.03;
 }
 
 .header-title {
   color: #ffe175;
-  margin-top: 10rem;
+  margin-top: 13rem;
   font-family: "Montserrat", sans-serif;
   position: absolute;
-  font-size: 3.5em;
+  font-size: 4rem;
   font-style: solid;
-  margin-left: 42rem;
+  margin-left: 8rem;
   text-shadow: black 0.1em 0.1em 0.2em;
 }
 
@@ -35,14 +35,13 @@
   color: white;
   font-weight: 200;
   font-family: "Montserrat", sans-serif;
-  font-size: 2rem;
+  font-size: 2.2rem;
 
   text-shadow: black 0.3em 0.2em 0.3em;
   position: absolute;
-  margin-top: 16rem;
-  text-align: center;
-  align-items: center;
-  margin-left: 28rem;
+  margin-top: 20rem;
+
+  margin-left: 8rem;
 }
 
 .header-button-More {
@@ -51,7 +50,7 @@
   border: none;
   font-family: "Montserrat", sans-serif;
   font-size: 2rem;
-  margin-top: 23rem;
+  margin-top: 30rem;
   font-weight: 200;
   position: absolute;
   text-align: center;
@@ -74,11 +73,11 @@
 }
 
 .header-logoLetrasAmarillo {
-  height: 33rem;
-  margin-left: -15rem;
+  height: 28rem;
+  margin-left: -13rem;
 
   margin-right: 2rem;
-  margin-top: 23rem;
+  margin-top: 28rem;
   position: absolute;
 }
 
