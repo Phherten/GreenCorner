@@ -138,3 +138,12 @@ a:hover {
 #li-buscador {
   list-style: none;
 }
+@media (max-width: 768px) {
+  .collapse-menu {
+    position: absolute;
+    margin-top: 17rem;
+    background-color: #85988986;
+    margin-left: -1rem;
+    margin-right: 5;
+  }
+}

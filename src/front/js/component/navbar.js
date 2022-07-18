@@ -143,7 +143,7 @@ export const Navbar = () => {
                 <img src={logo} className="navbar-logo" />
               </a>
             </div>
-            <div className="navbar-collapse collapse w-100 order-1 order-lg-1 dual-collapse2">
+            <div className="navbar-collapse collapse w-100 order-1 order-lg-1 dual-collapse2 collapse-menu">
               <ul className="navbar-nav me-auto">
                 <li>
                   <Link to={"/interior"}>

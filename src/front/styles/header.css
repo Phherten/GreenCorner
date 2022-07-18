@@ -3,7 +3,7 @@
 .header-background {
   margin: 0;
   padding: 0;
-  margin-top: -6.25rem;
+  margin-top: -6rem;
   box-shadow: 0 25px 25px 0 rgba(0, 0, 0, 0.15);
   background-size: cover;
   margin-bottom: 5rem;
@@ -22,7 +22,7 @@
 
 .header-title {
   color: #ffe175;
-  margin-top: 13rem;
+  margin-top: 14rem;
   font-family: "Montserrat", sans-serif;
   position: absolute;
   font-size: 4rem;
@@ -37,9 +37,9 @@
   font-family: "Montserrat", sans-serif;
   font-size: 2.2rem;
 
-  text-shadow: black 0.3em 0.2em 0.3em;
+  text-shadow: black 0.4em 0.3em 0.4em;
   position: absolute;
-  margin-top: 20rem;
+  margin-top: 22rem;
 
   margin-left: 8rem;
 }
@@ -88,19 +88,28 @@
 @media (max-width: 768px) {
   .header-title {
     margin-top: 8rem;
-
-    font-size: 2rem;
-
-    margin-left: 4rem;
+    margin-left: 1rem;
+    font-size: 3rem;
+    align-items: center;
+    text-align: center;
   }
 
   .header-paragrap {
+    font-size: 2.2rem;
+    margin-left: 2rem;
+    margin-right: 2.5rem;
+    margin-top: 16rem;
+    align-items: center;
+    text-align: center;
+  }
+  .header-logoLetrasAmarillo {
     display: none;
-    font-size: 1.6rem;
-    margin-left: 5rem;
-    margin-right: 5rem;
+  }
+  .header-background {
+    width: 100%;
   }
   .header-button-More {
+    margin-top: 40rem;
     font-size: 1.3rem;
   }
 }
