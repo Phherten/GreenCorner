@@ -3,7 +3,7 @@ This module takes care of starting the API Server, Loading the DB and Adding the
 """
 from flask import Flask, request, jsonify, url_for, Blueprint, send_from_directory
 
-from api.models import db, Plagas, InfoPlant, User, Plant
+from api.models import db, Plagas, InfoPlant, User, Plant, Riego
 
 import json 
 from api.utils import generate_sitemap, APIException
@@ -188,3 +188,21 @@ def sendNotification():
     return response.json()
 
     sendNotification('Mensaje mandado correctamente', '✅')
+
+
+
+@api.route('/add_notificacion_telegram', methods = ['POST'])
+def addNotificacion():
+    request_body = request.get_json()
+    print(request_body)
+    riego = Riego
+
+    riego = Riego(
+        texto = request_body['texto'],
+        id_chat = request_body['id_chat'],
+        fecha_riego = request_body['fecha_riego'],
+
+            )
+    riego.save()
+    return "Usuario registrado"
+   

@@ -174,8 +174,10 @@ class User(db.Model):
     second_name = db.Column(db.String(80), unique=False, nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(80), unique=False, nullable=False)
+    chat_id = db.Column(db.String(80), unique=True, nullable=True)
     is_active = db.Column(db.Boolean(), unique=False, nullable=False)
-    plant = db.relationship(Plant)
+    plant = db.relationship("Plant")
+    riego = db.relationship("Riego", backref="user", lazy=True)
 
     def __repr__(self):
         return f'<User {self.email}>'
@@ -207,5 +209,26 @@ class User(db.Model):
     @staticmethod
     def get_by_email(email):
         return User.query.filter_by(email = email).first()
+
+
+class Riego(db.Model):
+    __tablename__="riego"
+    id = db.Column(db.Integer, primary_key=True)
+    texto = db.Column(db.String(250),unique=False, nullable=False)
+    id_chat = db.Column(db.String(80), db.ForeignKey('user.chat_id'))
+    fecha_riego = db.Column(db.DateTime)
+
+    def serialize(self):
+        return {
+            "id": self.id,
+            "texto": self.texto,
+            "chat_id": self.id_chat,
+            "fecha_riego": self.fecha_riego,
+            }
+        
+    def save(self):
+        if not self.id:
+            db.session.add(self)
+        db.session.commit()
       
     
