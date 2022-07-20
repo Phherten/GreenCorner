@@ -82,7 +82,10 @@ export const CardColeccion = (props) => {
           </div>
         </Link>
       </div>
-      <ModalEditarAlias estado={store.modal.estado}></ModalEditarAlias>
+      <ModalEditarAlias
+        estado={store.modal.estado}
+        callback={props.callback}
+      ></ModalEditarAlias>
     </div>
   );
 };

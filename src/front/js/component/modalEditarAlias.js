@@ -35,6 +35,7 @@ export const ModalEditarAlias = (props) => {
                     button: "Aceptar",
                     timer: "1600",
                   }),
+                  props.callback(),
                   actions.setModal(false, "", 0)
                 )}
               >

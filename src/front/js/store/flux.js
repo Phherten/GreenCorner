@@ -294,6 +294,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         fetch(process.env.BACKEND_URL + "/api/user_plants", requestOptions)
           .then((response) => response.json())
           .then((result) => {
+            console.log(result);
             setStore({ user_plants: result });
           })
           .catch((error) => console.log("error", error));
