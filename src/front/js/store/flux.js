@@ -39,7 +39,6 @@ const getState = ({ getStore, getActions, setStore }) => {
         setStore({
           modal: { estado: estado, nombre: nombre, id: id },
         });
-        console.log(store.modal);
       },
 
       resetBusqueda: () => {
@@ -298,6 +297,10 @@ const getState = ({ getStore, getActions, setStore }) => {
             setStore({ user_plants: result });
           })
           .catch((error) => console.log("error", error));
+      },
+
+      updatePlantAlias: (alias, plant_id) => {
+        console.log("Updating plant " + plant_id + " with alias " + alias);
       },
     },
   };
