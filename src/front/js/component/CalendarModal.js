@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../store/appContext";
 import { Button, Modal } from "react-bootstrap";
 import "../../styles/CalendarModal.css";
+import "../../styles/cardColeccion1.css";
 
 import {
   signInToGoogle,
@@ -95,13 +96,15 @@ export const CalendarModal = (props) => {
 
   return (
     <>
-      <Button
-        className="btn-secondary boton"
-        variant="primary"
-        onClick={(e) => handleShow(e)}
-      >
-        <h5 className="p-1 pb-0"> Notificar con Calendar</h5>
-      </Button>
+      <div className="boton-calendar-privada">
+        <Button
+          className=" btn btn-secondary boton"
+          variant="primary"
+          onClick={(e) => handleShow(e)}
+        >
+          Notificar con Calendar
+        </Button>
+      </div>
 
       <Modal show={show} onHide={(e) => handleClose(e)}>
         <Modal.Header closeButton>

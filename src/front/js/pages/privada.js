@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../store/appContext";
-import { CardColeccion } from "../component/cardColeccion";
+import { CardColeccion1 } from "../component/cardColeccion1";
 import "../../styles/home.css";
 import "../../styles/privada.css";
 import { HomeMediaPage } from "../component/homeMediaPage";
@@ -76,12 +76,11 @@ export const Privada = () => {
                 </>
               ) : (
                 <>
-                  <h1>Mis plantas</h1>
                   {store.user_plants.map((plant, index) => {
                     let dias_por_regar = calculateDays(plant);
 
                     return (
-                      <CardColeccion
+                      <CardColeccion1
                         name={plant.info_plant.nombre_comun}
                         alias={plant.alias}
                         id={plant.info_plant.id}
