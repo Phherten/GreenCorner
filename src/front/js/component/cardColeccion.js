@@ -18,22 +18,16 @@ export const CardColeccion = (props) => {
   };
 
   return (
-    <div
-      className="card media-page-tarjetas-interior card-elemento"
-      style={{ width: `17rem` }}
-    >
-      <div>
+    <div className="flex-container">
+      <div className="card-privada">
         <Link to={"/ficha/" + props.id}>
-          <img
-            src={props.img}
-            className="p-0 imagen-card media-page-planta-tarjetas-interior-foto"
-          />
-          <div className="card-body d-flex flex-column justify-content-between">
-            <h2 className="text-center texto-card mt-4">{props.name} </h2>
-            <h3 className="text-center texto-card mt-4">
+          <img src={props.img} className="imagen-card-privada " />
+          <div className="body-card-privada">
+            <h2 className="texto-card-privada ">{props.name} </h2>
+            <h3 className="texto-card-privada ">
               "{props.alias !== "" ? props.alias : "Sin alias"}"
             </h3>
-            <p className="text-center texto-card mt-4" id="card-coleccion">
+            <p className="texto-card-privada " id="card-coleccion1">
               Faltan{" "}
               {props.dias_por_regar > 1
                 ? `${props.dias_por_regar} días`
@@ -42,18 +36,17 @@ export const CardColeccion = (props) => {
             </p>
           </div>
         </Link>
-      </div>
-      <div class="d-grid gap-2 m-3 pt-3">
-        <CalendarModal
-          mostrar={false}
-          id={props.id}
-          diasRiego={props.dias_por_regar}
-          alias={props.alias !== "" ? props.alias : props.name}
-        />
-        <div>
+
+        <div className="boton-telegram-privada">
+          <CalendarModal
+            mostrar={false}
+            id={props.id}
+            diasRiego={props.dias_por_regar}
+            alias={props.alias !== "" ? props.alias : props.name}
+          />
           <button
-            class="btn btn-secondary boton"
-            type="button"
+            class=" btn btn-secondary boton"
+            variant="primary"
             onClick={() =>
               swal({
                 title: "¿Deseas añadir una alerta de riego para esta planta?",
@@ -69,17 +62,17 @@ export const CardColeccion = (props) => {
               })
             }
           >
-            <h5 className="p-1 pb-0">Notificar con Telegram</h5>
+            Notificar con Telegram
           </button>
-
-          <Link onClick={handleDelete}>
-            <div class="d-grid gap-2 m-3 pt-3">
-              <button class="btn btn-secondary boton" type="button">
-                <h5 className="p-1 pb-0">Eliminar</h5>
-              </button>
-            </div>
-          </Link>
         </div>
+
+        <Link onClick={handleDelete}>
+          <div class="boton-eliminar-privada">
+            <button class="btn btn-secondary boton" type="button">
+              Eliminar
+            </button>
+          </div>
+        </Link>
       </div>
     </div>
   );

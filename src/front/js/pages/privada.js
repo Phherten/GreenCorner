@@ -52,7 +52,7 @@ export const Privada = () => {
   return (
     <div style={{ minHeight: "800px" }}>
       <div className="container d-flex mb-xs-1 mb-5 mt-4 justify-content-center">
-        <div className="row d-flex justify-content-center">
+        <div className="row d-flex justify-content-center row-privada">
           {store.permiso ? (
             <>
               {store.user_plants.length === 0 ? (
@@ -76,7 +76,6 @@ export const Privada = () => {
                 </>
               ) : (
                 <>
-                  <h1>Mis plantas</h1>
                   {store.user_plants.map((plant, index) => {
                     let dias_por_regar = calculateDays(plant);
 
