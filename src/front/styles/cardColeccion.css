@@ -1,4 +1,58 @@
-#card-coleccion {
+.flex-container {
+  display: flex;
+}
+
+.card-privada {
+  width: 38rem;
+  height: 19rem;
+  background-color: #e1e4e9;
+  border: none;
+  border-radius: 0.438rem;
+  margin-top: 3.5rem;
+  box-shadow: 5px 5px 10px black !important;
+}
+
+.imagen-card-privada {
+  width: 12rem;
+  height: auto;
+  background-color: transparent;
+  margin-top: -2rem;
+}
+
+.body-card-privada {
+  margin-left: 8rem;
+  margin-top: -12rem;
+  text-align: center;
+}
+
+.boton-eliminar-privada {
+  text-align: center;
+  margin-top: 1.5rem;
+  margin-left: 8rem;
+}
+
+.boton-calendar-privada {
+  width: auto;
+  display: flex;
+  font-size: 17px;
+  padding: 0rem;
+  margin-right: 1rem;
+}
+
+.boton-telegram-privada {
+  width: auto;
+  display: flex;
+  margin-left: 10rem;
+  font-size: 17px;
+  padding: 0rem;
+  margin-top: 0.5rem;
+}
+
+#card-coleccion1 {
   color: black;
   font-size: 1.5rem;
+}
+
+.row-privada > * {
+  width: auto;
 }

@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../store/appContext";
-import { CardColeccion1 } from "../component/cardColeccion1";
+import { CardColeccion } from "../component/cardColeccion";
 import "../../styles/home.css";
 import "../../styles/privada.css";
 import { HomeMediaPage } from "../component/homeMediaPage";
@@ -52,7 +52,7 @@ export const Privada = () => {
   return (
     <div style={{ minHeight: "800px" }}>
       <div className="container d-flex mb-xs-1 mb-5 mt-4 justify-content-center">
-        <div className="row d-flex justify-content-center">
+        <div className="row d-flex justify-content-center row-privada">
           {store.permiso ? (
             <>
               {store.user_plants.length === 0 ? (
@@ -80,7 +80,7 @@ export const Privada = () => {
                     let dias_por_regar = calculateDays(plant);
 
                     return (
-                      <CardColeccion1
+                      <CardColeccion
                         name={plant.info_plant.nombre_comun}
                         alias={plant.alias}
                         id={plant.info_plant.id}

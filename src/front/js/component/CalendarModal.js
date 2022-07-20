@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../store/appContext";
 import { Button, Modal } from "react-bootstrap";
 import "../../styles/CalendarModal.css";
-import "../../styles/cardColeccion1.css";
+import "../../styles/cardColeccion.css";
 
 import {
   signInToGoogle,
