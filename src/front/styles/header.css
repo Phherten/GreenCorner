@@ -84,39 +84,10 @@
 .header-button-More-arrow {
   margin-left: 65%;
 }
-/*
-@media (max-width: 768px) {
-  .header-title {
-    margin-top: 8rem;
-    margin-left: 1rem;
-    font-size: 3rem;
-    align-items: center;
-    text-align: center;
-  }
 
-  .header-paragrap {
-    font-size: 2.2rem;
-    margin-left: 2rem;
-    margin-right: 2.5rem;
-    margin-top: 16rem;
-    align-items: center;
-    text-align: center;
-  }
-  .header-logoLetrasAmarillo {
-    display: none;
-  }
-  .header-background {
-    width: 100%;
-  }
-  .header-button-More {
-    margin-top: 40rem;
-    font-size: 1.3rem;
-  }
-}
-*/
 /*movil*/
 /*Portrait*/
-/*Default*/
+
 @media (max-width: 480px) and (orientation: portrait) {
   .header-title {
     margin-top: 8rem;
@@ -147,7 +118,7 @@
 }
 
 /*movil*/
-/*Portrait*/
+
 /*Default*/
 @media (max-width: 320px) and (orientation: portrait) {
   .header-title {
@@ -208,25 +179,3 @@
   }
 }
 /*fin movil*/
-
-/*Tablet*/
-/*Portrait
-@media (max-width: 1024px) and (orientation: portrait) {
-  .header-title {
-    margin-left: 8rem;
-  }
-
-  .header-paragrap {
-  }
-  .header-logoLetrasAmarillo {
-  }
-  .header-background {
-  }
-  .header-button-More {
-  }
-}
-
-/*landscape
-@media (min0-width: 991.98px) and (max-width: 1199.98px) and (orientation: landscape) {
-}
-/*fin tablet*/

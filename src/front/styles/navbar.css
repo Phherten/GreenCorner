@@ -141,9 +141,32 @@ a:hover {
 @media (max-width: 768px) {
   .collapse-menu {
     position: absolute;
-    margin-top: 17rem;
-    background-color: #85988986;
+    margin-top: 25rem;
+    background-color: #859889c7;
     margin-left: -1rem;
     margin-right: 5;
+  }
+
+  .navbar-search-button {
+    color: transparent;
+    background-color: rgba(98, 98, 98, 0.665);
+    text-decoration: none;
+    color: white;
+    margin-left: 1rem;
+    border: none;
+  }
+  .navbar-user-button {
+    text-decoration: none;
+
+    margin-left: 1rem;
+
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .navbar-button-user-login {
+    color: rgb(255, 255, 255);
+    background-color: rgba(98, 98, 98, 0.665);
+    border: none;
   }
 }
