@@ -145,6 +145,36 @@
     font-size: 1.3rem;
   }
 }
+
+/*movil*/
+/*Portrait*/
+/*Default*/
+@media (max-width: 320px) and (orientation: portrait) {
+  .header-title {
+    margin-left: 4rem;
+    font-size: 3rem;
+    margin-top: 6rem;
+    font-size: 2.5rem;
+    width: 100%;
+  }
+
+  .header-paragrap {
+    font-size: 2rem;
+    margin-left: 4rem;
+    margin-right: 2.5rem;
+    margin-top: 15rem;
+    width: 100%;
+  }
+
+  .header-background {
+    width: 145%;
+  }
+  .header-button-More {
+    margin-top: 45rem;
+    font-size: 1.4rem;
+    margin-left: -10rem;
+  }
+}
 /*landscape*/
 @media (min-width: 320px) and (max-width: 480px) and (orientation: landscape) {
   .header-title {
@@ -178,3 +208,25 @@
   }
 }
 /*fin movil*/
+
+/*Tablet*/
+/*Portrait
+@media (max-width: 1024px) and (orientation: portrait) {
+  .header-title {
+    margin-left: 8rem;
+  }
+
+  .header-paragrap {
+  }
+  .header-logoLetrasAmarillo {
+  }
+  .header-background {
+  }
+  .header-button-More {
+  }
+}
+
+/*landscape
+@media (min0-width: 991.98px) and (max-width: 1199.98px) and (orientation: landscape) {
+}
+/*fin tablet*/
