@@ -169,7 +169,7 @@ export const Navbar = () => {
                 <li>
                   <Link to={"/cuidados"}>
                     <a className="nav-link navbar-button" href="#">
-                      Cuidados
+                      Plagas
                     </a>
                   </Link>
                 </li>
