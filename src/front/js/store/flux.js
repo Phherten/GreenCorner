@@ -173,6 +173,33 @@ const getState = ({
                     .catch((error) => console.log("error", error));
             },
 
+            add_notificacion_telegram: (msg, intervalo, fecha) => {
+                var myHeaders = new Headers();
+                myHeaders.append(
+                    "Authorization",
+                    `Bearer ${sessionStorage.getItem("token")}`
+                );
+                myHeaders.append("Content-Type", "application/json");
+
+                var raw = JSON.stringify({
+                    msg: msg,
+                    intervalo: intervalo,
+                    fecha: fecha,
+                });
+
+                var requestOptions = {
+                    method: "POST",
+                    headers: myHeaders,
+                    body: raw,
+                    redirect: "follow",
+                };
+
+                fetch(process.env.BACKEND_URL + "/api/aviso_telegram", requestOptions)
+                    .then((response) => response.text())
+                    .then((result) => console.log(result))
+                    .catch((error) => console.log("error", error));
+            },
+
             privado: () => {
                 var myHeaders = new Headers();
                 myHeaders.append(
