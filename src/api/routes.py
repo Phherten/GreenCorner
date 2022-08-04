@@ -245,6 +245,25 @@ def get_chat_id():
 
     return {"chat_id":chat_id}
 
+@api.route('/save_chat_id', methods = ['POST'])
+@jwt_required()
+def save_chat_id():
+    
+    data = request.get_json()
+    email = get_jwt_identity()
+    user = User.get_by_email(email)
+    user.chat_id = data["chat_id"]
+
+    
+
+    db.session.commit()
+
+    
+
+    
+
+    return "chat id guardado"
+
 
 
 

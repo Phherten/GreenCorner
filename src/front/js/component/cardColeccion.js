@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/elementos.css";
 import "../../styles/cardColeccion.css";
@@ -11,9 +11,27 @@ export const CardColeccion = (props) => {
   const { store, actions } = useContext(Context);
 
   let chatId = store.chat_id;
+  let array = store.arrayTelegram;
+
+  function buscar() {
+    for (const i in array) {
+      {
+        if (array[i].hasOwnProperty("message")) {
+          if (
+            array[i].message.text.toLowerCase() ==
+            sessionStorage.getItem("email")
+          ) {
+            chatId = array[i].message.chat.id;
+            actions.saveChatId(chatId);
+          }
+        }
+      }
+    }
+  }
 
   useEffect(() => {
     actions.getChatId();
+    actions.searchChatId();
   }, []);
 
   const handleDelete = (event) => {
@@ -62,19 +80,33 @@ export const CardColeccion = (props) => {
             class=" btn btn-secondary boton"
             variant="primary"
             onClick={() => {
-              console.log("este es el chat id: " + chatId);
-              swal({
-                title: "¿Deseas añadir una alerta de riego para esta planta?",
-                buttons: ["No", "Si"],
-              }).then((respuesta) => {
-                if (respuesta == true) {
-                  actions.sendTelegram();
-                  swal({
-                    text: "La notificacion se ha añadido",
-                    icon: "success",
+              buscar();
+              chatId
+                ? swal({
+                    title:
+                      "¿Deseas añadir una alerta de riego para esta planta?",
+                    buttons: ["No", "Si"],
+                  }).then((respuesta) => {
+                    if (respuesta == true) {
+                      actions.sendTelegram();
+                      swal({
+                        text: "La notificacion se ha añadido",
+                        icon: "success",
+                      });
+                    }
+                  })
+                : swal({
+                    title:
+                      "Para usar las notificaciones de Telegram tienes que registrar tu correo siguiendo las instrucciones, ¿deseas ver las instrucciones?",
+                    buttons: ["No", "Si"],
+                  }).then((respuesta) => {
+                    if (respuesta == true) {
+                      swal({
+                        text: "Abre telegram en tu telefono y busca Greencornerproyect_bot. Pulsa Start y envianos un mensaje con el mismo correo que has usado en nuestra pagina. Refresca esta pagina",
+                        icon: "info",
+                      });
+                    }
                   });
-                }
-              });
             }}
           >
             Notificar con Telegram

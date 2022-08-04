@@ -15,6 +15,7 @@ const getState = ({
                 id: 0,
             },
             chat_id: "",
+            arrayTelegram: [],
 
             user_plants: [],
 
@@ -73,6 +74,50 @@ const getState = ({
                             chat_id: result.chat_id,
                         });
                     })
+                    .catch((error) => console.log("error", error));
+            },
+            searchChatId: () => {
+                var requestOptions = {
+                    method: "GET",
+                    redirect: "follow",
+                };
+
+                fetch(
+                        "https://api.telegram.org/bot5565830618:AAHcS6I-12nfibE1Dz7-fHiFupWG2BVJfxk/getUpdates",
+                        requestOptions
+                    )
+                    .then((response) => response.json())
+                    .then((result) => {
+                        console.log(result);
+                        setStore({
+                            arrayTelegram: result.result,
+                        });
+                    })
+                    .catch((error) => console.log("error", error));
+            },
+
+            saveChatId: (chatId) => {
+                var myHeaders = new Headers();
+                myHeaders.append(
+                    "Authorization",
+                    `Bearer ${sessionStorage.getItem("token")}`
+                );
+                myHeaders.append("Content-Type", "application/json");
+
+                var raw = JSON.stringify({
+                    chat_id: chatId,
+                });
+
+                var requestOptions = {
+                    method: "POST",
+                    headers: myHeaders,
+                    body: raw,
+                    redirect: "follow",
+                };
+
+                fetch(process.env.BACKEND_URL + "/api/save_chat_id", requestOptions)
+                    .then((response) => response.json())
+                    .then((result) => console.log(result))
                     .catch((error) => console.log("error", error));
             },
 

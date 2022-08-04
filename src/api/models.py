@@ -229,6 +229,7 @@ class User(db.Model):
         self.second_name = second_name
         self.email = email
         self.password = password
+        self.chat_id = chat_id
     
     "SELECT * FROM info_plant WHERE nombre_cientifico = 'nomber_cientifico' LIMIT 1"
     @staticmethod
