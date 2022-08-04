@@ -14,6 +14,7 @@ const getState = ({
                 nombre: "",
                 id: 0,
             },
+            chat_id: "",
 
             user_plants: [],
 
@@ -46,6 +47,33 @@ const getState = ({
                         id: id,
                     },
                 });
+            },
+
+            getChatId: () => {
+                var myHeaders = new Headers();
+                myHeaders.append(
+                    "Authorization",
+                    `Bearer ${sessionStorage.getItem("token")}`
+                );
+
+                var raw = "";
+
+                var requestOptions = {
+                    method: "POST",
+                    headers: myHeaders,
+                    body: raw,
+                    redirect: "follow",
+                };
+
+                fetch(process.env.BACKEND_URL + "/api/get_chat_id", requestOptions)
+                    .then((response) => response.json())
+                    .then((result) => {
+                        console.log(result.chat_id);
+                        setStore({
+                            chat_id: result.chat_id,
+                        });
+                    })
+                    .catch((error) => console.log("error", error));
             },
 
             resetBusqueda: () => {
@@ -168,7 +196,7 @@ const getState = ({
                 };
 
                 fetch(process.env.BACKEND_URL + "/api/changePassword/", requestOptions)
-                    .then((response) => response.text())
+                    .then((response) => response.json())
                     .then((result) => console.log(result))
                     .catch((error) => console.log("error", error));
             },

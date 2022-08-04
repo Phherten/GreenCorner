@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/elementos.css";
 import "../../styles/cardColeccion.css";
@@ -9,6 +9,12 @@ import swal from "sweetalert";
 
 export const CardColeccion = (props) => {
   const { store, actions } = useContext(Context);
+
+  let chatId = store.chat_id;
+
+  useEffect(() => {
+    actions.getChatId();
+  }, []);
 
   const handleDelete = (event) => {
     event.preventDefault();
@@ -55,7 +61,8 @@ export const CardColeccion = (props) => {
           <button
             class=" btn btn-secondary boton"
             variant="primary"
-            onClick={() =>
+            onClick={() => {
+              console.log("este es el chat id: " + chatId);
               swal({
                 title: "¿Deseas añadir una alerta de riego para esta planta?",
                 buttons: ["No", "Si"],
@@ -67,8 +74,8 @@ export const CardColeccion = (props) => {
                     icon: "success",
                   });
                 }
-              })
-            }
+              });
+            }}
           >
             Notificar con Telegram
           </button>

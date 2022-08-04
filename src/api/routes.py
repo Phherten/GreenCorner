@@ -229,4 +229,23 @@ def aviso_telegram():
 
     return "Notificacion añadida", 200
 
+
+@api.route('/get_chat_id', methods = ['POST'])
+@jwt_required()
+def get_chat_id():
+    
+
+    email = get_jwt_identity()
+    user = User.get_by_email(email)
+    chat_id = user.chat_id
+
+    
+
+    
+
+    return {"chat_id":chat_id}
+
+
+
+
     
