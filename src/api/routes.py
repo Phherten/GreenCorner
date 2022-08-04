@@ -221,7 +221,7 @@ def aviso_telegram():
         msg=data["msg"],
         chat_id= user.chat_id,
         intervalo=data["intervalo"],
-        fecha = data["fecha"],
+        fecha = data["fecha"]
         
     )
 

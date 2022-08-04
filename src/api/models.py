@@ -167,13 +167,9 @@ class Riego(db.Model):
     __tablename__ = "riego"
     id = db.Column(db.Integer, primary_key=True)
     msg =  db.Column(db.String(80), unique=False, nullable=False)
-    
     chat_id = db.Column(db.Integer, unique=False, nullable=False)
-
     intervalo = db.Column(db.Integer, unique=False, nullable=False)
-    
-    
-    fecha = db.Column(db.DateTime, unique=False, nullable=False)
+    fecha = db.Column(db.Date, unique=False, nullable=False)
     
 
 
@@ -182,6 +178,7 @@ class Riego(db.Model):
             "id": self.id,
             "msg": self.msg,
             "chat_id": self.chat_id,
+            "intervalo":self.intervalo,
             "fecha": self.fecha
             # do not serialize the password, its a security breach
         }
