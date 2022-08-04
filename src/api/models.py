@@ -163,18 +163,45 @@ class InfoPlant(db.Model):
     def get_by_id(id):
         return InfoPlant.query.filter_by(id=id).first()
         
+class Riego(db.Model):
+    __tablename__ = "riego"
+    id = db.Column(db.Integer, primary_key=True)
+    msg =  db.Column(db.String(80), unique=False, nullable=False)
+    # chat_id = db.Column(db.Integer, db.ForeignKey('user.chat_id'))
+    chat_id = db.Column(db.Integer, db.ForeignKey('user.chat_id'),
+        nullable=False)
+    fecha = db.Column(db.DateTime, unique=False, nullable=False)
     
+
+
+    def serialize(self):
+        return {
+            "id": self.id,
+            "msg": self.msg,
+            "chat_id": self.chat_id,
+            "fecha": self.fecha
+            # do not serialize the password, its a security breach
+        }
+    
+    def save(self):
+        if not self.id:
+            db.session.add(self)
+        db.session.commit()
 
 
 
 
 class User(db.Model):
+    __tablename__ = "user"
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(80), unique=False, nullable=False)
     second_name = db.Column(db.String(80), unique=False, nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
+    chat_id = db.Column(db.Integer, unique=True, nullable=True)
     password = db.Column(db.String(80), unique=False, nullable=False)
     is_active = db.Column(db.Boolean(), unique=False, nullable=False)
+    # riego = db.relationship(Riego)
+    riego = db.relationship('Riego', backref='user', lazy=True)
     plant = db.relationship(Plant)
 
     def __repr__(self):

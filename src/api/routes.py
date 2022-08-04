@@ -141,7 +141,8 @@ def iniciar_sesion():
             return jsonify ({
                 "duracion": tiempo.total_seconds(),
                 "mensaje": "Inicio de sesion correcto",
-                "token": acceso
+                "token": acceso,
+                "email": request_body['email']
             })
         else:
             return jsonify({"error": "La contraseña no es correcta"})
