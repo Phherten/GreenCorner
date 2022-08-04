@@ -169,6 +169,9 @@ class Riego(db.Model):
     msg =  db.Column(db.String(80), unique=False, nullable=False)
     
     chat_id = db.Column(db.Integer, unique=False, nullable=False)
+
+    intervalo = db.Column(db.Integer, unique=False, nullable=False)
+    
     
     fecha = db.Column(db.DateTime, unique=False, nullable=False)
     

@@ -220,6 +220,7 @@ def aviso_telegram():
     riego = Riego(
         msg=data["msg"],
         chat_id= user.chat_id,
+        intervalo=data["intervalo"],
         fecha = data["fecha"],
         
     )
