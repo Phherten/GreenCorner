@@ -12,7 +12,20 @@ export const CardColeccion = (props) => {
 
   let chatId = store.chat_id;
   let array = store.arrayTelegram;
+  let hoy = new Date();
 
+  function sumarDias(fecha, dias) {
+    fecha.setDate(fecha.getDate() + dias);
+    return fecha.toLocaleDateString();
+  }
+
+  function guardarNotificacion() {
+    actions.add_notificacion_telegram(
+      "Riega tu " + props.alias,
+      4,
+      sumarDias(hoy, props.dias_por_regar)
+    );
+  }
   function buscar() {
     for (const i in array) {
       {
@@ -81,6 +94,7 @@ export const CardColeccion = (props) => {
             variant="primary"
             onClick={() => {
               buscar();
+
               chatId
                 ? swal({
                     title:
@@ -88,7 +102,8 @@ export const CardColeccion = (props) => {
                     buttons: ["No", "Si"],
                   }).then((respuesta) => {
                     if (respuesta == true) {
-                      actions.sendTelegram();
+                      guardarNotificacion();
+
                       swal({
                         text: "La notificacion se ha añadido",
                         icon: "success",
