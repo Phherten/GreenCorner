@@ -167,9 +167,9 @@ class Riego(db.Model):
     __tablename__ = "riego"
     id = db.Column(db.Integer, primary_key=True)
     msg =  db.Column(db.String(80), unique=False, nullable=False)
-    # chat_id = db.Column(db.Integer, db.ForeignKey('user.chat_id'))
-    chat_id = db.Column(db.Integer, db.ForeignKey('user.chat_id'),
-        nullable=False)
+    
+    chat_id = db.Column(db.Integer, unique=False, nullable=False)
+    
     fecha = db.Column(db.DateTime, unique=False, nullable=False)
     
 
@@ -200,8 +200,8 @@ class User(db.Model):
     chat_id = db.Column(db.Integer, unique=True, nullable=True)
     password = db.Column(db.String(80), unique=False, nullable=False)
     is_active = db.Column(db.Boolean(), unique=False, nullable=False)
-    # riego = db.relationship(Riego)
-    riego = db.relationship('Riego', backref='user', lazy=True)
+    
+    
     plant = db.relationship(Plant)
 
     def __repr__(self):
