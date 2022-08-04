@@ -102,7 +102,8 @@ export const CardColeccion = (props) => {
                   }).then((respuesta) => {
                     if (respuesta == true) {
                       swal({
-                        text: "Abre telegram en tu telefono y busca Greencornerproyect_bot. Pulsa Start y envianos un mensaje con el mismo correo que has usado en nuestra pagina. Refresca esta pagina",
+                        title:
+                          "Abre telegram en tu telefono y busca Greencornerproyect_bot. Pulsa Start y envianos un mensaje con el mismo correo que has usado en nuestra pagina. Refresca esta pagina",
                         icon: "info",
                       });
                     }
