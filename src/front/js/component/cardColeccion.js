@@ -134,6 +134,7 @@ export const CardColeccion = (props) => {
                   title: "La notificacion se ha eliminado",
                   icon: "error",
                 });
+                setNotificiacionTelegram("No");
               }}
             >
               Eliminar Notificacion
@@ -152,6 +153,7 @@ export const CardColeccion = (props) => {
                     }).then((respuesta) => {
                       if (respuesta == true) {
                         guardarNotificacion();
+                        setNotificiacionTelegram("Si");
 
                         swal({
                           text: "La notificacion se ha añadido",
