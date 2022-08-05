@@ -182,13 +182,33 @@ def sendNotification():
     request_body = request.get_json()
 
     bot_token = "5565830618:AAHcS6I-12nfibE1Dz7-fHiFupWG2BVJfxk"
-    bot_chatID = "120625919"
+    bot_chatID = ""
     msg = request_body['msg']
     send_text = 'https://api.telegram.org/bot' + bot_token + '/sendMessage?chat_id=' + bot_chatID + '&parse_mode=Markdown&text=' + msg
     response = requests.get(send_text)
     return response.json()
 
     sendNotification('Mensaje mandado correctamente', '✅')
+
+@api.route('/telegram', methods=['GET'])
+def telegram():
+    current_date=datetime.date.today()
+    riegos=Riego.query.filter_by(fecha=current_date)
+    print(riegos.count())
+    for riego in riegos:
+        bot_token = "5565830618:AAHcS6I-12nfibE1Dz7-fHiFupWG2BVJfxk"
+        bot_chatID = riego.chat_id
+        msg = riego.msg
+        send_text = f'https://api.telegram.org/bot{bot_token}/sendMessage?chat_id={bot_chatID}&parse_mode=Markdown&text={msg}'
+        response = requests.get(send_text)
+        riego.fecha = current_date + datetime.timedelta(days=riego.intervalo)
+        db.session.commit()
+    return jsonify({"Message":"ok"}),200
+
+    
+
+
+
 
 @api.route('/plant/edit', methods=['POST'])
 @jwt_required()
@@ -266,5 +286,3 @@ def save_chat_id():
 
 
 
-
-    
