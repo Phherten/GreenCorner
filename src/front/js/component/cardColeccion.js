@@ -21,8 +21,8 @@ export const CardColeccion = (props) => {
 
   function guardarNotificacion() {
     actions.add_notificacion_telegram(
-      "Riega tu " + props.alias,
-      4,
+      "Riega tu " + (props.alias ? props.alias : props.name),
+      props.dias_por_regar,
       sumarDias(hoy, props.dias_por_regar)
     );
   }
