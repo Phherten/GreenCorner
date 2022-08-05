@@ -123,7 +123,7 @@ export const CardColeccion = (props) => {
           />
           {notificacionTelegram == "Si" ? (
             <button
-              className=" btn btn-secondary boton"
+              className=" btn btn-danger boton"
               variant="primary"
               onClick={() => {
                 actions.deleteTelegram(
