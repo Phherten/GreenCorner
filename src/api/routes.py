@@ -142,7 +142,8 @@ def iniciar_sesion():
                 "duracion": tiempo.total_seconds(),
                 "mensaje": "Inicio de sesion correcto",
                 "token": acceso,
-                "email": request_body['email']
+                "email": request_body['email'],
+                "chat_id":user.chat_id
             })
         else:
             return jsonify({"error": "La contraseña no es correcta"})
@@ -194,6 +195,7 @@ def sendNotification():
 def telegram():
     current_date=datetime.date.today()
     riegos=Riego.query.filter_by(fecha=current_date)
+    
     print(riegos.count())
     for riego in riegos:
         bot_token = "5565830618:AAHcS6I-12nfibE1Dz7-fHiFupWG2BVJfxk"
@@ -204,6 +206,29 @@ def telegram():
         riego.fecha = current_date + datetime.timedelta(days=riego.intervalo)
         db.session.commit()
     return jsonify({"Message":"ok"}),200
+
+
+@api.route('/delete_telegram', methods=['DELETE'])
+def delete_telegram():
+    
+    body = request.get_json()
+    riego=Riego.query.filter_by(chat_id=body["chat_id"],msg=body["msg"]).first()
+    db.session.delete(riego)
+    db.session.commit()
+    
+   
+    return jsonify({"Message":"Riego eliminado"}),200
+
+@api.route('/consultar_telegram', methods=['POST'])
+def consultar_telegram():
+    
+    body = request.get_json()
+    consulta=Riego.query.filter_by(chat_id=body["chat_id"],msg=body["msg"]).first()
+    if consulta is None:
+        return jsonify({"Message":"No"}),200
+    else:
+        return jsonify({"Message":"Si"}),200
+    
 
     
 

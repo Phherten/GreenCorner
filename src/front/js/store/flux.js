@@ -176,6 +176,7 @@ const getState = ({
                         });
                         sessionStorage.setItem("token", result.token);
                         sessionStorage.setItem("email", result.email);
+                        sessionStorage.setItem("chat_id", result.chat_id);
                     })
                     .then(() => console.log(store.token))
                     // .then((data) => console.log(data))
@@ -183,11 +184,57 @@ const getState = ({
                     // .then(console.log(store.token))
                     .catch((error) => console.log("error", error));
             },
+            deleteTelegram: (chat_id, msg) => {
+                var myHeaders = new Headers();
+                myHeaders.append("Content-Type", "application/json");
+
+                var raw = JSON.stringify({
+                    chat_id: chat_id,
+                    msg: msg,
+                });
+
+                var requestOptions = {
+                    method: "DELETE",
+                    headers: myHeaders,
+                    body: raw,
+                    redirect: "follow",
+                };
+
+                fetch(process.env.BACKEND_URL + "/api/delete_telegram", requestOptions)
+                    .then((response) => response.json())
+                    .then((result) => console.log(result))
+                    .catch((error) => console.log("error", error));
+            },
+            consultarTelegram: (chat_id, msg) => {
+                var myHeaders = new Headers();
+                myHeaders.append("Content-Type", "application/json");
+
+                var raw = JSON.stringify({
+                    chat_id: chat_id,
+                    msg: msg,
+                });
+
+                var requestOptions = {
+                    method: "POST",
+                    headers: myHeaders,
+                    body: raw,
+                    redirect: "follow",
+                };
+
+                fetch(
+                        process.env.BACKEND_URL + "/api/consultar_telegram",
+                        requestOptions
+                    )
+                    .then((response) => response.json())
+                    .then((result) => console.log(result))
+                    .catch((error) => console.log("error", error));
+            },
 
             logout: () => {
                 const store = getStore();
                 sessionStorage.removeItem("token");
                 sessionStorage.removeItem("email");
+                sessionStorage.removeItem("chat_id");
                 store.permiso = false;
             },
 
