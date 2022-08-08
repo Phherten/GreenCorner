@@ -163,18 +163,45 @@ class InfoPlant(db.Model):
     def get_by_id(id):
         return InfoPlant.query.filter_by(id=id).first()
         
+class Riego(db.Model):
+    __tablename__ = "riego"
+    id = db.Column(db.Integer, primary_key=True)
+    msg =  db.Column(db.String(80), unique=False, nullable=False)
+    chat_id = db.Column(db.Integer, unique=False, nullable=False)
+    intervalo = db.Column(db.Integer, unique=False, nullable=False)
+    fecha = db.Column(db.Date, unique=False, nullable=False)
     
+
+
+    def serialize(self):
+        return {
+            "id": self.id,
+            "msg": self.msg,
+            "chat_id": self.chat_id,
+            "intervalo":self.intervalo,
+            "fecha": self.fecha
+            # do not serialize the password, its a security breach
+        }
+    
+    def save(self):
+        if not self.id:
+            db.session.add(self)
+        db.session.commit()
 
 
 
 
 class User(db.Model):
+    __tablename__ = "user"
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(80), unique=False, nullable=False)
     second_name = db.Column(db.String(80), unique=False, nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
+    chat_id = db.Column(db.Integer, unique=True, nullable=True)
     password = db.Column(db.String(80), unique=False, nullable=False)
     is_active = db.Column(db.Boolean(), unique=False, nullable=False)
+    
+    
     plant = db.relationship(Plant)
 
     def __repr__(self):
@@ -202,6 +229,7 @@ class User(db.Model):
         self.second_name = second_name
         self.email = email
         self.password = password
+        self.chat_id = chat_id
     
     "SELECT * FROM info_plant WHERE nombre_cientifico = 'nomber_cientifico' LIMIT 1"
     @staticmethod
