@@ -2,6 +2,11 @@
 .fondo-navbar {
   background-image: url("https://fondosmil.com/fondo/26795.jpg");
 }
+
+.home-navbar {
+  z-index: 1;
+}
+
 .home-navbar {
   background-color: transparent;
 }
@@ -31,12 +36,13 @@
   text-align: center;
   color: rgb(255, 255, 255);
   font-family: "Montserrat", sans-serif;
-  font-size: 20px;
+  font-size: 22px;
   outline: none;
   border: none;
   display: inline-block;
   text-decoration: none;
   font-weight: 300;
+  text-shadow: black 0.2em 0.2em 0.2em;
 }
 
 .navbar-button:hover {
@@ -131,4 +137,36 @@ a:hover {
 
 #li-buscador {
   list-style: none;
+}
+@media (max-width: 768px) {
+  .collapse-menu {
+    position: absolute;
+    margin-top: 25rem;
+    background-color: #859889c7;
+    margin-left: -1rem;
+    margin-right: 5;
+  }
+
+  .navbar-search-button {
+    color: transparent;
+    background-color: rgba(98, 98, 98, 0.665);
+    text-decoration: none;
+    color: white;
+    margin-left: 1rem;
+    border: none;
+  }
+  .navbar-user-button {
+    text-decoration: none;
+
+    margin-left: 1rem;
+
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .navbar-button-user-login {
+    color: rgb(255, 255, 255);
+    background-color: rgba(98, 98, 98, 0.665);
+    border: none;
+  }
 }

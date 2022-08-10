@@ -14,7 +14,7 @@ export const Navbar = () => {
 
   if (store.permiso == true) {
     return (
-      <div className="navbar-font">
+      <div className="navbar-font home-navbar">
         <nav className="navbar navbar-expand-lg home-navbar">
           <div className="container-fluid">
             <div className="order-0">
@@ -70,8 +70,8 @@ export const Navbar = () => {
                 </li>
               </ul>
             </div>
-            <div className="navbar-collapse collapse w-100 order-3">
-              <ul className="navbar-nav ms-auto">
+            <div className="navbar-collapse collapse w-100 order-3 ">
+              <ul className="navbar-nav ms-auto ">
                 <li>
                   <div class="navbar-search-button">
                     <BusadorPlantaPorNombre />
@@ -81,14 +81,14 @@ export const Navbar = () => {
                   <div className="btn-group ">
                     <button
                       type="button"
-                      className="btn btn-secondary navbar-user-button dropdown-toggle"
+                      className="btn btn-secondary navbar-user-button dropdown-toggle r"
                       data-bs-toggle="dropdown"
                       data-bs-display="static"
                       aria-expanded="false"
                     >
                       <i className="fa fa-user"></i>
                     </button>
-                    <ul className="dropdown-menu dropdown-menu-end navbar-user-twobuttons">
+                    <ul className="dropdown-menu dropdown-menu-end navbar-user-twobuttons botons-navbar-search-use">
                       <li>
                         <Link to={"/privada"}>
                           <button
@@ -143,7 +143,7 @@ export const Navbar = () => {
                 <img src={logo} className="navbar-logo" />
               </a>
             </div>
-            <div className="navbar-collapse collapse w-100 order-1 order-lg-1 dual-collapse2">
+            <div className="navbar-collapse collapse w-100 order-1 order-lg-1 dual-collapse2 collapse-menu">
               <ul className="navbar-nav me-auto">
                 <li>
                   <Link to={"/interior"}>
@@ -169,7 +169,7 @@ export const Navbar = () => {
                 <li>
                   <Link to={"/cuidados"}>
                     <a className="nav-link navbar-button" href="#">
-                      Cuidados
+                      Plagas
                     </a>
                   </Link>
                 </li>
@@ -179,9 +179,8 @@ export const Navbar = () => {
                   </a>
                 </li>
               </ul>
-            </div>
-            <div className="navbar-collapse collapse w-100 order-3">
-              <ul className="navbar-nav ms-auto">
+
+              <ul className="navbar-nav ms-auto ">
                 <li>
                   <div class="navbar-search-button">
                     <BusadorPlantaPorNombre />
