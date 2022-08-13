@@ -29,7 +29,7 @@ export const Reset = () => {
         <div className="d-flex flex-column min-vh-100 align-items-center">
           <div className="card p-4 text-light bg-dark cardLogin mb-5 w-lg-25">
             <div className="card-header">
-              <h2>Recuperar Contraseña </h2>
+              <h2>Contraseña</h2>
             </div>
             <div className="card-body w-100">
               <form name="login">
@@ -47,7 +47,7 @@ export const Reset = () => {
                 <div className="form-group mt-3">
                   <input
                     type="button"
-                    value="Enviar Contraseña"
+                    value="Cambiar Contraseña"
                     className="btn bg-secondary boton float-end text-white w-100"
                     name="login-btn"
                     onClick={() => {
