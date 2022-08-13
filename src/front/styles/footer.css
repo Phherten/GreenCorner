@@ -7,9 +7,20 @@
 }
 
 .text-footer-web {
+  margin-left: 1rem;
   text-decoration: none;
   color: #ffe175;
 }
 .text-footer-web:hover {
   text-decoration: none;
+}
+
+.enlaces-footer {
+  display: flex;
+  justify-content: center;
+}
+.texto-enlaces {
+  font-size: medium;
+  color: #ffe175;
+  margin: 1rem;
 }
