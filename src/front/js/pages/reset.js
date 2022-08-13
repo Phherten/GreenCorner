@@ -10,6 +10,8 @@ export const Reset = () => {
   const history = useHistory();
   const { token } = useParams();
   const [pass, setPass] = useState("");
+  const [shown, setShown] = useState(false);
+
   const [show, setShow] = useState(false);
   const localToken = JSON.parse(localStorage.getItem("recuperar"));
 
@@ -37,13 +39,22 @@ export const Reset = () => {
                 <div className="input-group form-group mt-3">
                   <div className="bg-secondary rounded-start"></div>
                   <input
-                    type="password"
-                    className="form-control"
+                    type={shown ? "text" : "password"}
+                    className="form-control input-registro-password"
                     placeholder="Nueva contraseña"
                     onChange={(e) => {
                       setPass(e.target.value);
                     }}
                   />
+                  <button
+                    type="button"
+                    className="btn btn-light"
+                    onClick={() => {
+                      shown ? setShown(false) : setShown(true);
+                    }}
+                  >
+                    <i className="fas fa-eye"></i>
+                  </button>
                 </div>
                 <div className="form-group mt-3">
                   <input

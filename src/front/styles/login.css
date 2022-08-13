@@ -34,6 +34,9 @@
 .input-registro {
   border-radius: 5px !important;
 }
+.input-registro-password {
+  border-radius: 5px 0px 0px 5px !important ;
+}
 .imagen-card {
   -webkit-filter: drop-shadow(5px 5px 5px #222);
   filter: drop-shadow(5px 5px 5px #222);
@@ -55,7 +58,6 @@
 
 .input-group > .form-control {
   width: 250px;
-  border-radius: 5px !important;
 }
 
 /* hola */
