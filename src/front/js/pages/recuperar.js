@@ -19,7 +19,7 @@ export const Recuperar = () => {
     storage = storage.token.substring(265);
     console.log(storage);
     setUrl(
-      "https://3000-phherten-finalproyect-ivnfbpi1v7v.ws-eu51.gitpod.io/reset/" +
+      "https://3000-phherten-greencorner-8058z0qsb1l.ws-eu60.gitpod.io/reset/" +
         storage
     );
   }
@@ -39,7 +39,6 @@ export const Recuperar = () => {
         "service_uvlatvq",
         "green corner",
         form.current,
-        // url,
         "or3vN3YPJ-tAi-TEz"
       )
       .then(
