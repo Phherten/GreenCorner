@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
-import { useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 import Logo from "../../img/Logo_letras_amarillo.png";
@@ -7,6 +7,7 @@ import swal from "sweetalert";
 
 export const Reset = () => {
   const { store, actions } = useContext(Context);
+  const history = useHistory();
   const { token } = useParams();
   const [pass, setPass] = useState("");
   const [show, setShow] = useState(false);
@@ -53,6 +54,7 @@ export const Reset = () => {
                     onClick={() => {
                       actions.resetPass(pass);
                       swal("Contraseña Cambiada");
+                      history.push("/login");
                     }}
                   />
                 </div>
