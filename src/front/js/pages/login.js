@@ -80,7 +80,11 @@ export const Login = () => {
                       shown ? setShown(false) : setShown(true);
                     }}
                   >
-                    <i className="fas fa-eye"></i>
+                    {shown ? (
+                      <i class="fas fa-eye-slash"></i>
+                    ) : (
+                      <i className="fas fa-eye"></i>
+                    )}
                   </button>
                 </div>
 

@@ -13,7 +13,7 @@ export const BusadorPlantaPorNombre = () => {
       <input
         type="text"
         placeholder="Buscar"
-        class="form-control navbar-form-control"
+        className="form-control navbar-form-control"
         onChange={(event) => {
           setIsSearch(!isSearch);
 
