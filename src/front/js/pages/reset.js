@@ -53,7 +53,11 @@ export const Reset = () => {
                       shown ? setShown(false) : setShown(true);
                     }}
                   >
-                    <i className="fas fa-eye"></i>
+                    {shown ? (
+                      <i class="fas fa-eye-slash"></i>
+                    ) : (
+                      <i className="fas fa-eye"></i>
+                    )}
                   </button>
                 </div>
                 <div className="form-group mt-3">

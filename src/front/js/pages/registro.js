@@ -119,7 +119,11 @@ export const Registro = () => {
                       shown ? setShown(false) : setShown(true);
                     }}
                   >
-                    <i className="fas fa-eye"></i>
+                    {shown ? (
+                      <i class="fas fa-eye-slash"></i>
+                    ) : (
+                      <i className="fas fa-eye"></i>
+                    )}
                   </button>
                 </div>
 
@@ -139,7 +143,11 @@ export const Registro = () => {
                       shown2 ? setShown2(false) : setShown2(true);
                     }}
                   >
-                    <i className="fas fa-eye"></i>
+                    {shown2 ? (
+                      <i class="fas fa-eye-slash"></i>
+                    ) : (
+                      <i className="fas fa-eye"></i>
+                    )}
                   </button>
                 </div>
 
