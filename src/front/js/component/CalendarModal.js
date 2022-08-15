@@ -65,8 +65,34 @@ export const CalendarModal = (props) => {
   const watering = () => {
     const date = new Date();
     date.setDate(date.getDate() + props.diasRiego);
+    date.setHours(8, 0, 0);
 
     return date.toISOString();
+  };
+
+  const recurrence = () => {
+    const date = new Date();
+    date.setFullYear(date.getFullYear() + 1);
+
+    let recurrence =
+      "RRULE:FREQ=DAILY;UNTIL=" +
+      formatDate(date) +
+      ";INTERVAL=" +
+      props.diasRiego;
+
+    console.log(recurrence);
+    return recurrence;
+  };
+
+  const formatDate = (date) => {
+    let month = "" + (date.getMonth() + 1),
+      day = "" + date.getDate(),
+      year = date.getFullYear();
+
+    if (month.length < 2) month = "0" + month;
+    if (day.length < 2) day = "0" + day;
+
+    return [year, month, day].join("");
   };
 
   const submit = () => {
@@ -82,6 +108,8 @@ export const CalendarModal = (props) => {
         dateTime: watering(),
         timeZone: "Europe/Madrid",
       },
+
+      recurrence: [recurrence()],
 
       reminders: {
         useDefault: false,
