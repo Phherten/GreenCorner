@@ -64,16 +64,18 @@ export const Navbar = () => {
                   </Link>
                 </li>
                 <li>
-                  <a className="nav-link navbar-button" href="#">
-                    Nosotros
-                  </a>
+                  <Link to={"/about"}>
+                    <a className="nav-link navbar-button" href="#">
+                      Nosotros
+                    </a>
+                  </Link>
                 </li>
               </ul>
             </div>
             <div className="navbar-collapse collapse w-100 order-3 ">
               <ul className="navbar-nav ms-auto ">
                 <li>
-                  <div class="navbar-search-button">
+                  <div className="navbar-search-button">
                     <BusadorPlantaPorNombre />
                   </div>
                 </li>

@@ -1,5 +1,4 @@
 import React, { useContext, useEffect } from "react";
-
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../../styles/navbar.css";
@@ -67,9 +66,11 @@ export const NavbarFondo = () => {
                   </Link>
                 </li>
                 <li>
-                  <a className="nav-link navbar-button" href="#">
-                    Nosotros
-                  </a>
+                  <Link to={"/about"}>
+                    <a className="nav-link navbar-button" href="#">
+                      Nosotros
+                    </a>
+                  </Link>
                 </li>
               </ul>
             </div>
