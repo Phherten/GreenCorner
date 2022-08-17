@@ -85,7 +85,7 @@ const Layout = () => {
               <NavbarFondo />
               <Cuidados />
             </Route>
-            <Route exact path="/cuidados-plantas">
+            <Route exact path="/cuidado-plantas">
               <NavbarFondo />
               <CuidadosPlantas />
             </Route>
