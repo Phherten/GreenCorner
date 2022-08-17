@@ -70,6 +70,7 @@ export const signOutFromGoogle = () => {
 export const getSignedInUserEmail = async () => {
   try {
     let status = await checkSignInStatus();
+    console.log(status);
     if (status) {
       var auth2 = gapi.auth2.getAuthInstance();
       var profile = auth2.currentUser.get().getBasicProfile();
