@@ -18,7 +18,7 @@ export const NavbarFondo = () => {
       <div className="navbar-font sombraNavbar">
         <nav className="navbar navbar-expand-lg fondo-navbar">
           <div className="container-fluid ">
-            <div class="order-0">
+            <div className="order-0">
               <a className="navbar-brand " href="">
                 <button
                   className="navbar-toggler navbar-menu-button"
@@ -27,7 +27,7 @@ export const NavbarFondo = () => {
                   data-bs-target=".dual-collapse2"
                   onClick={handleClick.bind(this)}
                 >
-                  <i class="fa fa-bars"></i>
+                  <i className="fa fa-bars"></i>
 
                   <span className="navbar-toggler-icon navbar-menu-button-icon"></span>
                 </button>
@@ -36,7 +36,7 @@ export const NavbarFondo = () => {
                 </Link>
               </a>
             </div>
-            <div class="navbar-collapse collapse w-100 order-1 order-lg-1 dual-collapse2">
+            <div className="navbar-collapse collapse w-100 order-1 order-lg-1 dual-collapse2">
               <ul className="navbar-nav me-auto">
                 <li>
                   <Link to={"/interior"}>
@@ -73,30 +73,30 @@ export const NavbarFondo = () => {
                 </li>
               </ul>
             </div>
-            <div class="navbar-collapse collapse w-100 order-3">
-              <ul class="navbar-nav ms-auto">
+            <div className="navbar-collapse collapse w-100 order-3">
+              <ul className="navbar-nav ms-auto">
                 <li>
-                  <div class="navbar-search-button">
+                  <div className="navbar-search-button">
                     <BusadorPlantaPorNombre />
                   </div>
                 </li>
                 <li>
-                  <div class="btn-group ">
+                  <div className="btn-group ">
                     <button
                       type="button"
-                      class="btn btn-secondary navbar-user-button dropdown-toggle icono-user"
+                      className="btn btn-secondary navbar-user-button dropdown-toggle icono-user"
                       data-bs-toggle="dropdown"
                       data-bs-display="static"
                       aria-expanded="false"
                     >
-                      <i class="fa fa-user"></i>
+                      <i className="fa fa-user"></i>
                     </button>
-                    <ul class="dropdown-menu dropdown-menu-end navbar-user-twobuttons">
+                    <ul className="dropdown-menu dropdown-menu-end navbar-user-twobuttons">
                       <div className="fondo-dropdown bg-light rounded ">
                         <li>
                           <Link to={"/privada"}>
                             <button
-                              class="dropdown-item navbar-button-user-login dropdown-text pt-3 ps-3 pe-3"
+                              className="dropdown-item navbar-button-user-login dropdown-text pt-3 ps-3 pe-3"
                               type="button"
                             >
                               <p className="text-drop">Mis Plantas</p>
@@ -132,7 +132,7 @@ export const NavbarFondo = () => {
       <div className="navbar-font sombraNavbar">
         <nav className="navbar navbar-expand-lg fondo-navbar">
           <div className="container-fluid ">
-            <div class="order-0">
+            <div className="order-0">
               <a className="navbar-brand " href="">
                 <button
                   className="navbar-toggler navbar-menu-button"
@@ -141,7 +141,7 @@ export const NavbarFondo = () => {
                   data-bs-target=".dual-collapse2"
                   onClick={handleClick.bind(this)}
                 >
-                  <i class="fa fa-bars"></i>
+                  <i className="fa fa-bars"></i>
 
                   <span className="navbar-toggler-icon navbar-menu-button-icon"></span>
                 </button>
@@ -150,7 +150,7 @@ export const NavbarFondo = () => {
                 </Link>
               </a>
             </div>
-            <div class="navbar-collapse collapse w-100 order-1 order-lg-1 dual-collapse2">
+            <div className="navbar-collapse collapse w-100 order-1 order-lg-1 dual-collapse2">
               <ul className="navbar-nav me-auto">
                 <li>
                   <Link to={"/interior"}>
@@ -187,30 +187,30 @@ export const NavbarFondo = () => {
                 </li>
               </ul>
             </div>
-            <div class="navbar-collapse collapse w-100 order-3">
-              <ul class="navbar-nav ms-auto">
+            <div className="navbar-collapse collapse w-100 order-3">
+              <ul className="navbar-nav ms-auto">
                 <li>
-                  <div class="navbar-search-button">
+                  <div className="navbar-search-button">
                     <BusadorPlantaPorNombre />
                   </div>
                 </li>
                 <li>
-                  <div class="btn-group ">
+                  <div className="btn-group ">
                     <button
                       type="button"
-                      class="btn btn-secondary navbar-user-button dropdown-toggle icono-user"
+                      className="btn btn-secondary navbar-user-button dropdown-toggle icono-user"
                       data-bs-toggle="dropdown"
                       data-bs-display="static"
                       aria-expanded="false"
                     >
-                      <i class="fa fa-user"></i>
+                      <i className="fa fa-user"></i>
                     </button>
-                    <ul class="dropdown-menu dropdown-menu-end navbar-user-twobuttons">
+                    <ul className="dropdown-menu dropdown-menu-end navbar-user-twobuttons">
                       <div className="fondo-dropdown bg-light rounded ">
                         <li>
                           <Link to={"/login"}>
                             <button
-                              class="dropdown-item navbar-button-user-login dropdown-text pt-3 ps-3 pe-3"
+                              className="dropdown-item navbar-button-user-login dropdown-text pt-3 ps-3 pe-3"
                               type="button"
                             >
                               <p className="text-drop">Iniciar Sesión</p>
@@ -220,7 +220,7 @@ export const NavbarFondo = () => {
                         <li>
                           <Link to={"/registro"}>
                             <button
-                              class="dropdown-item navbar-button-user-login dropdown-text pb-3"
+                              className="dropdown-item navbar-button-user-login dropdown-text pb-3"
                               type="button"
                             >
                               <p className="text-drop">Registrarse</p>

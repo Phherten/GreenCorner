@@ -7,6 +7,8 @@ import Logo from "../../img/Logo_letras_amarillo.png";
 
 export const Login = () => {
   const history = useHistory();
+  const [shown, setShown] = useState(false);
+
   const [error, guardarError] = useState(false);
 
   const { store, actions } = useContext(Context);
@@ -56,7 +58,7 @@ export const Login = () => {
                   <div className="bg-secondary rounded-start"></div>
                   <input
                     type="text"
-                    className="form-control"
+                    className="form-control input-registro"
                     placeholder="Email"
                     name="email"
                     onChange={handleInputChange}
@@ -65,12 +67,25 @@ export const Login = () => {
                 <div className="input-group form-group mt-3">
                   <div className="bg-secondary rounded-start"></div>
                   <input
-                    type="password"
-                    className="form-control"
+                    type={shown ? "text" : "password"}
+                    className="form-control input-registro-password"
                     placeholder="Contraseña"
                     name="password"
                     onChange={handleInputChange}
                   />
+                  <button
+                    type="button"
+                    className="btn btn-light"
+                    onClick={() => {
+                      shown ? setShown(false) : setShown(true);
+                    }}
+                  >
+                    {shown ? (
+                      <i class="fas fa-eye-slash"></i>
+                    ) : (
+                      <i className="fas fa-eye"></i>
+                    )}
+                  </button>
                 </div>
 
                 <div className="form-group mt-3">

@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
-import { useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 import Logo from "../../img/Logo_letras_amarillo.png";
@@ -7,8 +7,11 @@ import swal from "sweetalert";
 
 export const Reset = () => {
   const { store, actions } = useContext(Context);
+  const history = useHistory();
   const { token } = useParams();
   const [pass, setPass] = useState("");
+  const [shown, setShown] = useState(false);
+
   const [show, setShow] = useState(false);
   const localToken = JSON.parse(localStorage.getItem("recuperar"));
 
@@ -29,30 +32,44 @@ export const Reset = () => {
         <div className="d-flex flex-column min-vh-100 align-items-center">
           <div className="card p-4 text-light bg-dark cardLogin mb-5 w-lg-25">
             <div className="card-header">
-              <h2>Recuperar Contraseña </h2>
+              <h2>Contraseña</h2>
             </div>
             <div className="card-body w-100">
               <form name="login">
                 <div className="input-group form-group mt-3">
                   <div className="bg-secondary rounded-start"></div>
                   <input
-                    type="password"
-                    className="form-control"
+                    type={shown ? "text" : "password"}
+                    className="form-control input-registro-password"
                     placeholder="Nueva contraseña"
                     onChange={(e) => {
                       setPass(e.target.value);
                     }}
                   />
+                  <button
+                    type="button"
+                    className="btn btn-light"
+                    onClick={() => {
+                      shown ? setShown(false) : setShown(true);
+                    }}
+                  >
+                    {shown ? (
+                      <i class="fas fa-eye-slash"></i>
+                    ) : (
+                      <i className="fas fa-eye"></i>
+                    )}
+                  </button>
                 </div>
                 <div className="form-group mt-3">
                   <input
                     type="button"
-                    value="Enviar Contraseña"
+                    value="Cambiar Contraseña"
                     className="btn bg-secondary boton float-end text-white w-100"
                     name="login-btn"
                     onClick={() => {
                       actions.resetPass(pass);
                       swal("Contraseña Cambiada");
+                      history.push("/login");
                     }}
                   />
                 </div>

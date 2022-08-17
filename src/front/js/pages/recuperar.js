@@ -19,7 +19,7 @@ export const Recuperar = () => {
     storage = storage.token.substring(265);
     console.log(storage);
     setUrl(
-      "https://3000-phherten-finalproyect-ivnfbpi1v7v.ws-eu51.gitpod.io/reset/" +
+      "https://3000-phherten-greencorner-uhpl42rcs99.ws-eu60.gitpod.io/reset/" +
         storage
     );
   }
@@ -39,7 +39,6 @@ export const Recuperar = () => {
         "service_uvlatvq",
         "green corner",
         form.current,
-        // url,
         "or3vN3YPJ-tAi-TEz"
       )
       .then(
@@ -69,7 +68,7 @@ export const Recuperar = () => {
         <div className="d-flex flex-column min-vh-100 align-items-center">
           <div className="card p-4 text-light bg-dark cardLogin mb-5 w-lg-25">
             <div className="card-header">
-              <h2>Recuperar Contraseña </h2>
+              <h2>Recuperar </h2>
             </div>
             <div className="card-body w-100">
               <form name="login" ref={form} onSubmit={sendEmail}>
@@ -77,8 +76,8 @@ export const Recuperar = () => {
                   <div className="bg-secondary rounded-start"></div>
                   <input
                     type="email"
-                    className="form-control"
-                    placeholder="Email"
+                    className="form-control input-registro"
+                    placeholder="Introduce el email"
                     name="to_email"
                     onChange={(e) => {
                       console.log("entran en onchange");

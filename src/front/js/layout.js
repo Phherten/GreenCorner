@@ -17,7 +17,7 @@ import { Cuidados } from "./pages/cuidados";
 import { Ficha } from "./pages/ficha";
 import { Ficha_plagas } from "./pages/ficha_plagas";
 import { Privada } from "./pages/privada";
-import { Reset } from "./component/reset";
+import { Reset } from "./pages/reset";
 import { Notificaciones_riego } from "./pages/notificacion_riegos";
 
 import { Navbar } from "./component/navbar";

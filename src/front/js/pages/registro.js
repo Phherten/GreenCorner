@@ -9,6 +9,9 @@ import "../../styles/login.css";
 
 export const Registro = () => {
   const history = useHistory();
+  const [shown, setShown] = useState(false);
+  // Se crea una segunda variable de estado para el campod e validación de contraseña
+  const [shown2, setShown2] = useState(false);
   const { store, actions } = useContext(Context);
   const [datos, setDatos] = useState({
     username: "",
@@ -102,22 +105,50 @@ export const Registro = () => {
                 <div className="input-group form-group mt-3">
                   <div className="bg-secondary rounded-start"></div>
                   <input
-                    type="password"
-                    className="form-control input-registro"
+                    type={shown ? "text" : "password"}
+                    className="form-control input-registro-password"
                     placeholder="Contraseña"
                     name="password"
                     onChange={(e) => setPass1(e.target.value)}
                   />
+
+                  <button
+                    type="button"
+                    className="btn btn-light"
+                    onClick={() => {
+                      shown ? setShown(false) : setShown(true);
+                    }}
+                  >
+                    {shown ? (
+                      <i class="fas fa-eye-slash"></i>
+                    ) : (
+                      <i className="fas fa-eye"></i>
+                    )}
+                  </button>
                 </div>
+
                 <div className="input-group form-group mt-3">
                   <div className="bg-secondary rounded-start"></div>
                   <input
-                    type="password"
-                    className="form-control input-registro"
+                    type={shown2 ? "text" : "password"}
+                    className="form-control input-registro-password"
                     placeholder="Confirmar Contraseña"
                     name="password2"
                     onChange={(e) => setPass2(e.target.value)}
                   />
+                  <button
+                    type="button"
+                    className="btn btn-light"
+                    onClick={() => {
+                      shown2 ? setShown2(false) : setShown2(true);
+                    }}
+                  >
+                    {shown2 ? (
+                      <i class="fas fa-eye-slash"></i>
+                    ) : (
+                      <i className="fas fa-eye"></i>
+                    )}
+                  </button>
                 </div>
 
                 <div className="form-group mt-3">
