@@ -320,7 +320,7 @@ const getState = ({
                     .catch((error) => console.log("error", error));
             },
 
-            privado: () => {
+            privado: async () => {
                 var myHeaders = new Headers();
                 myHeaders.append(
                     "Authorization",
@@ -333,18 +333,21 @@ const getState = ({
                     redirect: "follow",
                 };
 
-                fetch(process.env.BACKEND_URL + "/api/privada", requestOptions)
-                    .then((response) => response.json())
-                    .then((result) => {
-                        console.log(result);
-                        setStore({
-                            permiso: result.permiso,
-                        });
-                        setStore({
-                            usuario: result.email,
-                        });
-                    })
-                    .catch((error) => console.log("error", error));
+                const response = await fetch(
+                    process.env.BACKEND_URL + "/api/privada",
+                    requestOptions
+                );
+                const result = await response.json();
+
+                console.log(result);
+                setStore({
+                    permiso: result.permiso,
+                });
+                setStore({
+                    usuario: result.email,
+                });
+
+                return result ? true : false;
             },
 
             exampleFunction: () => {
