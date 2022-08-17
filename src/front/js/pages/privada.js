@@ -19,8 +19,8 @@ export const Privada = () => {
     const result = actions.privado();
     if (result) {
       actions.getPlantsUser();
+      setLoad(true);
     }
-    setLoad(true);
   }, []);
 
   useEffect(() => {
