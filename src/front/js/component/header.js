@@ -63,7 +63,7 @@ export const Header = () => {
           <div className="col"></div>
           <div className="col-2 text-right">
             <a href="#" className="header-button-More">
-              Saber mas
+              Saber más
               <span>
                 <i className="fa fa-arrow-right header-icon-arrow"></i>
               </span>

@@ -15,19 +15,19 @@
 
 .header-title {
   color: #ffe175;
-  margin-top: 14rem;
+  margin-top: 10rem;
   font-family: "Montserrat", sans-serif;
   /* position: absolute; */
-  font-size: 2rem;
-  /* margin-left: 8rem; */
-  text-shadow: black 0.1em 0.1em 0.2em;
+  font-size: 3rem;
+  margin-left: 2rem;
+  text-shadow: rgb(2, 66, 16) 0.1em 0.1em 0.2em;
 }
 
 .header-paragraph {
   color: white;
   font-weight: 200;
   font-family: "Montserrat", sans-serif;
-  font-size: 1.6rem;
+  font-size: 2rem;
   text-shadow: black 0.4em 0.3em 0.4em;
   /* position: absolute; */
   /* margin-top: 22rem; */
