@@ -16,12 +16,11 @@ export const Privada = () => {
   const [load, setLoad] = useState(false);
 
   useEffect(() => {
-    const result = actions.privado();
-    if (result) {
-      actions.getPlantsUser();
-    }
-
     setTimeout(() => {
+      const result = actions.privado();
+      if (result) {
+        actions.getPlantsUser();
+      }
       setLoad(true);
     }, 3000);
   }, []);
