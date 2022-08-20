@@ -14,8 +14,8 @@ export const Navbar = () => {
 
   if (store.permiso == true) {
     return (
-      <div className="navbar-font home-navbar">
-        <nav className="navbar navbar-expand-lg home-navbar">
+      <div className="navbar-font">
+        <nav className="navbar  home-navbar">
           <div className="container-fluid">
             <div className="order-0">
               <a className="navbar-brand " href="">
@@ -81,7 +81,7 @@ export const Navbar = () => {
                   <div className="btn-group ">
                     <button
                       type="button"
-                      className="btn btn-secondary navbar-user-button dropdown-toggle r"
+                      className="btn btn-secondary navbar-user-button dropdown-toggler"
                       data-bs-toggle="dropdown"
                       data-bs-display="static"
                       aria-expanded="false"
