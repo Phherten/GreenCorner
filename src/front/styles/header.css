@@ -83,7 +83,7 @@
 
 /*movil*/
 /*Portrait*/
-
+/*
 @media (max-width: 480px) and (orientation: portrait) {
   header-title {
     margin-top: 8rem;
@@ -116,31 +116,30 @@
 
 /*Default*/
 
-@media (max-width: 320px) and (orientation: portrait) {
+@media (max-width: 480px) and (orientation: portrait) {
+  .header-logoLetrasAmarillo {
+    margin: 0;
+  }
   .header-title {
-    margin-left: 4rem;
-    font-size: 3rem;
-    margin-top: 6rem;
-    font-size: 2.5rem;
-    width: 100%;
+    font-size: 1.8rem;
+    margin-top: -5rem;
+    margin-left: 0;
+    text-align: center;
   }
 
-  .header-paragrap {
-    font-size: 1rem;
-    margin-left: 4rem;
-    margin-right: 2.5rem;
-    margin-top: 15rem;
-    width: 100%;
+  .header-paragraph {
+    font-size: 1.8rem;
+    overflow-wrap: break-word;
+    margin-top: -1rem;
+    margin-left: 0;
+    text-align: center;
   }
 
-  .header-background {
-    width: 145%;
-  }
   .header-button-More {
     display: none;
   }
-  .header-logoLetrasAmarillo {
-    display: none;
+  .header-logo-movil {
+    padding: 0;
   }
 }
 /*landscape*/

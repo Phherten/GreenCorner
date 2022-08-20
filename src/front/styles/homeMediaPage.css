@@ -166,6 +166,44 @@
   box-shadow: 5px 5px 10px black !important;
   margin-left: 4rem;
 }
+
+@media (max-width: 480px) {
+  .media-page-cards-cuidados-plagas-notificaciones {
+    font-size: 1.5rem;
+  }
+
+  .media-page-tarjetas-interior {
+    width: 100%;
+    height: auto;
+    background-color: #e1e4e9;
+    border: none;
+    border-radius: 0.438rem;
+    margin-bottom: 1rem;
+    justify-content: center;
+    box-shadow: 5px 5px 10px black !important;
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .media-page-card-text-interior {
+    font-size: 1.5rem;
+  }
+  .media-page-planta-tarjetas-exterior-suculenta-foto {
+    width: 120%;
+  }
+  .card-home-col-media-page-card-exterior {
+    width: 20rem;
+    max-height: 10rem;
+    background-color: #e1e4e9;
+    border: none;
+    border-radius: 0.438rem;
+    margin: auto;
+    box-shadow: 5px 5px 10px black !important;
+  }
+  .media-page-card-text-exterior {
+    font-size: 1.5rem;
+  }
+}
 @media (max-width: 1140px) {
   .media-page-plant-photo {
     display: none;
