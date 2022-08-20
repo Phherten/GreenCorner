@@ -28,7 +28,7 @@ export const Registro = () => {
     // console.log(event.target.value)
     setDatos({
       ...datos,
-      [event.target.name]: event.target.value,
+      [event.target.name]: event.target.value.toLowerCase(),
     });
   };
 
