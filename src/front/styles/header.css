@@ -19,12 +19,11 @@
   height: 50rem;
   background-color: rgb(255, 255, 255);
   position: absolute;
-  opacity: 0.1;
+  opacity: 0.06;
 }
 
 .header-title {
   color: #ffe175;
-  margin-top: 6rem;
   font-family: "Montserrat", sans-serif;
   /* position: absolute; */
   font-size: 2.5rem;
@@ -71,7 +70,7 @@
 
 .header-logoLetrasAmarillo {
   display: block;
-  height: 28rem;
+  height: 23rem;
 
   /* margin-left: -13rem; */
 
@@ -79,11 +78,12 @@
   /* margin-top: 28rem; */
   /* position: absolute; */
 }
-
+/*
 /*query*/
 
 /*movil*/
 /*Portrait*/
+
 @media (max-width: 480px) and (orientation: portrait) {
   header-title {
     margin-top: 8rem;
@@ -115,6 +115,7 @@
 /*movil*/
 
 /*Default*/
+
 @media (max-width: 320px) and (orientation: portrait) {
   .header-title {
     margin-left: 4rem;
@@ -143,6 +144,7 @@
   }
 }
 /*landscape*/
+
 @media (min-width: 320px) and (max-width: 480px) and (orientation: landscape) {
   .header-title {
     margin-top: 5rem;
@@ -181,6 +183,8 @@
 }
 
 /*tablets*/
+/*
+
 @media (max-width: 768px) and (orientation: portrait) {
   .header-title {
     margin-top: 8rem;
@@ -212,3 +216,4 @@
     padding: 0;
   }
 }
+*/

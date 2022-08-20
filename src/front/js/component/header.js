@@ -49,6 +49,16 @@ export const Header = () => {
     >
       <div className="container-fluid">
         img fondo
+        <div className="row d-flex justify-items-center">
+          <div className="col-4 mx"></div>
+          <div className="col-4 mx">
+            <img
+              className="header-logoLetrasAmarillo mx-auto"
+              src={logoHeader}
+            />
+          </div>
+          <div className="col-4"></div>
+        </div>
         <div className="row mx-16">
           <div className="col-12">
             <p className="header-title">Protege lo que te cuida</p>
@@ -69,16 +79,6 @@ export const Header = () => {
               </span>
             </a>
           </div>
-        </div>
-        <div className="row d-flex justify-items-center">
-          <div className="col-4 mx"></div>
-          <div className="col-4 mx">
-            <img
-              className="header-logoLetrasAmarillo mx-auto"
-              src={logoHeader}
-            />
-          </div>
-          <div className="col-4"></div>
         </div>
       </div>
     </div>
