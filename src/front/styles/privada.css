@@ -22,3 +22,20 @@
   margin-left: 0.5rem;
   font-size: 1.3rem;
 }
+@media (max-width: 480px) and (orientation: portrait) {
+  .imagen_privada {
+    width: 100%;
+  }
+
+  .texto_privada {
+    font-size: 1rem;
+
+    margin-top: 2rem;
+  }
+
+  #boton_privada {
+    margin-left: 0.5rem;
+    font-size: 0.8rem;
+    margin-top: 2rem;
+  }
+}
