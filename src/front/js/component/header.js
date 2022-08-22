@@ -50,14 +50,14 @@ export const Header = () => {
       <div className="container-fluid">
         img fondo
         <div className="row d-flex justify-items-center">
-          <div className="col-4 mx"></div>
-          <div className="col-4 mx">
+          <div className="col-sm-4 mx"></div>
+          <div className="col-sm-4 mx header-logo-movil">
             <img
               className="header-logoLetrasAmarillo mx-auto"
               src={logoHeader}
             />
           </div>
-          <div className="col-4"></div>
+          <div className="col-sm-4"></div>
         </div>
         <div className="row mx-16">
           <div className="col-12">
