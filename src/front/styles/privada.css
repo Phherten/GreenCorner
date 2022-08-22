@@ -1,19 +1,41 @@
 .imagen_privada {
-  background-image: url("https://images.pexels.com/photos/4505171/pexels-photo-4505171.jpeg?cs=srgb&dl=pexels-cottonbro-4505171.jpg&fm=jpg");
-  background-repeat: no-repeat;
   background-size: contain;
-  height: 48rem;
-  width: 70rem;
-  padding-left: 10rem;
-  padding-top: 15rem;
-  margin-top: 2rem;
+  height: 40rem;
+  width: 60rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-top: -3rem;
+  box-shadow: 0 25px 25px 0 rgba(0, 0, 0, 0.15);
+  margin-bottom: -3rem;
 }
 
 .texto_privada {
   font-size: 2rem;
   color: white;
+  margin-top: 5rem;
+  font-weight: 300;
+  text-shadow: rgb(2, 66, 16) 0.1em 0.1em 0.2em;
 }
 
 #boton_privada {
   margin-top: 1rem;
+  margin-left: 0.5rem;
+  font-size: 1.3rem;
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  .imagen_privada {
+    width: 100%;
+  }
+
+  .texto_privada {
+    font-size: 1rem;
+
+    margin-top: 2rem;
+  }
+
+  #boton_privada {
+    margin-left: 0.5rem;
+    font-size: 0.8rem;
+    margin-top: 2rem;
+  }
 }

@@ -7,6 +7,7 @@ import { HomeMediaPage } from "../component/homeMediaPage";
 import { Header } from "../component/header";
 import { Link } from "react-router-dom";
 import planta_maceta_privada from "../../img/planta_maceta_privada.jpg";
+import plantaPrivada from "../../img/imagen_page_privada.jpg";
 
 export const Privada = () => {
   const { store, actions } = useContext(Context);
@@ -52,28 +53,33 @@ export const Privada = () => {
   };
 
   return (
-    <div style={{ minHeight: "800px" }}>
+    <div>
       <div className="container d-flex mb-xs-1 mb-5 mt-4 justify-content-center">
         <div className="row d-flex justify-content-center row-privada">
           {store.permiso ? (
             <>
               {store.user_plants.length === 0 ? (
                 <>
-                  <div className="imagen_privada">
-                    <p className="texto_privada">
-                      Todavía no tienes plantas guardadas,<br></br>
-                      ¿Empezamos a cuidarlas juntos?
-                    </p>
+                  <div className="row ">
+                    <div
+                      className="col-md-12 imagen_privada"
+                      style={{ backgroundImage: `url(${plantaPrivada})` }}
+                    >
+                      <p className="texto_privada">
+                        Todavía no tienes plantas guardadas,<br></br>
+                        ¿Empezamos a cuidarlas juntos?
+                      </p>
 
-                    <Link to={"/#plants"}>
-                      <button
-                        class="btn btn-secondary boton"
-                        type="button"
-                        id="boton_privada"
-                      >
-                        Agrega tu primera planta
-                      </button>
-                    </Link>
+                      <Link to={"/#plants"}>
+                        <button
+                          class="btn btn-secondary boton"
+                          type="button"
+                          id="boton_privada"
+                        >
+                          Agrega tu primera planta
+                        </button>
+                      </Link>
+                    </div>
                   </div>
                 </>
               ) : (
