@@ -229,6 +229,7 @@
     font-size: 1.5rem;
   }
 }
+
 @media (max-width: 1140px) {
   .media-page-plant-photo {
     display: none;
@@ -246,4 +247,29 @@
 }
 .home-media-page-url-cards-cuidados-plagas-notificaciones:hover {
   color: black;
+}
+
+@media (max-width: 1680px) {
+  .media-page-plant-photo {
+    display: none;
+  }
+  .media-page-planta-suelta {
+    display: none;
+  }
+  .media-page-cards-cuidados-plagas-notificaciones {
+    width: 100%;
+  }
+  .home-col-media-page-dark {
+    margin-top: 2rem;
+  }
+  .media-page-planta-tarjetas-riego-foto {
+    width: 68%;
+    height: auto;
+  }
+  .home-media-page-url-cards-cuidados-plagas-notificaciones {
+    color: black;
+  }
+  .home-media-page-url-cards-cuidados-plagas-notificaciones:hover {
+    color: black;
+  }
 }
