@@ -19,9 +19,12 @@ export const HomeMediaPage = () => {
   const { store, actions } = useContext(Context);
   return (
     <div>
-      <div className="container-fluid p-0 m-0 media-page-container" id="plants">
-        <div className="row p-0 m-0">
-          <div className="col-sm-4 p-0 media-page-plant-photo">
+      <div
+        className="container-fluid p-0 m-0 media-page-container "
+        id="plants"
+      >
+        <div className="row p-0 m-0 ">
+          <div className="col-sm-4 p-0 media-page-plant-photo ">
             <img src={plantasMediaPage} className="media-page-plantas" />
           </div>
           <div className="col-sm ">

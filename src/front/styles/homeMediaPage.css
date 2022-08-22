@@ -5,11 +5,12 @@
 .home-col-media-page-white {
   background-color: #efeeef;
   display: flex;
-  margin-top: -3rem;
 }
 
 .home-col-media-page-dark {
   background-color: #1f2824;
+  margin-top: -4.7rem;
+  z-index: -1;
 }
 .columna-linea-negra-media-page {
   margin: 0 0 0 0;
@@ -20,7 +21,7 @@
 }
 
 .media-page-plantas {
-  width: 100%;
+  width: 80%;
   height: auto;
 }
 
