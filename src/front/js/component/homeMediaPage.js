@@ -64,7 +64,7 @@ export const HomeMediaPage = () => {
                 </div>
               </Link>
             </div>
-            <div className="card mb-3 card-home-col-media-page-card-exterior boxes-with-shadows">
+            <div className="card mb-3 card-home-col-media-page-card-suculenta boxes-with-shadows">
               <Link to={"/suculentas"}>
                 <div className="row  g-0">
                   <div className="col-8">
