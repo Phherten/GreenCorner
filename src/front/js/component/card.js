@@ -12,7 +12,7 @@ export const Card = (props) => {
     return (
       <Link
         to={"/ficha/" + props.id}
-        className="card media-page-tarjetas-interior card-elemento"
+        className="card media-page-tarjetas-interior card-elemento mt-5 mb-5"
         style={{ width: `17rem` }}
       >
         <img
@@ -35,7 +35,7 @@ export const Card = (props) => {
     return (
       <Link
         to={"/ficha/" + props.id}
-        className="card media-page-tarjetas-interior card-elemento"
+        className="card media-page-tarjetas-interior card-elemento mt-5 mb-5"
         style={{ width: `17rem` }}
       >
         <img
