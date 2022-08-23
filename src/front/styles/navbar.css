@@ -1,10 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Brawler&family=Indie+Flower&family=Montserrat:ital,wght@0,100;0,200;0,300;0,500;1,100&family=Moo+Lah+Lah&family=Noto+Sans+JP:wght@100&family=Orelega+One&family=Prompt:wght@100;800&family=Roboto:wght@100;500&family=Square+Peg&display=swap");
-.fondo-navbar {
-  background-image: url("https://fondosmil.com/fondo/26795.jpg");
-}
 
-.home-navbar {
-  z-index: 1;
+.fondo-navbar {
+  background-image: url("../img/fondoNavbar.jpeg");
 }
 
 .home-navbar {
@@ -81,7 +78,7 @@
 
 .navbar-user-button {
   margin-right: 25px;
-  background-color: rgba(255, 255, 255, 0.359);
+  background-color: rgba(255, 255, 255, 0.51);
 
   border-radius: 7px;
   color: #424242;
@@ -118,6 +115,11 @@
   color: black !important;
   font-size: 18px;
 }
+
+.dropdown-menu {
+  background-color: rgba(173, 169, 169, 0.8);
+}
+
 .dropdown-text:hover {
   background-color: transparent !important;
   color: #ffe175 !important;
@@ -149,8 +151,12 @@ a:hover {
     position: absolute;
     margin-top: 25rem;
     background-color: #859889c7;
-    margin-left: -1rem;
-    margin-right: 5;
+    margin-left: -0.75rem;
+    margin-bottom: 2rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    z-index: 1;
+    padding-bottom: 0.5rem;
   }
 
   /*.navbar-search-button {

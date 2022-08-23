@@ -62,7 +62,7 @@ export const NavbarFondo = () => {
                 <li>
                   <Link to={"/cuidados"}>
                     <a className="nav-link navbar-button" href="#">
-                      Cuidados
+                      Plagas
                     </a>
                   </Link>
                 </li>
@@ -176,7 +176,7 @@ export const NavbarFondo = () => {
                 <li>
                   <Link to={"/cuidados"}>
                     <a className="nav-link navbar-button" href="#">
-                      Cuidados
+                      Plagas
                     </a>
                   </Link>
                 </li>
