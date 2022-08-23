@@ -16,10 +16,10 @@ export const Navbar = () => {
 
   if (store.permiso == true) {
     return (
-      <div className="navbar-font">
-        <nav className="navbar  home-navbar fondo-navbar">
+      <div className="navbar-font fondo-navbar">
+        <nav className="navbar  home-navbar ">
           <div className="container-fluid ">
-            <div className="order-0">
+            <div className="order-0 ">
               <a className="navbar-brand " href="">
                 <button
                   className="navbar-toggler navbar-menu-button"
@@ -128,7 +128,10 @@ export const Navbar = () => {
     );
   } else {
     return (
-      <div className="navbar-font">
+      <div
+        className="navbar-font fondo-navbar"
+        style={{ backgroundImage: `url(${fondoNav})` }}
+      >
         <nav className="navbar navbar-expand-lg home-navbar">
           <div className="container-fluid">
             <div className="order-0">

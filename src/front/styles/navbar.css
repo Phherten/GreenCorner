@@ -2,16 +2,17 @@
 
 .fondo-navbar {
   background-image: url("../img/fondoNavbar.jpeg");
+  background-color: aquamarine;
 }
 
 .home-navbar {
   z-index: 1;
 }
 
-/*.home-navbar {
+.home-navbar {
   background-color: transparent;
 }
-*/
+
 .navbar-font {
   font-family: "Montserrat", sans-serif;
 }
