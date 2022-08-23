@@ -2,11 +2,6 @@
 
 .fondo-navbar {
   background-image: url("../img/fondoNavbar.jpeg");
-  background-color: aquamarine;
-}
-
-.home-navbar {
-  z-index: 1;
 }
 
 .home-navbar {
@@ -119,6 +114,10 @@
 .dropdown-text {
   color: black !important;
   font-size: 18px;
+}
+
+.dropdown-menu {
+  background-color: rgba(224, 224, 224, 0.669);
 }
 .dropdown-text:hover {
   background-color: transparent !important;

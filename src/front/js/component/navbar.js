@@ -16,10 +16,13 @@ export const Navbar = () => {
 
   if (store.permiso == true) {
     return (
-      <div className="navbar-font fondo-navbar">
-        <nav className="navbar  home-navbar ">
-          <div className="container-fluid ">
-            <div className="order-0 ">
+      <div
+        className="navbar-font fondo-navbar"
+        style={{ backgroundImage: `url(${fondoNav})` }}
+      >
+        <nav className="navbar navbar-expand-lg home-navbar">
+          <div className="container-fluid">
+            <div className="order-0">
               <a className="navbar-brand " href="">
                 <button
                   className="navbar-toggler navbar-menu-button"
@@ -37,7 +40,7 @@ export const Navbar = () => {
                 </Link>
               </a>
             </div>
-            <div className="navbar-collapse collapse w-100 order-1 order-lg-1 dual-collapse2">
+            <div className="navbar-collapse collapse w-100 order-1 order-lg-1 dual-collapse2 collapse-menu">
               <ul className="navbar-nav me-auto">
                 <li>
                   <Link to={"/interior"}>
@@ -73,8 +76,7 @@ export const Navbar = () => {
                   </a>
                 </li>
               </ul>
-            </div>
-            <div className="navbar-collapse collapse w-100 order-3 ">
+
               <ul className="navbar-nav ms-auto ">
                 <li>
                   <div class="navbar-search-button">
@@ -83,6 +85,43 @@ export const Navbar = () => {
                 </li>
                 <li>
                   <div className="btn-group ">
+                    <button
+                      type="button"
+                      className="btn btn-secondary navbar-user-button dropdown-toggle"
+                      data-bs-toggle="dropdown"
+                      data-bs-display="static"
+                      aria-expanded="false"
+                    >
+                      <i className="fa fa-user"></i>
+                    </button>
+                    <ul className="dropdown-menu dropdown-menu-end navbar-user-twobuttons">
+                      <li>
+                        <Link to={"/privada"}>
+                          <button
+                            className="dropdown-item navbar-button-user-login"
+                            type="button"
+                          >
+                            Mis plantas
+                          </button>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to={"/login"}>
+                          <button
+                            className="dropdown-item navbar-button-user-login"
+                            type="button"
+                            onClick={() => {
+                              console.log("Entra en logout");
+                              actions.logout();
+                            }}
+                          >
+                            Cerrar Sesión
+                          </button>
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
+                  {/* <div className="btn-group ">
                     <button
                       type="button"
                       className="btn btn-secondary navbar-user-button dropdown-toggler"
@@ -118,7 +157,7 @@ export const Navbar = () => {
                         </Link>
                       </li>
                     </ul>
-                  </div>
+                  </div> */}
                 </li>
               </ul>
             </div>
