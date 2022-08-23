@@ -25,7 +25,7 @@ export const Navbar = () => {
             <div className="order-0">
               <a className="navbar-brand " href="">
                 <button
-                  className="navbar-toggler navbar-menu-button"
+                  className="navbar-toggler navbar-menu-button "
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target=".dual-collapse2"
