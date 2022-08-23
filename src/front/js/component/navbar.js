@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../../styles/navbar.css";
 import logo from "../../img/Logo_amarillo.png";
+import fondoNav from "../../img/fondoNavbar.jpeg";
+
 import { BusadorPlantaPorNombre } from "./search";
 import { Context } from "../store/appContext";
 
@@ -15,8 +17,8 @@ export const Navbar = () => {
   if (store.permiso == true) {
     return (
       <div className="navbar-font">
-        <nav className="navbar  home-navbar">
-          <div className="container-fluid">
+        <nav className="navbar  home-navbar fondo-navbar">
+          <div className="container-fluid ">
             <div className="order-0">
               <a className="navbar-brand " href="">
                 <button
@@ -30,7 +32,9 @@ export const Navbar = () => {
 
                   <span className="navbar-toggler-icon navbar-menu-button-icon"></span>
                 </button>
-                <img src={logo} className="navbar-logo " />
+                <Link to={"/"}>
+                  <img src={logo} className="navbar-logo" />
+                </Link>
               </a>
             </div>
             <div className="navbar-collapse collapse w-100 order-1 order-lg-1 dual-collapse2">
@@ -59,7 +63,7 @@ export const Navbar = () => {
                 <li>
                   <Link to={"/cuidados"}>
                     <a className="nav-link navbar-button" href="#">
-                      Cuidados
+                      Plagas
                     </a>
                   </Link>
                 </li>
@@ -140,7 +144,9 @@ export const Navbar = () => {
 
                   <span className="navbar-toggler-icon navbar-menu-button-icon"></span>
                 </button>
-                <img src={logo} className="navbar-logo" />
+                <Link to={"/"}>
+                  <img src={logo} className="navbar-logo" />
+                </Link>
               </a>
             </div>
             <div className="navbar-collapse collapse w-100 order-1 order-lg-1 dual-collapse2 collapse-menu">

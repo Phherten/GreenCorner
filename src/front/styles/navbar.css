@@ -1,16 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Brawler&family=Indie+Flower&family=Montserrat:ital,wght@0,100;0,200;0,300;0,500;1,100&family=Moo+Lah+Lah&family=Noto+Sans+JP:wght@100&family=Orelega+One&family=Prompt:wght@100;800&family=Roboto:wght@100;500&family=Square+Peg&display=swap");
+
 .fondo-navbar {
-  background-image: url("https://fondosmil.com/fondo/26795.jpg");
+  background-image: url("../img/fondoNavbar.jpeg");
 }
 
 .home-navbar {
   z-index: 1;
 }
 
-.home-navbar {
+/*.home-navbar {
   background-color: transparent;
 }
-
+*/
 .navbar-font {
   font-family: "Montserrat", sans-serif;
 }

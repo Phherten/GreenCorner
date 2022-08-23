@@ -40,11 +40,11 @@ const Layout = () => {
               <Home />
             </Route>
             <Route exact path="/privada">
-              <NavbarFondo />
+              <Navbar />
               <Privada />
             </Route>
             <Route exact path="/notificaciones_riego">
-              <NavbarFondo />
+              <Navbar />
               <Notificaciones_riego />
             </Route>
 
@@ -61,40 +61,40 @@ const Layout = () => {
               <Reset />
             </Route>
             <Route exact path="/ficha/:theid">
-              <NavbarFondo />
+              <Navbar />
               <Ficha />
             </Route>
 
             <Route exact path="/ficha_plagas/:theid">
-              <NavbarFondo />
+              <Navbar />
               <Ficha_plagas />
             </Route>
             <Route exact path="/interior">
-              <NavbarFondo />
+              <Navbar />
               <Interior />
             </Route>
             <Route exact path="/exterior">
-              <NavbarFondo />
+              <Navbar />
               <Exterior />
             </Route>
             <Route exact path="/suculentas">
-              <NavbarFondo />
+              <Navbar />
               <Suculentas />
             </Route>
             <Route exact path="/cuidados">
-              <NavbarFondo />
+              <Navbar />
               <Cuidados />
             </Route>
             <Route exact path="/cuidado-plantas">
-              <NavbarFondo />
+              <Navbar />
               <CuidadosPlantas />
             </Route>
             <Route exact path="/plagas">
-              <NavbarFondo />
+              <Navbar />
               <CuidadosPlantas />
             </Route>
             <Route exact path="/notificaciones-riego">
-              <NavbarFondo />
+              <Navbar />
               <CuidadosPlantas />
             </Route>
             <Route>
