@@ -4,10 +4,9 @@
   width: 60rem;
   background-size: cover;
   background-repeat: no-repeat;
-  margin-top: -3rem;
+  margin-top: -1.5rem;
   box-shadow: 0 25px 25px 0 rgba(0, 0, 0, 0.15);
   margin-bottom: -3rem;
-  z-index: -1;
 }
 
 .texto_privada {
