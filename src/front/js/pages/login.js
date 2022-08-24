@@ -26,11 +26,13 @@ export const Login = () => {
 
   const enviardatos = (e) => {
     console.log("Entra en enviardatos");
-    actions.loguser(datos.email, datos.password);
     e.preventDefault();
+    actions.loguser(datos.email, datos.password).then(() => {
+      guardarError(false);
+      history.push("/privada");
+    });
     // actualizarUsuarioLogeado(true);
-    guardarError(false);
-    history.push("/privada"); // <-- Objeto history
+    // <-- Objeto history
   };
 
   return (
