@@ -48,7 +48,6 @@ export const Header = () => {
       style={{ backgroundImage: `url(${fondo})` }}
     >
       <div className="container-fluid">
-        img fondo
         <div className="row d-flex justify-items-center">
           <div className="col-sm-4 mx"></div>
           <div className="col-sm-4 mx header-logo-movil">
