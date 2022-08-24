@@ -86,15 +86,17 @@ def guardar_registro():
 @api.route('/user_plants', methods = ['GET'])
 @jwt_required()
 def get_user_plants():
-    
-    email = get_jwt_identity()
-    user = User.get_by_email(email)
-    
-    user_plants = Plant.get_by_user(user.id)
+    try:
+        email = get_jwt_identity()
+        user = User.get_by_email(email)
+        
+        user_plants = Plant.get_by_user(user.id)
 
-    response = []
-    for plant in user_plants:
-        response.append(plant.serialize())   
+        response = []
+        for plant in user_plants:
+            response.append(plant.serialize())   
+    except Exception as e:
+        response = e        
 
     return jsonify(response), 200
 
