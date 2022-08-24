@@ -461,7 +461,7 @@ const getState = ({
                 });
             },
 
-            getPlantsUser: () => {
+            getPlantsUser: async () => {
                 var myHeaders = new Headers();
                 myHeaders.append(
                     "Authorization",
@@ -474,15 +474,14 @@ const getState = ({
                     redirect: "follow",
                 };
 
-                fetch(process.env.BACKEND_URL + "/api/user_plants", requestOptions)
-                    .then((response) => response.json())
-                    .then((result) => {
-                        console.log(result);
-                        setStore({
-                            user_plants: result,
-                        });
-                    })
-                    .catch((error) => console.log("error", error));
+                const response = await fetch(
+                    process.env.BACKEND_URL + "/api/user_plants",
+                    requestOptions
+                );
+                const data = await response.json();
+                setStore({
+                    user_plants: data,
+                });
             },
 
             updatePlantAlias: (alias, plant_id) => {
