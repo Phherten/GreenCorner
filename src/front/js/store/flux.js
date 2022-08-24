@@ -167,7 +167,8 @@ const getState = ({
                     redirect: "follow",
                 };
 
-                fetch(process.env.BACKEND_URL + "/api/login", requestOptions)
+                return (
+                    fetch(process.env.BACKEND_URL + "/api/login", requestOptions)
                     .then((response) => response.json())
                     .then((result) => {
                         console.log(result.token);
@@ -178,11 +179,12 @@ const getState = ({
                         sessionStorage.setItem("email", result.email);
                         sessionStorage.setItem("chat_id", result.chat_id);
                     })
-                    .then(() => console.log(store.token))
+                    .then(() => true)
                     // .then((data) => console.log(data))
                     // .then((data) => setStore({ token: data }))
                     // .then(console.log(store.token))
-                    .catch((error) => console.log("error", error));
+                    .catch((error) => console.log("error", error))
+                );
             },
             deleteTelegram: (chat_id, msg) => {
                 var myHeaders = new Headers();
