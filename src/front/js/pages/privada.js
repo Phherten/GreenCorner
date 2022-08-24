@@ -18,10 +18,11 @@ export const Privada = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      const result = actions.privado();
-      if (result) {
-        actions.getPlantsUser();
-      }
+      actions.privado().then((result) => {
+        if (result) {
+          actions.getPlantsUser();
+        }
+      });
       setLoad(true);
     }, 3000);
   }, []);
