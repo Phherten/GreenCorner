@@ -18,10 +18,17 @@ export const Login = () => {
   });
 
   const handleInputChange = (event) => {
-    setDatos({
-      ...datos,
-      [event.target.name]: event.target.value,
-    });
+    {
+      event.target.name == "email"
+        ? setDatos({
+            ...datos,
+            [event.target.name]: event.target.value.toLowerCase(),
+          })
+        : setDatos({
+            ...datos,
+            [event.target.name]: event.target.value,
+          });
+    }
   };
 
   const enviardatos = (e) => {
