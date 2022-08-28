@@ -9,7 +9,7 @@ export const Card_plagas = (props) => {
   const { store, actions } = useContext(Context);
 
   return (
-    <div class="col-xs col-lg-4 col-xl-3 mb-2 mt-3" key={props.i}>
+    <div class="col-xs col-lg-4 col-xl-3 m-4" key={props.i}>
       <Link
         to={"/ficha_plagas/" + props.id}
         className="col-xs col-lg-4 col-xl-3 mb-2 mt-3"

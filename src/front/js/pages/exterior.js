@@ -11,7 +11,7 @@ export const Exterior = () => {
   let filtrado = store.seccion.filter((object) => object.tipo === "Exterior");
   return (
     <div style={{ minHeight: "800px" }}>
-      <div className="container  mb-xs-1 mb-5 mt-4">
+      <div className="container-fluid  mb-xs-1 mb-5 mt-4">
         <div className="row d-flex justify-content-center">
           {filtrado.map((obj, index) => {
             return (
