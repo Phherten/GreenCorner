@@ -15,9 +15,9 @@ export const NavbarFondo = () => {
 
   if (store.permiso == true) {
     return (
-      <div className="navbar-font sombraNavbar">
+      <div className="navbar-font sombraNavbar ">
         <nav className="navbar navbar-expand-lg fondo-navbar">
-          <div className="container-fluid ">
+          <div className="container-fluid mb-5">
             <div className="order-0">
               <a className="navbar-brand " href="">
                 <button
