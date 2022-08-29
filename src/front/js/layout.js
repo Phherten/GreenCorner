@@ -19,6 +19,7 @@ import { Ficha_plagas } from "./pages/ficha_plagas";
 import { Privada } from "./pages/privada";
 import { Reset } from "./pages/reset";
 import { Notificaciones_riego } from "./pages/notificacion_riegos";
+import { About } from "./pages/about";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
@@ -63,6 +64,10 @@ const Layout = () => {
             <Route exact path="/ficha/:theid">
               <Navbar />
               <Ficha />
+            </Route>
+            <Route exact path="/about">
+              <NavbarFondo />
+              <About />
             </Route>
 
             <Route exact path="/ficha_plagas/:theid">

@@ -71,15 +71,17 @@ export const Navbar = () => {
                   </Link>
                 </li>
                 <li>
-                  <a className="nav-link navbar-button" href="#">
-                    Nosotros
-                  </a>
+                  <Link to={"/about"}>
+                    <a className="nav-link navbar-button" href="#">
+                      Nosotros
+                    </a>
+                  </Link>
                 </li>
               </ul>
 
               <ul className="navbar-nav ms-auto ">
                 <li>
-                  <div class="navbar-search-button">
+                  <div className="navbar-search-button">
                     <BusadorPlantaPorNombre />
                   </div>
                 </li>
