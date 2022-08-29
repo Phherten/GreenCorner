@@ -11,7 +11,7 @@ export const Suculentas = () => {
   let filtrado = store.seccion.filter((object) => object.tipo === "Suculenta");
   return (
     <div style={{ minHeight: "800px" }}>
-      <div className="container-fluid  mb-xs-1 mb-5">
+      <div className="container-fluid  mb-xs-1 mb-5 pt-5">
         <div className="row d-flex justify-content-center mt-4">
           {filtrado.map((obj, index) => {
             return (
