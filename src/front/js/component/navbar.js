@@ -84,43 +84,6 @@ export const Navbar = () => {
                   </div>
                 </li>
                 <li>
-                  <div className="btn-group ">
-                    <button
-                      type="button"
-                      className="btn btn-secondary navbar-user-button dropdown-toggle"
-                      data-bs-toggle="dropdown"
-                      data-bs-display="static"
-                      aria-expanded="false"
-                    >
-                      <i className="fa fa-user"></i>
-                    </button>
-                    <ul className="dropdown-menu dropdown-menu-end navbar-user-twobuttons">
-                      <li>
-                        <Link to={"/privada"}>
-                          <button
-                            className="dropdown-item navbar-button-user-login"
-                            type="button"
-                          >
-                            Mis plantas
-                          </button>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to={"/login"}>
-                          <button
-                            className="dropdown-item navbar-button-user-login"
-                            type="button"
-                            onClick={() => {
-                              console.log("Entra en logout");
-                              actions.logout();
-                            }}
-                          >
-                            Cerrar Sesión
-                          </button>
-                        </Link>
-                      </li>
-                    </ul>
-                  </div>
                   {/* <div className="btn-group ">
                     <button
                       type="button"
@@ -158,6 +121,43 @@ export const Navbar = () => {
                       </li>
                     </ul>
                   </div> */}
+                </li>
+              </ul>
+            </div>
+            <div className="btn-group order-2">
+              <button
+                type="button"
+                className="btn btn-secondary navbar-user-button dropdown-toggle"
+                data-bs-toggle="dropdown"
+                data-bs-display="static"
+                aria-expanded="false"
+              >
+                <i className="fa fa-user"></i>
+              </button>
+              <ul className="dropdown-menu dropdown-menu-end navbar-user-twobuttons">
+                <li>
+                  <Link to={"/privada"}>
+                    <button
+                      className="dropdown-item navbar-button-user-login"
+                      type="button"
+                    >
+                      Mis plantas
+                    </button>
+                  </Link>
+                </li>
+                <li>
+                  <Link to={"/login"}>
+                    <button
+                      className="dropdown-item navbar-button-user-login"
+                      type="button"
+                      onClick={() => {
+                        console.log("Entra en logout");
+                        actions.logout();
+                      }}
+                    >
+                      Cerrar Sesión
+                    </button>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -234,40 +234,39 @@ export const Navbar = () => {
                     <BusadorPlantaPorNombre />
                   </div>
                 </li>
+                <li></li>
+              </ul>
+            </div>
+            <div className="btn-group order-2">
+              <button
+                type="button"
+                className="btn btn-secondary navbar-user-button dropdown-toggle"
+                data-bs-toggle="dropdown"
+                data-bs-display="static"
+                aria-expanded="false"
+              >
+                <i className="fa fa-user"></i>
+              </button>
+              <ul className="dropdown-menu dropdown-menu-end navbar-user-twobuttons">
                 <li>
-                  <div className="btn-group ">
+                  <Link to={"/login"}>
                     <button
+                      className="dropdown-item navbar-button-user-login"
                       type="button"
-                      className="btn btn-secondary navbar-user-button dropdown-toggle"
-                      data-bs-toggle="dropdown"
-                      data-bs-display="static"
-                      aria-expanded="false"
                     >
-                      <i className="fa fa-user"></i>
+                      Iniciar Sesión
                     </button>
-                    <ul className="dropdown-menu dropdown-menu-end navbar-user-twobuttons">
-                      <li>
-                        <Link to={"/login"}>
-                          <button
-                            className="dropdown-item navbar-button-user-login"
-                            type="button"
-                          >
-                            Iniciar Sesión
-                          </button>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to={"/registro"}>
-                          <button
-                            className="dropdown-item navbar-button-user-login"
-                            type="button"
-                          >
-                            Registrarse
-                          </button>
-                        </Link>
-                      </li>
-                    </ul>
-                  </div>
+                  </Link>
+                </li>
+                <li>
+                  <Link to={"/registro"}>
+                    <button
+                      className="dropdown-item navbar-button-user-login"
+                      type="button"
+                    >
+                      Registrarse
+                    </button>
+                  </Link>
                 </li>
               </ul>
             </div>
