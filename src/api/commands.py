@@ -58,8 +58,8 @@ def setup_commands(app):
                         tratamiento=row[3],
                         imagen=row[4]
                         )
-                else:
-                    plagas.update(row[1], row[2], row[3])
+                else: 
+                    plagas.update(row[0], row[1], row[2], row[3], row[4])
 
                 plagas.save()
                 
