@@ -3,6 +3,7 @@ import { Context } from "../store/appContext";
 import "../../styles/header.css";
 import fondo from "../../img/fondoNuevoHeader.jpeg";
 import logoHeader from "../../img/Logo_letras_amarillo.png";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
   const { store, actions } = useContext(Context);
@@ -71,12 +72,14 @@ export const Header = () => {
           </div>
           <div className="col"></div>
           <div className="col-2 text-right">
-            <a href="#" className="header-button-More">
-              Saber más
-              <span>
-                <i className="fa fa-arrow-right header-icon-arrow"></i>
-              </span>
-            </a>
+            <Link to={"/about"}>
+              <a href="#" className="header-button-More">
+                Saber más
+                <span>
+                  <i className="fa fa-arrow-right header-icon-arrow"></i>
+                </span>
+              </a>
+            </Link>
           </div>
         </div>
       </div>
