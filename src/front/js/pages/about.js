@@ -85,8 +85,8 @@ export const About = () => {
                 <a href="https://www.linkedin.com/in/orealba/">
                   <img src={ore} style={{ width: "150px" }}></img>
                   <p className="text-center mt-2">
-                    Orealba Soriano
-                    <br /> Rodríguez
+                    Orealba
+                    <br /> Soriano
                   </p>
                 </a>
               </div>
@@ -97,8 +97,8 @@ export const About = () => {
                 <a href="https://www.linkedin.com/in/aroldanperez/">
                   <img src={alex} style={{ width: "150px" }}></img>
                   <p className="text-center mt-2">
-                    Alejandro Roldán
-                    <br /> Pérez
+                    Alejandro
+                    <br /> Roldán
                   </p>
                 </a>
               </div>
@@ -108,7 +108,7 @@ export const About = () => {
                 <a href="https://www.linkedin.com/in/abril-celaya-hernandez-aa65911a5/">
                   <img src={abril} style={{ width: "150px" }}></img>
                   <p className="text-center mt-2">
-                    Abril Celaya
+                    Abril
                     <br /> Hernández
                   </p>
                 </a>
@@ -119,8 +119,8 @@ export const About = () => {
                 <a href="https://www.linkedin.com/in/pablo-higuera-herten-dev/">
                   <img src={pablo} style={{ width: "150px" }}></img>
                   <p className="text-center mt-2">
-                    Pablo Higuera
-                    <br /> Herten
+                    Pablo
+                    <br /> Higuera
                   </p>
                 </a>
               </div>
