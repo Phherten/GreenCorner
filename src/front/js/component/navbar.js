@@ -136,29 +136,6 @@ export const Navbar = () => {
             {store.permiso ? (
               <ul className="dropdown-menu dropdown-menu-end navbar-user-twobuttons">
                 <li>
-                  <Link to={"/login"}>
-                    <button
-                      className="dropdown-item navbar-button-user-login"
-                      type="button"
-                    >
-                      Iniciar Sesión
-                    </button>
-                  </Link>
-                </li>
-                <li>
-                  <Link to={"/registro"}>
-                    <button
-                      className="dropdown-item navbar-button-user-login"
-                      type="button"
-                    >
-                      Registrarse
-                    </button>
-                  </Link>
-                </li>
-              </ul>
-            ) : (
-              <ul className="dropdown-menu dropdown-menu-end navbar-user-twobuttons">
-                <li>
                   <Link to={"/privada"}>
                     <button
                       className="dropdown-item navbar-button-user-login"
@@ -179,6 +156,29 @@ export const Navbar = () => {
                       }}
                     >
                       Cerrar Sesión
+                    </button>
+                  </Link>
+                </li>
+              </ul>
+            ) : (
+              <ul className="dropdown-menu dropdown-menu-end navbar-user-twobuttons">
+                <li>
+                  <Link to={"/login"}>
+                    <button
+                      className="dropdown-item navbar-button-user-login"
+                      type="button"
+                    >
+                      Iniciar Sesión
+                    </button>
+                  </Link>
+                </li>
+                <li>
+                  <Link to={"/registro"}>
+                    <button
+                      className="dropdown-item navbar-button-user-login"
+                      type="button"
+                    >
+                      Registrarse
                     </button>
                   </Link>
                 </li>
