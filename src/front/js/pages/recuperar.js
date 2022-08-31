@@ -30,7 +30,7 @@ export const Recuperar = () => {
         let storage = JSON.parse(localStorage.getItem("recuperar"));
         storage = storage.token.substring(265);
         console.log(storage);
-        setUrl("https://green-corner.herokuapp.com/reset" + storage);
+        setUrl("https://green-corner.herokuapp.com/reset/" + storage);
     }
     useEffect(() => {
         console.log("entra en useEffect");
@@ -76,9 +76,9 @@ export const Recuperar = () => {
         width = "220"
         height = "110"
         className = "logoLogin" >
-        < /img> <
-        /Link> <
-        /div> <
+        < /img>{" "} <
+        /Link>{" "} <
+        /div>{" "} <
         div id = "template-bg-1" >
         <
         div className = "d-flex flex-column min-vh-100 align-items-center" >
@@ -87,8 +87,8 @@ export const Recuperar = () => {
         <
         div className = "card-header" >
         <
-        h2 > Recuperar < /h2> <
-        /div> <
+        h2 > Recuperar < /h2>{" "} <
+        /div>{" "} <
         div className = "card-body w-100" >
         <
         form name = "login"
@@ -101,7 +101,7 @@ export const Recuperar = () => {
         <
         div className = "input-group form-group mt-3" >
         <
-        div className = "bg-secondary rounded-start" > < /div> <
+        div className = "bg-secondary rounded-start" > < /div>{" "} <
         input type = "email"
         className = "form-control input-registro"
         placeholder = "Introduce el email"
@@ -113,8 +113,8 @@ export const Recuperar = () => {
                 setMail(e.target.value);
             }
         }
-        /> <
-        /div> <
+        />{" "} <
+        /div>{" "} <
         div className = "form-group mt-3" >
         <
         input type = "submit"
@@ -133,18 +133,19 @@ export const Recuperar = () => {
                 });
             }
         }
-        /> <
-        /div> <
+        />{" "} <
+        /div>{" "} <
         input type = "hidden"
         name = "url"
         id = "url"
         value = {
             url
         }
-        /> <
-        /form> <
-        div className = "text-danger" > < /div> <
-        div > < /div> <
+        />{" "} <
+        /form>{" "} <
+        div className = "text-danger" > < /div> <div> </div > {
+            " "
+        } <
         div className = "card-footer" >
         <
         div >
@@ -153,11 +154,14 @@ export const Recuperar = () => {
             "/login/"
         } >
         <
-        button className = "btn btn-transparent botones text-white mt-3 " > ¿Ya estas registrado ?
+        button className = "btn btn-transparent botones text-white mt-3 " > {
+            " "
+        }¿
+        Ya estas registrado ?
         <
-        /button> <
-        /Link> <
-        /div> <
+        /button>{" "} <
+        /Link>{" "} <
+        /div>{" "} <
         div >
         <
         Link to = {
@@ -165,15 +169,17 @@ export const Recuperar = () => {
         } >
         <
         button className = "btn btn-transparent botones text-white mt-1" >
-        Registrate <
-        /button> <
-        /Link> <
-        /div> <
-        /div> <
-        /div> <
-        /div> <
-        /div> <
-        /div> <
+        Registrate {
+            " "
+        } <
+        /button>{" "} <
+        /Link>{" "} <
+        /div>{" "} <
+        /div>{" "} <
+        /div>{" "} <
+        /div>{" "} <
+        /div>{" "} <
+        /div>{" "} <
         /div>
     );
 };
