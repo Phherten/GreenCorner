@@ -9,7 +9,7 @@ import { Login } from "./pages/login";
 import { Registro } from "./pages/registro";
 import injectContext from "./store/appContext";
 import { Interior } from "./pages/interior";
-import { NavbarFondo } from "./component/navbarFondo";
+// import { NavbarFondo } from "./component/navbarFondo";
 import { Recuperar } from "./pages/recuperar";
 import { Exterior } from "./pages/exterior";
 import { Suculentas } from "./pages/suculentas";
@@ -66,7 +66,7 @@ const Layout = () => {
               <Ficha />
             </Route>
             <Route exact path="/about">
-              <NavbarFondo />
+              <Navbar />
               <About />
             </Route>
 
