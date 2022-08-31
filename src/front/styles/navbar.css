@@ -1,165 +1,177 @@
 @import url("https://fonts.googleapis.com/css2?family=Brawler&family=Indie+Flower&family=Montserrat:ital,wght@0,100;0,200;0,300;0,500;1,100&family=Moo+Lah+Lah&family=Noto+Sans+JP:wght@100&family=Orelega+One&family=Prompt:wght@100;800&family=Roboto:wght@100;500&family=Square+Peg&display=swap");
 
 .fondo-navbar {
-  background-image: url("../img/fondoNavbar.jpeg");
+    background-image: url("../img/fondoNavbar.jpeg");
 }
 
 .home-navbar {
-  background-color: transparent;
+    background-color: transparent;
 }
 
 .navbar-font {
-  font-family: "Montserrat", sans-serif;
+    font-family: "Montserrat", sans-serif;
 }
+
 .navbar-menu-button {
-  background-color: none;
-  color: rgb(255, 255, 255);
-  margin-left: 5px;
-  padding-right: 0px;
+    background-color: none;
+    color: rgb(255, 255, 255);
+    margin-left: 5px;
+    padding-right: 0px;
 }
+
 .navbar-menu-button:focus {
-  box-shadow: none;
-  border: none;
+    box-shadow: none;
+    border: none;
 }
 
 .navbar-logo {
-  height: 48px;
-  padding-left: 20px;
+    height: 48px;
+    padding-left: 20px;
 }
 
 .navbar-button {
-  margin-right: 20px;
-  margin-left: 20px;
-  text-align: center;
-  color: rgb(255, 255, 255);
-  font-family: "Montserrat", sans-serif;
-  font-size: 1.2rem;
-  outline: none;
-  border: none;
-  display: inline-block;
-  text-decoration: none;
-  font-weight: 300;
-  text-shadow: black 0.2em 0.2em 0.2em;
+    margin-right: 20px;
+    margin-left: 20px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.2rem;
+    outline: none;
+    border: none;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 300;
+    text-shadow: black 0.2em 0.2em 0.2em;
 }
 
 .navbar-button:hover {
-  color: #ffe175;
+    color: #ffe175;
 }
+
 .navbar-search-button {
-  position: relative;
-  background-color: rgba(255, 255, 255, 0.359);
-  border-radius: 7px;
-  margin-right: 10px;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.359);
+    border-radius: 7px;
+    margin-right: 10px;
 }
 
 .navbar-search-button i {
-  position: absolute;
-  right: 13px;
-  top: 10px;
-  color: #424242;
+    position: absolute;
+    right: 13px;
+    top: 10px;
+    color: #424242;
 }
+
 .navbar-form-control {
-  height: 36px;
-  background-color: rgba(255, 255, 255, 0.359);
-  border: none;
-  color: #000000;
+    height: 36px;
+    background-color: rgba(255, 255, 255, 0.359);
+    border: none;
+    color: #000000;
 }
 
 .navbar-form-control:focus {
-  background-color: #eeeeee69;
-  box-shadow: none;
-  border: none;
+    background-color: #eeeeee69;
+    box-shadow: none;
+    border: none;
 }
+
 .navbar-form-control::placeholder {
-  color: #424242;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 900;
+    color: #424242;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 900;
 }
 
 .navbar-user-button {
-  margin-right: 25px;
-  background-color: rgba(255, 255, 255, 0.51);
+    margin-right: 25px;
+    background-color: rgba(255, 255, 255, 0.51);
 
-  border-radius: 7px;
-  color: #424242;
-  border: none;
-  height: 36px;
+    border-radius: 7px;
+    color: #424242;
+    border: none;
+    height: 36px;
 }
 
 .navbar-user-button i {
-  color: #424242;
+    color: #424242;
 }
 
 .navbar-user-button:focus {
-  background-color: #eeeeee69;
-  box-shadow: none;
-  border: none;
+    background-color: #eeeeee69;
+    box-shadow: none;
+    border: none;
 }
 
 .navbar-user-button::placeholder {
-  color: #000000;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 900;
+    color: #000000;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 900;
 }
 
 .navbar-user-twobuttons {
-  background-color: transparent;
-  border: none;
+    background-color: transparent;
+    border: none;
 }
 
 .navbar-button-user-login {
-  color: white;
+    color: white;
 }
 
 .dropdown-text {
-  color: black !important;
-  font-size: 18px;
+    color: black !important;
+    font-size: 18px;
 }
 
 .dropdown-menu {
-  background-color: rgba(173, 169, 169, 0.8);
+    background-color: rgba(173, 169, 169, 0.8);
 }
 
 .dropdown-text:hover {
-  background-color: transparent !important;
-  color: #ffe175 !important;
-  text-shadow: 1px 1px 1px black;
-  font-size: 20px;
+    background-color: transparent !important;
+    color: #ffe175 !important;
+    text-shadow: 1px 1px 1px black;
+    font-size: 20px;
 }
 
 .fondo-dropdown {
-  opacity: 0.8;
+    opacity: 0.8;
 }
+
 a {
-  text-decoration: none !important;
-  color: #000000;
-  font-size: 1.2rem;
+    text-decoration: none !important;
+    color: #000000;
+    font-size: 1.2rem;
 }
+
 a:hover {
-  color: black;
+    color: black;
 }
 
 .icono-user:hover {
-  background-color: rgba(224, 224, 224, 0.669) !important;
+    background-color: rgba(224, 224, 224, 0.669) !important;
 }
 
 #li-buscador {
-  list-style: none;
+    list-style: none;
 }
-@media (max-width: 768px) {
-  .collapse-menu {
-    position: absolute;
-    margin-top: 25rem;
-    background-color: #859889c7;
-    margin-left: -0.75rem;
-    margin-bottom: 2rem;
-    padding-right: 1rem;
-    padding-left: 1rem;
-    z-index: 1;
-    padding-bottom: 0.5rem;
-  }
 
-  /*.navbar-search-button {
+@media (max-width: 768px) {
+    .collapse-menu {
+        position: absolute;
+        margin-top: 25rem;
+        background-color: #859889c7;
+        margin-left: -0.75rem;
+        margin-bottom: 2rem;
+        padding-right: 1rem;
+        padding-left: 1rem;
+        z-index: 1;
+        padding-bottom: 0.5rem;
+    }
+
+    .navbar-logo {
+        margin-left: -2rem;
+    }
+
+    /*.navbar-search-button {
     color: transparent;
     background-color: rgba(98, 98, 98, 0.665);
     text-decoration: none;

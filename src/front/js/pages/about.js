@@ -10,6 +10,7 @@ import ore from "../../img/Ore.png";
 import pablo from "../../img/Pablo.png";
 import alex from "../../img/Alex.png";
 import abril from "../../img/Abril.png";
+import "../../styles/about.css";
 
 export const About = () => {
   const { store, actions } = useContext(Context);
@@ -130,7 +131,7 @@ export const About = () => {
         <div className="col-md-5">
           <img
             src={about}
-            className="img-fluid me-0"
+            className="img-fluid me-0 foto_about"
             style={{ height: "950px" }}
           ></img>
         </div>
