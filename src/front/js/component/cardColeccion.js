@@ -90,9 +90,9 @@ export const CardColeccion = (props) => {
       <div className="card-privada">
         <Link to={"/ficha/" + props.id}>
           <img src={props.img} className="imagen-card-privada " />
-          <div className="body-card-privada">
+          <div className="body-card-privada ">
             <h2 className="texto-card-privada ">{props.name} </h2>
-            <h3 className="texto-card-privada ">
+            <h3 className="texto-card-privada texto-alias ">
               "{props.alias !== "" ? props.alias : "Sin alias"}"
               <Link
                 onClick={() =>
@@ -123,7 +123,7 @@ export const CardColeccion = (props) => {
           />
           {notificacionTelegram == "Si" ? (
             <button
-              className=" btn btn-danger boton"
+              className=" btn btn-danger boton telegram-boton"
               variant="primary"
               onClick={() => {
                 actions.deleteTelegram(
@@ -141,7 +141,7 @@ export const CardColeccion = (props) => {
             </button>
           ) : (
             <button
-              className=" btn btn-secondary boton"
+              className="btn btn-secondary boton telegram-boton"
               variant="primary"
               onClick={() => {
                 buscar();
@@ -183,7 +183,10 @@ export const CardColeccion = (props) => {
 
         <Link onClick={handleDelete}>
           <div class="boton-eliminar-privada">
-            <button class="btn btn-secondary boton" type="button">
+            <button
+              class="btn btn-secondary boton eliminar-boton"
+              type="button"
+            >
               Eliminar
             </button>
           </div>

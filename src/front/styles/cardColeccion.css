@@ -66,3 +66,51 @@
   border: none;
   background-color: transparent;
 }
+
+@media (max-width: 480px) {
+  .card-privada {
+    width: 25rem;
+    height: 15rem;
+    margin-top: 3.5rem;
+  }
+  .imagen-card-privada {
+    width: 10rem;
+    height: auto;
+    background-color: transparent;
+    margin-top: -2rem;
+  }
+  #card-coleccion1 {
+    color: black;
+    font-size: 1.2rem;
+  }
+  .boton-telegram-privada {
+    width: 2rem;
+    margin-left: 11rem;
+    margin-top: -0.5rem;
+  }
+  .telegram-boton {
+    font-size: 0.8rem;
+  }
+  .calendar-boton {
+    font-size: 0.8rem;
+  }
+  .eliminar-boton {
+    font-size: 0.8rem;
+    margin-top: -1.9rem;
+    margin-left: 0.4rem;
+  }
+  .texto-card-privada {
+    margin-top: 0.7rem;
+  }
+  .body-card-privada {
+    margin-left: 9rem;
+    margin-top: -12rem;
+    text-align: center;
+  }
+  .texto-alias {
+    margin-left: 2rem;
+  }
+  .fa-pen {
+    margin-left: -0.5rem;
+  }
+}

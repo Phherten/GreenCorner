@@ -126,7 +126,7 @@ export const CalendarModal = (props) => {
     <>
       <div className="boton-calendar-privada">
         <Button
-          className=" btn btn-secondary boton"
+          className=" btn btn-secondary boton calendar-boton"
           variant="primary"
           onClick={(e) => handleShow(e)}
         >
