@@ -5,7 +5,7 @@ import rigoImageUrl from "../../img/rigo-baby.jpg";
 import "../../styles/home.css";
 import { Card } from "../component/card";
 import { ModalCard } from "../component/modal";
-import about from "../../img/about.jpg";
+import about from "../../img/imagen-nosotros.jpg";
 import ore from "../../img/Ore.png";
 import pablo from "../../img/Pablo.png";
 import alex from "../../img/Alex.png";
@@ -22,12 +22,12 @@ export const About = () => {
           <div>
             <h2>Green Corner: el final y el principio de nuestro viaje.</h2>
 
-            <p>
+            <p className="texto-nosotros">
               Somos Ore, Alex, Abril y Pablo, el <i>team</i> encargado de que
               Green Corner hoy sea una realidad.
             </p>
 
-            <p>
+            <p className="texto-nosotros">
               Cuando creamos Green Corner lo hicimos con una idea en mente:
               ayudar a las personas con el cuidado de las plantas de casa. Para
               lograrlo, implementamos una tecnología capaz de enviar avisos
@@ -39,14 +39,14 @@ export const About = () => {
               (Ni olvido ni perdón para el último cactus que dejaste morir).
             </h5>
 
-            <p>
+            <p className="texto-nosotros">
               Sabemos que integrar diferentes tipos de plantas, tanto en el
               interior como en el exterior, convierten una estancia anodina en
               un lugar lleno de vida. Pero a menudo olvidamos que para que eso
               ocurra, <strong>cada planta merece un tipo de cuidado.</strong>
             </p>
 
-            <p>
+            <p className="texto-nosotros">
               En Green Corner podrás añadir a tu cuenta de usuario cada una de
               tus plantas (diferenciadas por nombre y clasificación), y la web
               se encargará de recordarte periodos de riego mediante
@@ -54,7 +54,7 @@ export const About = () => {
               plantas siempre lucirán verdes y bonitas.
             </p>
 
-            <p>
+            <p className="texto-nosotros">
               Este proyecto pone el broche final a nuestra formación como
               desarrolladores, y simboliza un punto de inflexión en nuestras
               carreras:
@@ -65,18 +65,18 @@ export const About = () => {
               camino profesional.
             </h4>
 
-            <p>
+            <p className="texto-nosotros">
               Todos venimos de disciplinas bien distintas, así que Green Corner
               nos hace sentir especialmente orgullosos.
             </p>
 
-            <p>
+            <p className="texto-nosotros">
               Nuestro objetivo siempre fue diseñar un proyecto en el que volcar
               lo aprendido en nuestro periodo formativo, y que al mismo tiempo
               pudiera resultar útil para el mundo real.
             </p>
 
-            <p>Y lo logramos</p>
+            <p className="texto-nosotros">Y lo logramos.</p>
 
             <h4>No dejes morir tus plantas, únete a Green Corner.</h4>
           </div>
@@ -106,7 +106,7 @@ export const About = () => {
             </div>
             <div className="col-md-3 bg-white p-3 " style={{ width: "auto" }}>
               <div>
-                <a href="https://www.linkedin.com/in/abril-celaya-hernandez-aa65911a5/">
+                <a href="https://www.linkedin.com/in/abril-celaya-hernandez/">
                   <img src={abril} style={{ width: "150px" }}></img>
                   <p className="text-center mt-2">
                     Abril
