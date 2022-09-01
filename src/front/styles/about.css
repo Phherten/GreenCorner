@@ -1,5 +1,16 @@
+.foto_about {
+  width: 100%;
+}
+.texto-nosotros {
+  font-weight: 300;
+}
+
+.cuerpo-nosotros {
+  display: flex;
+}
+
 @media (max-width: 480px) {
-    .foto_about {
-        display: none;
-    }
+  .foto_about {
+    display: none;
+  }
 }
