@@ -74,28 +74,28 @@
     margin-top: 3.5rem;
   }
   .imagen-card-privada {
-    width: 10rem;
+    width: 8rem;
     height: auto;
     background-color: transparent;
-    margin-top: -2rem;
+    margin-top: 0rem;
+    margin-bottom: 1rem;
   }
   #card-coleccion1 {
     color: black;
     font-size: 1.2rem;
   }
   .boton-telegram-privada {
-    width: 2rem;
-    margin-left: 11rem;
     margin-top: -0.5rem;
   }
   .telegram-boton {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
+    margin-right: 1rem;
   }
   .calendar-boton {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
   }
   .eliminar-boton {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     margin-top: -1.9rem;
     margin-left: 0.4rem;
   }
