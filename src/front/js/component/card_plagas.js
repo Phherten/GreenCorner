@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
-import rigoImageUrl from "../../img/rigo-baby.jpg";
+
 import "../../styles/elementos.css";
 import Hoja from "../../img/hoja.png";
 import { Link } from "react-router-dom";
