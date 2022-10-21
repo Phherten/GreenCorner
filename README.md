@@ -54,8 +54,8 @@ It is recomended to install the backend first, make sure you have Python 3.8, Pi
 | MySQL     | mysql://username:password@localhost:port/example    |
 | Postgress | postgres://username:password@localhost:5432/example |
 
-5. Migrate the migrations: `$ pipenv run migrate` (skip if you have not made changes to the models on the `./src/api/models.py`)
-6. Run the migrations: `$ pipenv run upgrade`
+5. Migrate the migrations: `$ pipenv run upgrade` (skip if you have not made changes to the models on the `./src/api/models.py`)
+6. Run the migrations: `$ pipenv run migrate`
 7. Run `flask insert-plagas src/resources/info_plagas.csv`
 8. Run `flask insert-plants src/resources/info_plants.csv`
 9. Run the application: `$ pipenv run start`

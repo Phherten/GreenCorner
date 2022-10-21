@@ -30,7 +30,7 @@ export const Ficha_plagas = (props) => {
             </p>
             <p className="h5  ps-4 pe-5 pb-3">
               {" "}
-              <span className="w400">Sintomas: </span> {filtrado[0].sintomas}
+              <span className="w400">Síntomas: </span> {filtrado[0].sintomas}
             </p>
 
             <p className="h5 ps-4 pe-5 pb-3">
